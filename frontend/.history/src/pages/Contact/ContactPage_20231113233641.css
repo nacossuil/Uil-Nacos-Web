@@ -1,0 +1,14 @@
+.c-wrapper {
+    position: relative;
+}
+
+.c-container {
+    background: #dcffd7, url();
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.c-heading {}

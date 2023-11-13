@@ -1,0 +1,15 @@
+.c-wrapper {
+    position: relative;
+}
+
+.c-container {
+    background: url('Grid.png') #dcffd7;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+/* .c-heading {} */

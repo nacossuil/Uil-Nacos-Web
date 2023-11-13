@@ -1,0 +1,49 @@
+.c-wrapper {
+    position: relative;
+}
+
+.c-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+/* first div */
+
+.c-container .first {
+    background: #dcffd7;
+    width: 100%;
+}
+
+.first .c-heading>h1 {
+    margin: 1.5rem auto 0;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 48px;
+}
+
+.image-container {
+    width: 100%;
+}
+
+
+/* second div  */
+
+.second {
+    margin-top: 5rem;
+}
+
+.second>.s-text {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 48px;
+    width: 45rem;
+    margin-bottom: 5rem;
+}
+
+.second input {
+    display: block;
+}

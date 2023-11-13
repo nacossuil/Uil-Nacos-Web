@@ -18,8 +18,8 @@ const ContactPage = () => {
             If you have any questions or need assistance, please {`don't`}{' '}
             hesitate to reach out to us.
           </div>
-          <form className="form">
-            <input type="text" />
+          <form>
+            <input type="" />
             <input type="text" />
             <input type="text" />
             <input type="text" />
