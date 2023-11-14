@@ -1,35 +1,16 @@
-import "./Opportunitiespage.css";
 import PropTypes from "prop-types";
-
-const tempCoursesData = [
-  {
-    img: "./../../../src/assets/Opportunities/resources-img1.png",
-    title: "JavaScript best pratices",
-    description:
-      "This course is designed to take your existing JavaScript knowledge and teach you how to leverage patterns and practices to take...",
-    level: "Beginner",
-  },
-  {
-    img: "./../../../src/assets/Opportunities/resources-img2.png",
-    title: "JavaScript best pratices",
-    description:
-      "This course is designed to take your existing JavaScript knowledge and teach you how to leverage patterns and practices to take...",
-    level: "Beginner",
-  },
-  {
-    img: "./../../../src/assets/Opportunities/resources-img3.png",
-    title: "JavaScript best pratices",
-    description:
-      "This course is designed to take your existing JavaScript knowledge and teach you how to leverage patterns and practices to take...",
-    level: "Beginner",
-  },
-];
+import "./Opportunitiespage.css";
+import { tempCoursesData, tempScholarshipsData } from "./tempData";
 
 const OpportunitiesPage = () => {
   return (
     <div className="opportunities">
       <PageIntro />
-      <Courses />
+      <Resources data={tempCoursesData} heading="Shared Career Resources" />
+      <Resources
+        data={tempScholarshipsData}
+        heading="Discover Scholarships & Financial Support"
+      />
     </div>
   );
 };
@@ -66,54 +47,85 @@ const PageIntro = () => {
   );
 };
 
-const Courses = () => {
+const Resources = ({ data, heading }) => {
   return (
     <section className="section-courses">
       <div className="container">
-        <h1 className="heading-md">Shared Career Resources</h1>
-        <CoursesCards />
+        <h1 className="heading-md">{heading}</h1>
+        <ResourcesCards data={data} />
       </div>
     </section>
   );
 };
 
-const CoursesCards = () => {
+Resources.propTypes = {
+  data: PropTypes.array,
+  heading: PropTypes.string,
+};
+
+const ResourcesCards = ({ data }) => {
   return (
-    <ul className="courses__cards">
-      {tempCoursesData.map((course, i) => (
-        <CoursesCard
+    <ul className="resources__cards">
+      {data.map((data, i) => (
+        <ResourcesCard
           key={i}
-          img={course.img}
-          title={course.title}
-          description={course.description}
-          level={course.level}
+          img={data.img}
+          title={data.title}
+          description={data.description}
+          level={data.level}
         />
       ))}
     </ul>
   );
 };
 
-const CoursesCard = ({ img, title, description, level }) => {
+ResourcesCards.propTypes = {
+  data: PropTypes.array,
+};
+
+const ResourcesCard = ({ img, title, description, level }) => {
+  let color, bgColor;
+
+  if (level === "Beginner") {
+    bgColor = "#c0c6e4";
+    color = "#192666";
+  }
+
+  if (level === "Expert") {
+    bgColor = "#1386011F";
+    color = "#138601";
+  }
+  if (level === "Intermediate") {
+    bgColor = "#FF0F9F1F";
+    color = "#FF0F9F";
+  }
+
   return (
-    <li>
-      <a href="\#" className="courses__card">
-        <img src={img} alt="course" />
-        <div className="content">
-          <h3 className="heading-sm">{title}</h3>
-          <p className="text-sm">{description}</p>
-          <div className="justify-flex">
-            <span className="tag">{level}</span>
-            <a href="/#" className="btn btn-md">
-              View course
-            </a>
-          </div>
+    <li className="resources__card">
+      <img src={img} alt="course" />
+      <div className="content">
+        <h3 className="heading-sm">{title}</h3>
+        <p className="text-sm">{description}</p>
+        <div className="justify-flex">
+          <span
+            style={{
+              backgroundColor: level ? bgColor : "#c0c6e4",
+              color: level ? color : "#192666",
+            }}
+            className="tag"
+          >
+            {level ? level : "Scholarship"}
+          </span>
+          <a href="/#" className="btn btn-md">
+            {level ? "View course" : "Apply"}
+          </a>
         </div>
-      </a>
+      </div>
     </li>
   );
 };
 
-CoursesCard.propTypes = {
+ResourcesCard.propTypes = {
   img: PropTypes.string,
   title: PropTypes.string,
   description: PropTypes.string,

@@ -38,7 +38,7 @@
 img {
   /* Making images responsive */
   display: block;
-  max-width: 100%;
+  width: 100%;
 }
 
 /*###### RE-USABLE CLASSES ######*/
@@ -141,32 +141,26 @@ img {
   text-align: center;
 }
 
-.courses__cards {
+.resources__cards {
   list-style-type: none;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
 }
 
-.courses > li {
-  border-radius: var(--card-radius);
-}
-
-.courses__card {
-  display: block;
-  text-decoration: none;
+.resources__card {
   color: var(--text-color);
   box-shadow: var(--custom-box-shadow);
   border-radius: var(--card-radius);
   overflow: hidden;
 }
 
-.courses__card .content {
+.resources__card .content {
   padding: 1rem;
 }
 
 /* This element would be conditionally styled in the JSX */
-.courses__card .tag {
+.resources__card .tag {
   display: inline-block;
   color: #192666;
   font-size: var(--fs-text-x-sm);
