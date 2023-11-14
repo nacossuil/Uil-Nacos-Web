@@ -1,3 +1,5 @@
+import About from '../../components/Home/About/About'
+import Hero from '../../components/Home/Hero/Hero'
 import './HomePage.css'
 
 /** SECTIONS
@@ -13,9 +15,10 @@ import './HomePage.css'
 
 const HomePage = () => {
   return (
-    <div>
-      HomePage
-    </div>
+    <main>
+      <Hero />
+      <About />
+    </main>
   )
 }
 
