@@ -1,0 +1,26 @@
+#cgpa-container {
+    box-shadow: 0px 32px 40px 12px rgba(0, 0, 0, 0.08);
+}
+
+#CGC-container {
+    border: 1px solid rgba(33, 37, 33, 0.24);
+}
+
+#course {
+    padding: 12px 68px 12px 16px;
+    color: rgba(33, 37, 33, 0.50);
+    border-right: 1px solid rgba(33, 37, 33, 0.24);
+}
+
+#grade-select {
+    padding: 12px 20px 12px 16px;
+    border-right: 1px solid rgba(33, 37, 33, 0.24);
+    color: rgba(33, 37, 33, 0.50);
+}
+
+
+#credits {
+    padding: 12px 20px 12px 16px;
+    padding-right: -1000px;
+    color: rgba(33, 37, 33, 0.50);
+}
