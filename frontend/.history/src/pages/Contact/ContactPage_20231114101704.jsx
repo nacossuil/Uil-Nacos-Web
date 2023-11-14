@@ -25,7 +25,6 @@ const ContactPage = () => {
             <input type="text" />
             <img src={Email} alt="person" className="icon" />
             <input type="text" />
-            <img src={Email} alt="person" className="icon" />
             <input type="text" />
             <input type="text" />
             <input type="text" />

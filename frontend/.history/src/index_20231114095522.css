@@ -21,8 +21,4 @@ body {
     text-align: center;
 }
 
-.textBig {
-    font-size: 36px;
-    font-weight: 700;
-    line-height: 48px;
-}
+.textBig {}
