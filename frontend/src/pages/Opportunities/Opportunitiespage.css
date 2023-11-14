@@ -7,13 +7,18 @@
 
   --font-family: "DM Sans", sans-serif;
 
-  --fs-heading: 2.5rem;
+  --fs-heading-lg: 2.5rem;
+  --fs-heading-md: 2.25rem;
+  --fs-heading-sm: 1.25rem;
   --fs-text-md: 1rem;
   --fs-text-lg: 1.75rem;
   --fs-text-sm: 0.875rem;
+  --fs-text-x-sm: 0.75rem;
 
   --line-height-text: 1.6;
   --btn-radius: 2.8vw;
+  --card-radius: 17px;
+  --custom-box-shadow: 0 6px 8px 0 hsla(0, 0%, 0%, 0.15);
 
   /* GlOBAL STYLINGS */
   font-family: var(--font-family);
@@ -33,7 +38,7 @@
 img {
   /* Making images responsive */
   display: block;
-  max-width: 100%;
+  width: 100%;
 }
 
 /*###### RE-USABLE CLASSES ######*/
@@ -43,10 +48,29 @@ img {
   margin-inline: auto;
 }
 
-.heading {
-  font-size: var(--fs-heading);
+.justify-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.heading-lg {
+  font-size: var(--fs-heading-lg);
   font-weight: 600;
   margin-bottom: 2rem;
+}
+
+.heading-md {
+  font-family: "Mulish", var(--font-family), sans-serif;
+  font-size: var(--fs-heading-md);
+  font-weight: 600;
+  margin-bottom: 5rem;
+}
+
+.heading-sm {
+  font-family: "Mulish", var(--font-family), sans-serif;
+  font-size: var(--fs-heading-sm);
+  margin-bottom: 0.75rem;
 }
 
 .text-md {
@@ -56,16 +80,34 @@ img {
   margin-bottom: 2rem;
 }
 
+.text-sm {
+  font-size: var(--fs-text-sm);
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+.text-x-sm {
+  font-size: var(--fs-text-x-sm);
+}
+
 .btn {
   display: inline-block;
-  padding: 0.75em 1.5em;
-  font-size: var(--fs-text-md);
   font-weight: 500;
+  text-decoration: none;
   color: var(--color-primary-tint);
   background-color: var(--color-primary-shade);
   border: 0;
   border-radius: var(--btn-radius);
   cursor: pointer;
+}
+
+.btn-lg {
+  padding: 0.625em 1.25em;
+}
+
+.btn-md {
+  padding: 0.5em 1em;
+  font-size: var(--fs-text-sm);
 }
 
 /*##### INTRO SECTION #####*/
@@ -87,4 +129,43 @@ img {
 
 .intro__content-img-box img {
   width: 80%;
+}
+
+/*##### RESOURCES SECTION #####*/
+
+.section-courses {
+  padding-block: 5rem;
+}
+
+.section-courses h1 {
+  text-align: center;
+}
+
+.resources__cards {
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.resources__card {
+  color: var(--text-color);
+  box-shadow: var(--custom-box-shadow);
+  border-radius: var(--card-radius);
+  overflow: hidden;
+}
+
+.resources__card .content {
+  padding: 1rem;
+}
+
+/* This element would be conditionally styled in the JSX */
+.resources__card .tag {
+  display: inline-block;
+  color: #192666;
+  font-size: var(--fs-text-x-sm);
+  font-weight: 500;
+  background-color: #c0c6e4;
+  padding: 0.3rem 0.6rem;
+  border-radius: var(--btn-radius);
 }
