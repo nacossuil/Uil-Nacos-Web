@@ -1,7 +1,11 @@
+import CgpaHero from "../../components/cgpa-hero/CgpaHero";
+
 const CgpaCalculatorPage = () => {
   return (
-    <div>cgpaCalculator</div>
-  )
-}
+    <>
+      <CgpaHero />
+    </>
+  );
+};
 
 export default CgpaCalculatorPage;

@@ -1,12 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=Mulish:wght@200;300;400;500;600;700&display=swap');
-:root {
-  font-size: 16px;
-}
-*{
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=Mulish:wght@200;300;400;500;600;700&display=swap");
+
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
+
+:root {
+  font-size: 16px;
+  --bg-green: #dcffd7;
+  --m-black: #212521;
+  --font-sans: "DM Sans", sans-serif;
+  --font-mulish: "DM Sans", sans-serif;
+}
+
 body {
   margin: 0;
 }

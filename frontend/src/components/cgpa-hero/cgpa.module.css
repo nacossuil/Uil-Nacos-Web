@@ -1,0 +1,33 @@
+.hero_layout {
+  background-color: var(--bg-green);
+  position: relative;
+  padding-top: 156px;
+  padding-bottom: 144px;
+  padding-left: 105px;
+  height: 535px;
+  width: 100%;
+  overflow: hidden;
+}
+.hero_title {
+  color: var(--color-cus);
+  font-family: var(--font-mulish);
+  font-style: normal;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 52px;
+  padding-bottom: 27px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.hero_desc {
+  font-family: var(--font-sans);
+  color: var(--color-cus);
+  width: 100%;
+  max-width: 509px;
+}
+
+.hero_svg {
+  position: absolute;
+  inset: 0;
+}
