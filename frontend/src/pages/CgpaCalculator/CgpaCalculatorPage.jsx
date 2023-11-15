@@ -1,5 +1,6 @@
 import React from "react";
 import "./cgpa.css";
+import IconButton from "@mui/material/IconButton";
 
 const CgpaCalculatorPage = () => {
   return (
@@ -18,7 +19,7 @@ const CgpaCalculatorPage = () => {
         <div className="flex items-center justify-center">
           <div
             id="CGC-container"
-            className="rounded-lg  w-[520px] h-[52px] flex items-center "
+            className="rounded-lg w-[520px] h-[52px] mr-3 flex items-center "
           >
             {/* course container */}
             <div className="flex-1">
@@ -31,7 +32,7 @@ const CgpaCalculatorPage = () => {
             </div>
 
             {/* grade container */}
-            <div className="flex-1">
+            <div className="flex-1" id="grade-container">
               <select
                 name="grade"
                 id="grade-select"
@@ -40,12 +41,24 @@ const CgpaCalculatorPage = () => {
                 <option value="" disabled selected>
                   Grade
                 </option>
-                <option value="A">A</option>
-                <option value="B">B</option>
-                <option value="C">C</option>
-                <option value="D">D</option>
-                <option value="E">E</option>
-                <option value="F">F</option>
+                <option id="grade-option-A" value="5">
+                  A
+                </option>
+                <option id="grade-option-B" value="4">
+                  B
+                </option>
+                <option id="grade-option-C" value="3">
+                  C
+                </option>
+                <option id="grade-option-D" value="2">
+                  D
+                </option>
+                <option id="grade-option-E" value="1">
+                  E
+                </option>
+                <option id="grade-option-F" value="0">
+                  F
+                </option>
               </select>
             </div>
 
@@ -55,12 +68,14 @@ const CgpaCalculatorPage = () => {
                 <option value="" disabled selected>
                   Credits
                 </option>
-                <option value="">1</option>
+                <option value="" className="flex">
+                  1
+                </option>
               </select>
             </div>
           </div>
 
-          <div className="ml-4 ">
+          <IconButton>
             <svg
               width="24"
               height="24"
@@ -83,7 +98,52 @@ const CgpaCalculatorPage = () => {
                 />
               </g>
             </svg>
+          </IconButton>
+        </div>
+
+        {/* Add course button and  calculate button */}
+        <div className="flex space-x-16 mx-8 my-6">
+          <button
+            id="add-btn"
+            className="text-[#138601] leading-5 font-bold  hover:bg-[#138601] hover:text-white duration-200"
+          >
+            Add new course
+          </button>
+
+          <button
+            id="calc-btn"
+            disabled="false"
+            className="bg-[#138601] leading-5 font-bold text-white opacity-50"
+          >
+            Calculate CGPA
+          </button>
+        </div>
+
+        {/* Result section */}
+        <div className="flex">
+          {/* credits section */}
+          <div id="credits-section">
+            <h2 className="font-medium leading-5 text-xs">TOTAL CREDITS</h2>
+            <h1 className="text-[32px] font-bold" id="credit-count">
+              0
+            </h1>
           </div>
+          {/* cgpa section */}
+          <div id="cgpa-section">
+            <h2 className="font-medium leading-5 text-xs">CGPA</h2>
+            <h1 className="text-[32px] font-bold" id="cgpa-count">
+              0.00
+            </h1>
+          </div>
+        </div>
+
+        {/* Grade bar section */}
+        <div>
+          <h1 id="grade" className="text-xs font-medium leading-5 px-14 py-4">
+            ACADEMIC STANDING:
+          </h1>
+
+          <div id="grade-bar" className="mx-auto"></div>
         </div>
       </div>
     </div>
