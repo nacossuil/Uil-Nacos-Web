@@ -79,22 +79,3 @@ textarea {
     color: #fff;
     cursor: pointer;
 }
-
-.btn-submit:hover {
-    transition: all 0.3s ease-in;
-    filter: brightness(90%);
-    color: white;
-}
-
-
-/* third section  */
-
-.third {
-    font-family: 'Mulish', sans-serif;
-    width: 100%;
-    margin-top: 6rem;
-}
-
-.third .t-text {
-    margin: 2rem auto;
-}

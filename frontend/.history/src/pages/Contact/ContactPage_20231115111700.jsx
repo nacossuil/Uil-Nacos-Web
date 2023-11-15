@@ -17,7 +17,7 @@ const ContactPage = () => {
             <img src={Img} alt="bgImg" />
           </div>
         </div>
-        <div className="second">
+        <div className="flexCenter second">
           <div className="textBig s-text">
             If you have any questions or need assistance, please {`don't`}{' '}
             hesitate to reach out to us.
@@ -26,20 +26,13 @@ const ContactPage = () => {
             <img src={Person} alt="person" className="icon" />
             <input type="text" placeholder="Your Name" />
             <img src={Email} alt="person" className="icon" />
-            <input type="email" placeholder="Email Address" />
+            <input type="text" placeholder="Email Address" />
             <img src={Ic} alt="person" className="icon" />
             <input type="text" placeholder="Subject" />
             <img src={AntDesign} alt="" className="icon" />
-            <textarea placeholder="Message"></textarea>
-            <input
-              type="submit"
-              value="Send Message"
-              className="textSmall btn-submit"
-            />
+            <input type="text" placeholder="Message" />
+            <input type="submit" value="Send Message" />
           </form>
-        </div>
-        <div className="third">
-          <div className="textBig t-text">FAQs and Answers.</div>
         </div>
       </div>
     </section>

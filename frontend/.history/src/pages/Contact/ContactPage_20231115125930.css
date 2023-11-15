@@ -45,7 +45,6 @@
     border-radius: 8px;
     outline: none;
     border: 1px solid rgba(33, 37, 33, 0.32);
-    font-family: 'DM Sans', sans-serif;
 }
 
 input::placeholder,
@@ -73,28 +72,6 @@ textarea {
     border-radius: 8px;
 }
 
-.btn-submit {
-    font-family: 'DM Sans', sans-serif;
-    background: #138601;
-    color: #fff;
-    cursor: pointer;
-}
-
-.btn-submit:hover {
-    transition: all 0.3s ease-in;
-    filter: brightness(90%);
-    color: white;
-}
-
-
-/* third section  */
-
-.third {
-    font-family: 'Mulish', sans-serif;
-    width: 100%;
-    margin-top: 6rem;
-}
-
-.third .t-text {
-    margin: 2rem auto;
+textarea::placeholder {
+    padding: 0;
 }

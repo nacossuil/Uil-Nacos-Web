@@ -31,15 +31,8 @@ const ContactPage = () => {
             <input type="text" placeholder="Subject" />
             <img src={AntDesign} alt="" className="icon" />
             <textarea placeholder="Message"></textarea>
-            <input
-              type="submit"
-              value="Send Message"
-              className="textSmall btn-submit"
-            />
+            <input type="submit" value="Send Message" className="btn-submit" />
           </form>
-        </div>
-        <div className="third">
-          <div className="textBig t-text">FAQs and Answers.</div>
         </div>
       </div>
     </section>

@@ -26,20 +26,12 @@ const ContactPage = () => {
             <img src={Person} alt="person" className="icon" />
             <input type="text" placeholder="Your Name" />
             <img src={Email} alt="person" className="icon" />
-            <input type="email" placeholder="Email Address" />
+            <input type="text" placeholder="Email Address" />
             <img src={Ic} alt="person" className="icon" />
             <input type="text" placeholder="Subject" />
-            <img src={AntDesign} alt="" className="icon" />
-            <textarea placeholder="Message"></textarea>
-            <input
-              type="submit"
-              value="Send Message"
-              className="textSmall btn-submit"
-            />
+            <img src={AntDesign} alt="" />
+            <textarea name="" id="" cols="75" rows="10"></textarea>
           </form>
-        </div>
-        <div className="third">
-          <div className="textBig t-text">FAQs and Answers.</div>
         </div>
       </div>
     </section>

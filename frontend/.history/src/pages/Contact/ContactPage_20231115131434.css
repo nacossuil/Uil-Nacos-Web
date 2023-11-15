@@ -90,11 +90,6 @@ textarea {
 /* third section  */
 
 .third {
-    font-family: 'Mulish', sans-serif;
     width: 100%;
     margin-top: 6rem;
-}
-
-.third .t-text {
-    margin: 2rem auto;
 }

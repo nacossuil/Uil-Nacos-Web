@@ -39,7 +39,7 @@ const ContactPage = () => {
           </form>
         </div>
         <div className="third">
-          <div className="textBig t-text">FAQs and Answers.</div>
+          <div className="textBig t-text"></div>
         </div>
       </div>
     </section>
