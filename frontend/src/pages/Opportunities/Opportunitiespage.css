@@ -114,6 +114,9 @@ img {
 .section-intro {
   padding-block: 3rem;
   background-color: var(--color-primary-tint);
+  background-image: url("./../../../src/assets/Opportunities/Grid.png");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .intro__content {
