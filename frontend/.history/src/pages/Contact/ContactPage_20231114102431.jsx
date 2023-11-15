@@ -28,7 +28,8 @@ const ContactPage = () => {
             <input type="text" />
             <img src={Ic} alt="person" className="icon" />
             <input type="text" />
-            <textarea name="" id="" cols="30" rows="10"></textarea>
+            <input type="text" />
+            <input type="text" />
           </form>
         </div>
       </div>
