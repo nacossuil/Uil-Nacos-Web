@@ -11,12 +11,15 @@ const CgpaForm = () => {
 
   const increaseCreditValue = () => {
     setCreditValue(creditValue + 1);
+    setCreditsSelect(creditValue + 1);
   };
 
   const decreaseCreditValue = () => {
     setCreditValue(creditValue - 1);
+    setCreditsSelect(creditValue - 1);
     if (creditValue <= 1) {
-      return creditValue;
+      setCreditValue(1);
+      setCreditsSelect(1);
     }
   };
 
@@ -26,6 +29,7 @@ const CgpaForm = () => {
 
   const toggleCreditsDropDown = () => {
     setIsCreditsOpen(!isCreditsOpen);
+    setCreditsSelect(creditValue);
   };
 
   const handleGradeSelect = (option) => {
@@ -45,6 +49,7 @@ const CgpaForm = () => {
           placeholder="Course Title"
           className="leading-6 w-full"
           id="course"
+          required
         />
       </div>
 
@@ -79,7 +84,10 @@ const CgpaForm = () => {
         </div>
 
         {isOpen && (
-          <div id="grade-option-select" className="absolute">
+          <div
+            id="grade-option-select"
+            className="absolute top-full left-0 bg-white z-50"
+          >
             <h1 className="px-3" id="grade-header">
               Select Grade
             </h1>
@@ -130,7 +138,7 @@ const CgpaForm = () => {
         {isCreditsOpen && (
           <div
             id="credits-option-select"
-            className="absolute  rounded text-black"
+            className="absolute top-full left-0 bg-white z-50  rounded text-black"
           >
             <h1 id="credits-header" className="px-3">
               Select Credit
