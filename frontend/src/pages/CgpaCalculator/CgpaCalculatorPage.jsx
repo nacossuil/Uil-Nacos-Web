@@ -1,6 +1,7 @@
 import React from "react";
 import "./cgpa.css";
 import IconButton from "@mui/material/IconButton";
+import CgpaForm from "./CgpaForm";
 
 const CgpaCalculatorPage = () => {
   return (
@@ -17,63 +18,7 @@ const CgpaCalculatorPage = () => {
 
         {/* course code, grade and  credits container */}
         <div className="flex items-center justify-center">
-          <div
-            id="CGC-container"
-            className="rounded-lg w-[520px] h-[52px] mr-3 flex items-center "
-          >
-            {/* course container */}
-            <div className="flex-1">
-              <input
-                type="text"
-                placeholder="Course Title"
-                className="leading-6 w-full"
-                id="course"
-              />
-            </div>
-
-            {/* grade container */}
-            <div className="flex-1" id="grade-container">
-              <select
-                name="grade"
-                id="grade-select"
-                className="leading-6 w-full"
-              >
-                <option value="" disabled selected>
-                  Grade
-                </option>
-                <option id="grade-option-A" value="5">
-                  A
-                </option>
-                <option id="grade-option-B" value="4">
-                  B
-                </option>
-                <option id="grade-option-C" value="3">
-                  C
-                </option>
-                <option id="grade-option-D" value="2">
-                  D
-                </option>
-                <option id="grade-option-E" value="1">
-                  E
-                </option>
-                <option id="grade-option-F" value="0">
-                  F
-                </option>
-              </select>
-            </div>
-
-            {/* credits container */}
-            <div className="flex-1">
-              <select name="credits" id="credits" className="leading-6 w-full">
-                <option value="" disabled selected>
-                  Credits
-                </option>
-                <option value="" className="flex">
-                  1
-                </option>
-              </select>
-            </div>
-          </div>
+          <CgpaForm />
 
           <IconButton>
             <svg
@@ -112,8 +57,8 @@ const CgpaCalculatorPage = () => {
 
           <button
             id="calc-btn"
-            disabled="false"
-            className="bg-[#138601] leading-5 font-bold text-white opacity-50"
+            disabled
+            className="bg-[#138601] leading-5 font-bold text-white"
           >
             Calculate CGPA
           </button>
