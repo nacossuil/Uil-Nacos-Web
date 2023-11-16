@@ -9,13 +9,16 @@
 }
 
 #course {
-    padding: 12px 68px 12px 16px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 12px;
     color: rgba(33, 37, 33, 0.50);
     border-right: 1px solid rgba(33, 37, 33, 0.24);
 }
 
 #grade-container {
-    padding: 12px 7px 12px 16px;
+    padding-left: 10px;
+    padding-right: 10px;
     border-right: 1px solid rgba(33, 37, 33, 0.24);
     color: rgba(33, 37, 33, 0.50);
     position: relative;
@@ -49,9 +52,8 @@
 }
 
 #grade-option-select {
-
     display: flex;
-    width: 173px;
+    width: 180px;
     padding: 12px 0px 19px 0px;
     flex-direction: column;
     align-items: flex-start;
@@ -65,9 +67,9 @@
 
 #credits-container {
     height: 48px;
-    padding: 12px 20px 12px 16px;
+    padding-left: 10px;
+    padding-right: 10px;
     gap: 58px;
-
     color: rgba(33, 37, 33, 0.50);
 }
 
@@ -75,7 +77,7 @@
     border-radius: 20px;
     background: #FFF;
     display: flex;
-    width: 173px;
+    width: 178px;
     padding: 12px 0px 21px 0px;
     flex-direction: column;
     align-items: flex-start;
@@ -134,11 +136,18 @@
     color: rgba(33, 37, 33, 0.50);
 }
 
-#grade-bar {
+#grade-bar-container {
     width: 524px;
     height: 24px;
-    flex-shrink: 0;
     border-radius: 100px;
     border: 1px solid rgba(33, 37, 33, 0.12);
     background: #FFF;
+}
+
+#grade-bar {
+    border-radius: 100px;
+}
+
+#grade-note {
+    color: rgba(33, 37, 33, 0.50);
 }

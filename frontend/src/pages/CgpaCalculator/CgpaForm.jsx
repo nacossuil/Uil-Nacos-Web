@@ -54,7 +54,7 @@ const CgpaForm = () => {
       </div>
 
       {/* grade container */}
-      <div className="flex-1 relative" id="grade-container">
+      <div className="flex-1 relative py-3" id="grade-container">
         <div
           onClick={toggleGradeDropDown}
           id="grade-select"
@@ -94,7 +94,7 @@ const CgpaForm = () => {
             {gradeOptions.map((gradeOption) => (
               <div
                 key={gradeOption}
-                className="duration-300 px-4"
+                className="duration-75 px-4"
                 id="grade-option"
                 onClick={() => handleGradeSelect(gradeOption)}
               >
@@ -106,7 +106,7 @@ const CgpaForm = () => {
       </div>
 
       {/* credits container */}
-      <div className="flex-1 relative" id="credits-container">
+      <div className="flex-1 relative py-3" id="credits-container">
         <div
           onClick={toggleCreditsDropDown}
           id="credits-select"

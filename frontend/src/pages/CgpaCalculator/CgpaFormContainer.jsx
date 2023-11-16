@@ -2,13 +2,13 @@ import React from "react";
 import IconButton from "@mui/material/IconButton";
 import CgpaForm from "./CgpaForm";
 
-const CgpaFormContainer = () => {
+const CgpaFormContainer = ({ removeForm }) => {
   return (
     <div>
       <div className="flex items-center justify-center py-1">
         <CgpaForm />
 
-        <IconButton>
+        <IconButton onClick={removeForm}>
           <svg
             width="24"
             height="24"
