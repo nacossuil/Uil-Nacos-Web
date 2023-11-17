@@ -45,6 +45,10 @@ const CgpaCalculator = () => {
       credit: "Credits",
     };
     setContainers([...containers, newContainer]);
+    setResult("0.00");
+    setResultCredits("0");
+    setResultText("");
+    setResultBgStyle("");
     setIsDisabled(false);
   };
 
