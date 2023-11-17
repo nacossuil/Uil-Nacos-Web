@@ -9,6 +9,9 @@
 .c-container .first {
     background: #dcffd7;
     width: 100%;
+    background-image: url('./../../../src/assets/Opportunities/Grid.png');
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .first .c-heading {
@@ -33,6 +36,7 @@
 }
 
 .form {
+    position: relative;
     width: 573px;
     margin: 0 auto;
 }
@@ -41,7 +45,7 @@
     display: block;
     margin: 40px auto;
     width: 100%;
-    padding: 1rem 3rem;
+    padding: 0.9rem 3rem;
     border-radius: 8px;
     outline: none;
     border: 1px solid rgba(33, 37, 33, 0.32);
@@ -49,7 +53,7 @@
 }
 
 input::placeholder,
-textarea::placeholder {
+.textarea::placeholder {
     font-size: 16px;
     font-weight: 400;
     line-height: 26px;
@@ -57,13 +61,15 @@ textarea::placeholder {
 
 .form>img {
     position: absolute;
+    width: auto;
+    height: auto;
 }
 
 .icon {
     padding: 15px 20px;
 }
 
-textarea {
+.textarea {
     width: 100%;
     height: 119px;
     outline: none;
@@ -73,6 +79,7 @@ textarea {
     border-radius: 8px;
 }
 
+input[type='submit'],
 .btn-submit {
     font-family: 'DM Sans', sans-serif;
     background: #138601;

@@ -12,14 +12,14 @@ header {
     border-bottom: solid 1px #138601;
     position: sticky;
     top: 0;
-    transition: background .3s;
+    transition: background 0.3s;
+    z-index: 99;
 }
 
 nav {
     display: flex;
     gap: 1.625rem;
     /*gap provided in the desing*/
-
 }
 
 nav a {
@@ -37,7 +37,9 @@ nav a.active {
     color: #138601;
 }
 
+
 /* using the after pseudo-class to create horizontal bars beneath active links */
+
 nav a.active::after {
     content: '';
     position: absolute;
@@ -49,7 +51,9 @@ nav a.active::after {
     border-radius: 0.375rem;
 }
 
+
 /* utility class to change background of navigation on scroll */
+
 header.scrolled {
-    background-color: #FFFFFF;
+    background-color: #ffffff;
 }
