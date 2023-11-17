@@ -4,101 +4,156 @@ import IconButton from "@mui/material/IconButton";
 
 const CgpaCalculatorPage = () => {
   const [result, setResult] = useState("0.00");
+  const [resultCredits, setResultCredits] = useState("0");
   const [resultText, setResultText] = useState("");
+  const [resultBgStyle, setResultBgStyle] = useState("");
   const [isDisabled, setIsDisabled] = useState(true);
   const [containers, setContainers] = useState([]);
 
+  // Array of grade options
   const gradeOptions = ["A", "B", "C", "D", "E", "F"];
-  const [gradeSelect, setGradeSelect] = useState("Grade");
-  const [creditsSelect, setCreditsSelect] = useState("Credits");
+
+  const [selectedIndex, setSelectedIndex] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
   const [isCreditsOpen, setIsCreditsOpen] = useState(false);
-  const [creditValue, setCreditValue] = useState(1);
 
-  //calculate individual form
+  // Calculate individual form based on grade and credit
   const gradeCalc = (gradeSelect, creditValue) => {
-    if (gradeSelect == "A") {
-      return 5 * creditValue;
-    } else if (gradeSelect == "B") {
-      return 4 * creditValue;
-    } else if (gradeSelect == "C") {
-      return 3 * creditValue;
-    } else if (gradeSelect == "D") {
-      return 2 * creditValue;
-    } else if (gradeSelect == "E") {
-      return 1 * creditValue;
-    } else if (gradeSelect == "F") {
-      return 0 * creditValue;
-    } else return null;
+    switch (gradeSelect) {
+      case "A":
+        return 5 * creditValue;
+      case "B":
+        return 4 * creditValue;
+      case "C":
+        return 3 * creditValue;
+      case "D":
+        return 2 * creditValue;
+      case "E":
+        return 1 * creditValue;
+      case "F":
+        return 0 * creditValue;
+      default:
+        return null;
+    }
   };
 
   //add new form
   const addNewContainer = () => {
-    setContainers([...containers, {}]);
-    const score = gradeCalc(gradeSelect, creditValue);
-    grades.push(score);
-    credits.push(creditValue);
-    console.log(grades, credits);
+    const newContainer = {
+      id: containers.length,
+      grade: "Grades",
+      credit: "Credits",
+    };
+    setContainers([...containers, newContainer]);
     setIsDisabled(false);
   };
 
   //removeform
-  const removeContainer = (index) => {
-    const updatedContainers = [...containers];
-    updatedContainers.splice(index, 1);
+  const removeContainer = (id) => {
+    const updatedContainers = containers.filter(
+      (container) => container.id !== id
+    );
     setContainers(updatedContainers);
-    grades.pop;
-    credits.pop();
-  };
-
-  //increase credit units
-  const increaseCreditValue = () => {
-    setCreditValue(creditValue + 1);
-    setCreditsSelect(creditValue + 1);
-  };
-
-  //decrease credit units
-  const decreaseCreditValue = () => {
-    setCreditValue(creditValue - 1);
-    setCreditsSelect(creditValue - 1);
-    if (creditValue <= 1) {
-      setCreditValue(1);
-      setCreditsSelect(1);
+    setResult("0.00");
+    setResultCredits("0");
+    setResultText("");
+    setResultBgStyle("");
+    if (updatedContainers.length < 1) {
+      setIsDisabled(true);
     }
   };
 
-  const toggleGradeDropDown = () => {
+  //increase credit units
+  const increaseCreditValue = (index) => {
+    const updatedContainers = [...containers];
+    updatedContainers[index].credit += 1;
+    setContainers(updatedContainers);
+  };
+
+  //decrease credit units
+  const decreaseCreditValue = (index) => {
+    const updatedContainers = [...containers];
+    updatedContainers[index].credit = Math.max(
+      1,
+      updatedContainers[index].credit - 1
+    );
+    setContainers(updatedContainers);
+  };
+
+  //grade toggler
+  const toggleGradeDropDown = (index) => {
     setIsOpen(!isOpen);
+    setIsCreditsOpen(false);
+    setSelectedIndex(index);
   };
 
-  const toggleCreditsDropDown = () => {
+  //credits toggler
+  const toggleCreditsDropDown = (index) => {
+    const updatedContainers = [...containers];
+
+    if (updatedContainers[index].credit === "Credits") {
+      updatedContainers[index].credit = 1;
+    }
+    setContainers(updatedContainers);
+
     setIsCreditsOpen(!isCreditsOpen);
-    setCreditsSelect(creditValue);
+    setIsOpen(false);
+    setSelectedIndex(index);
   };
 
-  const handleGradeSelect = (option) => {
-    setGradeSelect(option);
-    console.log(option);
+  //selecting grades
+  const handleGradeSelect = (option, index) => {
+    const updatedContainers = [...containers];
+    updatedContainers[index].grade = option;
+    setContainers(updatedContainers);
+
     setIsOpen(false);
   };
 
   //calculate cgpa
-  const credits = [];
-  const grades = [];
-
   const handleCalculateCGPA = () => {
-    const totalGrades = grades.reduce((nextGrades, currentGrades) => {
-      return Number(nextGrades) + Number(currentGrades);
-    });
+    const totalGrades = containers.reduce(
+      (sum, container) => sum + gradeCalc(container.grade, container.credit),
+      0
+    );
+    const totalCredits = containers.reduce(
+      (sum, container) => sum + container.credit,
+      0
+    );
 
-    const totalCredits = credits.reduce((nextCredit, currentCredit) => {
-      return Number(nextCredit) + Number(currentCredit);
-    });
+    const cgpa = totalGrades / totalCredits;
+    setResult(cgpa.toFixed(2));
+    setResultCredits(totalCredits);
 
-    const sum = totalGrades / totalCredits;
-    setResult(sum.toFixed(2));
-    setResultText("hello");
+    switch (true) {
+      case isNaN(cgpa):
+        setResultText("INVALID. PLEASE ENTER VALID GRADES AND CREDITS.");
+        setResult("0.00");
+        setResultCredits("0");
+        break;
+      case cgpa === 5.0:
+        setResultText("PERFECT RESULTS, CONGRATULATIONS!");
+        setResultBgStyle("bg-[#05BA05] w-full text-[#05BA05]");
+        break;
+      case cgpa >= 4.5:
+        setResultText("EXCELLENT PERFORMANCE!");
+        setResultBgStyle("bg-[#05BA05] w-[440px] text-[#05BA05]");
+        break;
+      case cgpa >= 3.5:
+        setResultText("GOOD STANDING");
+        setResultBgStyle("bg-[#FDC553] w-[351px] text-[#FDC553]");
+        break;
+      case cgpa < 3.5:
+        setResultText("NOT GOOD STANDING- SEE YOUR ACADEMIC ADVISOR");
+        setResultBgStyle("bg-[#F91F1F] w-[225px] text-[#F91F1F]");
+        break;
+
+      default:
+        setResultText("");
+        setResultBgStyle("");
+    }
   };
+
   return (
     <div className="bg-green-300">
       {/* CGPA calculator */}
@@ -112,7 +167,7 @@ const CgpaCalculatorPage = () => {
         </h1>
 
         {/* Cgpa form container */}
-        {containers.map((_, index) => (
+        {containers.map((container, index) => (
           <div key={index}>
             <div className="flex-1">
               <div className="flex items-center justify-center py-1">
@@ -134,11 +189,11 @@ const CgpaCalculatorPage = () => {
                   {/* grade container */}
                   <div className="flex-1 relative py-3" id="grade-container">
                     <div
-                      onClick={toggleGradeDropDown}
-                      id="grade-select"
+                      onClick={() => toggleGradeDropDown(index)}
+                      id={`grade-select-${index}`}
                       className="relative cursor-pointer"
                     >
-                      {gradeSelect}
+                      {container.grade}
                       <div className="absolute mt-[-30px] right-2">
                         <IconButton>
                           <svg
@@ -161,7 +216,7 @@ const CgpaCalculatorPage = () => {
                       </div>
                     </div>
 
-                    {isOpen && (
+                    {isOpen && selectedIndex === index && (
                       <div
                         id="grade-option-select"
                         className="absolute top-full left-0 bg-white z-50"
@@ -173,8 +228,10 @@ const CgpaCalculatorPage = () => {
                           <div
                             key={gradeOption}
                             className="duration-75 px-4"
-                            id="grade-option"
-                            onClick={() => handleGradeSelect(gradeOption)}
+                            id={`grade-option`}
+                            onClick={() =>
+                              handleGradeSelect(gradeOption, index)
+                            }
                           >
                             {gradeOption}
                           </div>
@@ -186,11 +243,11 @@ const CgpaCalculatorPage = () => {
                   {/* credits container */}
                   <div className="flex-1 relative py-3" id="credits-container">
                     <div
-                      onClick={toggleCreditsDropDown}
-                      id="credits-select"
+                      onClick={() => toggleCreditsDropDown(index)}
+                      id={`credits-select-${index}`}
                       className="relative cursor-pointer"
                     >
-                      {isCreditsOpen ? "Credits" : creditsSelect}
+                      {isCreditsOpen && index ? "Credits" : container.credit}
                       <div className="absolute mt-[-30px] right-2">
                         <IconButton>
                           <svg
@@ -213,9 +270,9 @@ const CgpaCalculatorPage = () => {
                       </div>
                     </div>
 
-                    {isCreditsOpen && (
+                    {isCreditsOpen && selectedIndex === index && (
                       <div
-                        id="credits-option-select"
+                        id={`credits-option-select`}
                         className="absolute top-full left-0 bg-white z-50  rounded text-black"
                       >
                         <h1 id="credits-header" className="px-3">
@@ -225,10 +282,12 @@ const CgpaCalculatorPage = () => {
                           className="flex items-center justify-between px-3"
                           id="credits-option"
                         >
-                          <span className="mr-auto">{creditValue}</span>
+                          <span className="mr-auto">{container.credit}</span>
 
                           <div className="flex items-center">
-                            <IconButton onClick={decreaseCreditValue}>
+                            <IconButton
+                              onClick={() => decreaseCreditValue(index)}
+                            >
                               <svg
                                 width="20"
                                 height="20"
@@ -252,7 +311,9 @@ const CgpaCalculatorPage = () => {
                                 </g>
                               </svg>
                             </IconButton>
-                            <IconButton onClick={increaseCreditValue}>
+                            <IconButton
+                              onClick={() => increaseCreditValue(index)}
+                            >
                               <svg
                                 width="20"
                                 height="20"
@@ -334,7 +395,7 @@ const CgpaCalculatorPage = () => {
           <div id="credits-section">
             <h2 className="font-medium leading-5 text-xs">TOTAL CREDITS</h2>
             <h1 className="text-[32px] font-bold" id="credit-count">
-              0
+              {resultCredits}
             </h1>
           </div>
           {/* cgpa section */}
@@ -361,10 +422,7 @@ const CgpaCalculatorPage = () => {
             </p>
           </div>
           <div id="grade-bar-container" className="mx-auto">
-            <div
-              id="grade-bar"
-              className="bg-[#F91F1F] w-[225px] text-[#F91F1F]"
-            >
+            <div id="grade-bar" className={`${resultBgStyle}`}>
               .
             </div>
           </div>
