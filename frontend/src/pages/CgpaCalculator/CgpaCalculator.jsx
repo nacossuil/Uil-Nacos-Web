@@ -68,18 +68,18 @@ const CgpaCalculator = () => {
   };
 
   //increase credit units
-  const increaseCreditValue = (index) => {
+  const increaseCreditValue = (id) => {
     const updatedContainers = [...containers];
-    updatedContainers[index].credit += 1;
+    updatedContainers[id].credit += 1;
     setContainers(updatedContainers);
   };
 
   //decrease credit units
-  const decreaseCreditValue = (index) => {
+  const decreaseCreditValue = (id) => {
     const updatedContainers = [...containers];
-    updatedContainers[index].credit = Math.max(
+    updatedContainers[id].credit = Math.max(
       1,
-      updatedContainers[index].credit - 1
+      updatedContainers[id].credit - 1
     );
     setContainers(updatedContainers);
   };
@@ -170,8 +170,8 @@ const CgpaCalculator = () => {
         </h1>
 
         {/* Cgpa form container */}
-        {containers.map((container, index) => (
-          <div key={index}>
+        {containers.map((container) => (
+          <div key={container.id}>
             <div className="flex-1">
               <div className="flex items-center justify-center py-1">
                 <div
@@ -192,8 +192,8 @@ const CgpaCalculator = () => {
                   {/* grade container */}
                   <div className="flex-1 relative py-3" id="grade-container">
                     <div
-                      onClick={() => toggleGradeDropDown(index)}
-                      id={`grade-select-${index}`}
+                      onClick={() => toggleGradeDropDown(container.id)}
+                      id={`grade-select-${container.id}`}
                       className="relative cursor-pointer"
                     >
                       {container.grade}
@@ -219,7 +219,7 @@ const CgpaCalculator = () => {
                       </div>
                     </div>
 
-                    {isOpen && selectedIndex === index && (
+                    {isOpen && selectedIndex === container.id && (
                       <div
                         id="grade-option-select"
                         className="absolute top-full left-0 bg-white z-50"
@@ -233,7 +233,7 @@ const CgpaCalculator = () => {
                             className="duration-75 px-4"
                             id={`grade-option`}
                             onClick={() =>
-                              handleGradeSelect(gradeOption, index)
+                              handleGradeSelect(gradeOption, container.id)
                             }
                           >
                             {gradeOption}
@@ -246,11 +246,13 @@ const CgpaCalculator = () => {
                   {/* credits container */}
                   <div className="flex-1 relative py-3" id="credits-container">
                     <div
-                      onClick={() => toggleCreditsDropDown(index)}
-                      id={`credits-select-${index}`}
+                      onClick={() => toggleCreditsDropDown(container.id)}
+                      id={`credits-select-${container.id}`}
                       className="relative cursor-pointer"
                     >
-                      {isCreditsOpen && index ? "Credits" : container.credit}
+                      {isCreditsOpen && selectedIndex === container.id
+                        ? "Credits"
+                        : container.credit}
                       <div className="absolute mt-[-30px] right-2">
                         <IconButton>
                           <svg
@@ -273,7 +275,7 @@ const CgpaCalculator = () => {
                       </div>
                     </div>
 
-                    {isCreditsOpen && selectedIndex === index && (
+                    {isCreditsOpen && selectedIndex === container.id && (
                       <div
                         id={`credits-option-select`}
                         className="absolute top-full left-0 bg-white z-50  rounded text-black"
@@ -289,7 +291,7 @@ const CgpaCalculator = () => {
 
                           <div className="flex items-center">
                             <IconButton
-                              onClick={() => decreaseCreditValue(index)}
+                              onClick={() => decreaseCreditValue(container.id)}
                             >
                               <svg
                                 width="20"
@@ -315,7 +317,7 @@ const CgpaCalculator = () => {
                               </svg>
                             </IconButton>
                             <IconButton
-                              onClick={() => increaseCreditValue(index)}
+                              onClick={() => increaseCreditValue(container.id)}
                             >
                               <svg
                                 width="20"
@@ -341,7 +343,7 @@ const CgpaCalculator = () => {
                   </div>
                 </div>
 
-                <IconButton onClick={() => removeContainer(index)}>
+                <IconButton onClick={() => removeContainer(container.id)}>
                   <svg
                     width="24"
                     height="24"
