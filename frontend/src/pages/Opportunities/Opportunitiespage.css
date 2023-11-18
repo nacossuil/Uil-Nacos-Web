@@ -5,7 +5,7 @@
   --text-color: hsla(120, 6%, 14%, 1);
   --text-color-light: hsla(108, 10%, 10%, 0.8);
 
-  --font-family: "DM Sans", sans-serif;
+  --font-family: "DM Sans", sans-serif !important;
 
   --fs-heading-lg: 2.5rem;
   --fs-heading-md: 2.25rem;
@@ -32,7 +32,7 @@
 }
 
 .opportunities > * {
-  font-family: inherit;
+  font-family: inherit !important;
 }
 
 img {
@@ -42,8 +42,9 @@ img {
 }
 
 /*###### RE-USABLE CLASSES ######*/
-.container {
-  /* max-width: Ideal width not decided yet */
+.container-center {
+  /* Ideal width not decided yet */
+  max-width: 1200px;
   width: 85%;
   margin-inline: auto;
 }
@@ -144,26 +145,26 @@ img {
   text-align: center;
 }
 
-.resources__cards {
+.cards {
   list-style-type: none;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
 }
 
-.resources__card {
+.card {
   color: var(--text-color);
   box-shadow: var(--custom-box-shadow);
   border-radius: var(--card-radius);
   overflow: hidden;
 }
 
-.resources__card .content {
+.card .content {
   padding: 1rem;
 }
 
 /* This element would be conditionally styled in the JSX */
-.resources__card .tag {
+.card .tag {
   display: inline-block;
   color: #192666;
   font-size: var(--fs-text-x-sm);
@@ -171,4 +172,18 @@ img {
   background-color: #c0c6e4;
   padding: 0.3rem 0.6rem;
   border-radius: var(--btn-radius);
+}
+
+.event-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.heading-desc {
+  font-size: var(--fs-text-md);
+  color: var(--color-primary-shade);
+  font-weight: 600;
+  text-align: center;
+  text-transform: capitalize;
 }
