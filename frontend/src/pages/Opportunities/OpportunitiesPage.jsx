@@ -1,6 +1,10 @@
 import PropTypes from "prop-types";
 import "./Opportunitiespage.css";
-import { tempCoursesData, tempScholarshipsData } from "./tempData";
+import {
+  tempCoursesData,
+  tempScholarshipsData,
+  tempEventsData,
+} from "./tempData";
 
 const OpportunitiesPage = () => {
   return (
@@ -10,6 +14,10 @@ const OpportunitiesPage = () => {
       <Resources
         data={tempScholarshipsData}
         heading="Discover Scholarships & Financial Support"
+      />
+      <Events
+        data={tempEventsData}
+        heading="Tech Competitions and Hackathons"
       />
     </div>
   );
@@ -21,7 +29,7 @@ export default OpportunitiesPage;
 const PageIntro = () => {
   return (
     <section className="section-intro">
-      <div className="container">
+      <div className="container-center">
         <div className="intro__content">
           <div className="intro__content-text">
             <h1 className="heading-lg">Opportunities for Students</h1>
@@ -50,7 +58,7 @@ const PageIntro = () => {
 const Resources = ({ data, heading }) => {
   return (
     <section className="section-courses">
-      <div className="container">
+      <div className="container-center">
         <h1 className="heading-md">{heading}</h1>
         <ResourcesCards data={data} />
       </div>
@@ -65,7 +73,7 @@ Resources.propTypes = {
 
 const ResourcesCards = ({ data }) => {
   return (
-    <ul className="resources__cards">
+    <ul className="cards">
       {data.map((data, i) => (
         <ResourcesCard
           key={i}
@@ -101,7 +109,7 @@ const ResourcesCard = ({ img, title, description, level }) => {
   }
 
   return (
-    <li className="resources__card">
+    <li className="card">
       <img src={img} alt="course" />
       <div className="content">
         <h3 className="heading-sm">{title}</h3>
@@ -130,4 +138,74 @@ ResourcesCard.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
   level: PropTypes.string,
+};
+
+const Events = ({ data, heading }) => {
+  return (
+    <section className="section-courses">
+      <div className="container-center">
+        <p className="heading-desc">Test your skills</p>
+        <h1 className="heading-md">{heading}</h1>
+        <EventCards data={data} />
+      </div>
+    </section>
+  );
+};
+
+Events.propTypes = {
+  data: PropTypes.array,
+  heading: PropTypes.string,
+};
+
+const EventCards = ({ data }) => {
+  return (
+    <ul className="cards">
+      {data.map((data, i) => (
+        <EventCard
+          key={i}
+          img={data.img}
+          title={data.title}
+          description={data.description}
+          date={data.date}
+          time={data.time}
+          venue={data.venue}
+        />
+      ))}
+    </ul>
+  );
+};
+
+EventCards.propTypes = {
+  data: PropTypes.array,
+};
+
+const EventCard = ({ img, title, description, date, time, venue }) => {
+  return (
+    <li className="card">
+      <img src={img} alt="event" />
+      <div className="content">
+        <h3 className="heading-sm">{title}</h3>
+        <p className="text-sm">{description}</p>
+        <div className="justify-flex">
+          <p className="text-x-sm event-details">
+            <span>{date}</span>
+            <span>{time}</span>
+            <span>{venue}</span>
+          </p>
+          <a href="/#" className="btn btn-md">
+            Register
+          </a>
+        </div>
+      </div>
+    </li>
+  );
+};
+
+EventCard.propTypes = {
+  img: PropTypes.string,
+  title: PropTypes.string,
+  description: PropTypes.string,
+  date: PropTypes.string,
+  time: PropTypes.string,
+  venue: PropTypes.string,
 };

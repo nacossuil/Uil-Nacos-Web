@@ -42,3 +42,30 @@ export const tempScholarshipsData = [
       "This course is designed to take your existing JavaScript knowledge and teach you how to leverage patterns and practices to take...",
   },
 ];
+
+export const tempEventsData = [
+  {
+    img: "./../../../src/assets/Opportunities/competitions-img1.png",
+    title: "National Innovation Summit",
+    description: "Is to become a network of committed Student IT Professionals",
+    date: "12 Sep, 2023 - 28 Sep, 2023",
+    time: "12 PM - 2:30 PM",
+    venue: "CISLT",
+  },
+  {
+    img: "./../../../src/assets/Opportunities/competitions-img2.png",
+    title: "National Innovation Summit",
+    description: "Is to become a network of committed Student IT Professionals",
+    date: "12 Sep, 2023 - 28 Sep, 2023",
+    time: "12 PM - 2:30 PM",
+    venue: "CISLT",
+  },
+  {
+    img: "./../../../src/assets/Opportunities/competitions-img3.png",
+    title: "National Innovation Summit",
+    description: "Is to become a network of committed Student IT Professionals",
+    date: "12 Sep, 2023 - 28 Sep, 2023",
+    time: "12 PM - 2:30 PM",
+    venue: "CISLT",
+  },
+];
