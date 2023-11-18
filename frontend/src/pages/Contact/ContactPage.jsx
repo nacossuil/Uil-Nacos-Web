@@ -1,3 +1,4 @@
+import FAQs from '../../components/FAQs/FAQs'
 import './ContactPage.css'
 import Img from '../../assets/customer-support.png'
 import Person from '../../assets/fluent_person-20-filled.svg'
@@ -30,7 +31,7 @@ const ContactPage = () => {
             <img src={Ic} alt="person" className="icon" />
             <input type="text" placeholder="Subject" />
             <img src={AntDesign} alt="" className="icon" />
-            <textarea placeholder="Message"></textarea>
+            <textarea placeholder="Message" className="textarea"></textarea>
             <input
               type="submit"
               value="Send Message"
@@ -41,6 +42,7 @@ const ContactPage = () => {
         <div className="third">
           <div className="textBig t-text">FAQs and Answers.</div>
         </div>
+        <FAQs />
       </div>
     </section>
   )
