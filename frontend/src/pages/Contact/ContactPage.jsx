@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import FAQs from '../../components/FAQs/FAQs'
 import './ContactPage.css'
 import Img from '../../assets/customer-support.png'
@@ -7,6 +8,36 @@ import Ic from '../../assets/ic_outline-subject.svg'
 import AntDesign from '../../assets/ant-design_message-filled.svg'
 
 const ContactPage = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: '',
+  })
+
+  const handleChange = (e) => {
+    const { name, value } = e.target
+
+    setFormData({
+      ...formData,
+      [name]: value,
+    })
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    console.log('Form Data:', formData)
+
+    setFormData({
+      name: '',
+      email: '',
+      subject: '',
+      message: '',
+    }) // Reset the form state
+  }
+
+  const { name, email, subject, message } = formData
+
   return (
     <section className="c-wrapper">
       <div className="flexCenter c-container">
@@ -23,15 +54,39 @@ const ContactPage = () => {
             If you have any questions or need assistance, please {`don't`}{' '}
             hesitate to reach out to us.
           </div>
-          <form className="form">
+          <form className="form" onSubmit={handleSubmit}>
             <img src={Person} alt="person" className="icon" />
-            <input type="text" placeholder="Your Name" />
+            <input
+              type="text"
+              name="name"
+              value={name}
+              placeholder="Your Name (optional)"
+              onChange={handleChange}
+            />
             <img src={Email} alt="person" className="icon" />
-            <input type="email" placeholder="Email Address" />
+            <input
+              type="email"
+              name="email"
+              value={email}
+              placeholder="Email Address (optional)"
+              onChange={handleChange}
+            />
             <img src={Ic} alt="person" className="icon" />
-            <input type="text" placeholder="Subject" />
+            <input
+              type="text"
+              name="subject"
+              value={subject}
+              placeholder="Subject"
+              onChange={handleChange}
+            />
             <img src={AntDesign} alt="" className="icon" />
-            <textarea placeholder="Message" className="textarea"></textarea>
+            <textarea
+              placeholder="Message"
+              name="message"
+              value={message}
+              className="textarea"
+              onChange={handleChange}
+            ></textarea>
             <input
               type="submit"
               value="Send Message"
