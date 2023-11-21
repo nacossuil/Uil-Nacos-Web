@@ -1,0 +1,189 @@
+.opportunities {
+  /*###### CUSTOM VARIABLES ######*/
+  --color-primary-tint: hsla(112, 99%, 92%);
+  --color-primary-shade: hsl(112, 99%, 26%);
+  --text-color: hsla(120, 6%, 14%, 1);
+  --text-color-light: hsla(108, 10%, 10%, 0.8);
+
+  --font-family: "DM Sans", sans-serif !important;
+
+  --fs-heading-lg: 2.5rem;
+  --fs-heading-md: 2.25rem;
+  --fs-heading-sm: 1.25rem;
+  --fs-text-md: 1rem;
+  --fs-text-lg: 1.75rem;
+  --fs-text-sm: 0.875rem;
+  --fs-text-x-sm: 0.75rem;
+
+  --line-height-text: 1.6;
+  --btn-radius: 2.8vw;
+  --card-radius: 17px;
+  --custom-box-shadow: 0 6px 8px 0 hsla(0, 0%, 0%, 0.15);
+
+  /* GlOBAL STYLINGS */
+  font-family: var(--font-family);
+}
+
+/*###### GLOBAL RESETS ######*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.opportunities > * {
+  font-family: inherit !important;
+}
+
+img {
+  /* Making images responsive */
+  display: block;
+  width: 100%;
+}
+
+/*###### RE-USABLE CLASSES ######*/
+.container-center {
+  /* Ideal width not decided yet */
+  max-width: 1200px;
+  width: 85%;
+  margin-inline: auto;
+}
+
+.justify-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.heading-lg {
+  font-size: var(--fs-heading-lg);
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+.heading-md {
+  font-family: "Mulish", var(--font-family), sans-serif;
+  font-size: var(--fs-heading-md);
+  font-weight: 600;
+  margin-bottom: 5rem;
+}
+
+.heading-sm {
+  font-family: "Mulish", var(--font-family), sans-serif;
+  font-size: var(--fs-heading-sm);
+  margin-bottom: 0.75rem;
+}
+
+.text-md {
+  font-size: var(--fs-text-md);
+  font-weight: 500;
+  line-height: var(--line-height-text);
+  margin-bottom: 2rem;
+}
+
+.text-sm {
+  font-size: var(--fs-text-sm);
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+.text-x-sm {
+  font-size: var(--fs-text-x-sm);
+}
+
+.btn {
+  display: inline-block;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--color-primary-tint);
+  background-color: var(--color-primary-shade);
+  border: 0;
+  border-radius: var(--btn-radius);
+  cursor: pointer;
+}
+
+.btn-lg {
+  padding: 0.625em 1.25em;
+}
+
+.btn-md {
+  padding: 0.5em 1em;
+  font-size: var(--fs-text-sm);
+}
+
+/*##### INTRO SECTION #####*/
+.section-intro {
+  padding-block: 3rem;
+  background-color: var(--color-primary-tint);
+  background-image: url("./../../../src/assets/Opportunities/Grid.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.intro__content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+}
+
+.intro__content-img-box {
+  display: grid;
+  place-items: center;
+}
+
+.intro__content-img-box img {
+  width: 80%;
+}
+
+/*##### RESOURCES SECTION #####*/
+
+.section-courses {
+  padding-block: 5rem;
+}
+
+.section-courses h1 {
+  text-align: center;
+}
+
+.cards {
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.card {
+  color: var(--text-color);
+  box-shadow: var(--custom-box-shadow);
+  border-radius: var(--card-radius);
+  overflow: hidden;
+}
+
+.card .content {
+  padding: 1rem;
+}
+
+/* This element would be conditionally styled in the JSX */
+.card .tag {
+  display: inline-block;
+  color: #192666;
+  font-size: var(--fs-text-x-sm);
+  font-weight: 500;
+  background-color: #c0c6e4;
+  padding: 0.3rem 0.6rem;
+  border-radius: var(--btn-radius);
+}
+
+.event-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.heading-desc {
+  font-size: var(--fs-text-md);
+  color: var(--color-primary-shade);
+  font-weight: 600;
+  text-align: center;
+  text-transform: capitalize;
+}
