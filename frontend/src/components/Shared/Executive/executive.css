@@ -1,4 +1,5 @@
 .executive {
+    background: white;
     display: flex;
     align-items: center;
     gap: 1.5rem;
@@ -20,6 +21,8 @@
     flex-direction: column;
     gap: .75rem;
     margin: 1.5rem auto 6.25rem;
+}
+.executive-details  {
 }
 
 .executive-name {
