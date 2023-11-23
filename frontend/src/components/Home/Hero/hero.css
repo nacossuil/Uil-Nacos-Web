@@ -20,8 +20,8 @@
 .home-hero__content {
     flex: 1 1 50%;
     display: flex;
-    align-items: center;
     padding: 0rem 0rem 0rem 4rem;
+    padding-top: 15%;
 }
 
 
@@ -57,7 +57,7 @@
 .home-hero button {
     display: flex;
     align-items: center;
-    gap: 0rem .5rem;
+    gap: 0rem .7rem;
     font-size: 1.2rem;
     margin: 5rem 0rem 0rem 0rem;
     color: #138601;
@@ -65,7 +65,21 @@
 }
 
 .home-hero button svg {
-    stroke-width: 1px;
-    width: 1.3rem;
+    stroke-width: .2px;
+    width: 1.4rem;
     height: auto;
+    animation: slideUpDown 600ms ease 0s infinite alternate none;
+    position: relative;
+    top: -12px;
+}
+
+
+@keyframes slideUpDown {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(15px);
+    }
 }

@@ -1,8 +1,11 @@
 /* eslint-disable react/prop-types */
 import './executive.css'
+import { BsBriefcaseFill, } from "react-icons/bs"
+import { FaGraduationCap, } from 'react-icons/fa'
+import { IoMail } from 'react-icons/io5'
 
 const Executive = ({ data }) => {
-  const { img, postion, level, dept, email, socials, name } = data
+  const { img, position, level, dept, email, socials, name } = data
 
   return (
     <div className="executive">
@@ -10,17 +13,16 @@ const Executive = ({ data }) => {
       <div className="executive-details">
         <p className="executive-name">{name}</p>
         <div className="executive-acad">
-
           <div className="executive-acad-detail">
-
-            <div className="executive-acad-text">{postion}</div>
+            <BsBriefcaseFill />
+            <div className="executive-acad-text">{position}</div>
           </div>
           <div className="executive-acad-detail">
-
+            <FaGraduationCap />
             <div className="executive-acad-text">{level}L {dept}</div>
           </div>
           <div className="executive-acad-detail">
-
+            <IoMail />
             <div className="executive-acad-text">{email}</div>
           </div>
 
