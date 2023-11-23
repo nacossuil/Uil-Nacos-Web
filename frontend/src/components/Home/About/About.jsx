@@ -1,6 +1,6 @@
 import Values from '../../Shared/Values/Values'
 import './About.css'
-import { GoArrowRight } from 'react-icons/go'
+import Nacos_tree from '../../../assets/imgs/nacos-tree.webp'
 
 const About = () => {
     return (
@@ -11,11 +11,12 @@ const About = () => {
 
                     </div>
                     <div className="sec1__img">
-
                     </div>
                 </div>
                 <div className="home-about__sec2">
-
+                    <div className='nacos-tree'>
+                        <img src={Nacos_tree} />
+                    </div>
                 </div>
                 <div className="home-about__sec3">
                     <Values />

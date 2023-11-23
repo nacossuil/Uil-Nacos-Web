@@ -1,8 +1,21 @@
-.executive{
+.executive-members {
     padding: 70px 30px;
     cursor: default;
+    max-width: 84rem;
+    margin: 0 auto;
+
+
 }
-.executive-head{
+
+.executive-members svg {
+    width: 1.5rem;
+    height: auto;
+    fill: green;
+    stroke: green;
+}
+
+
+.executive-head {
     font-size: 36px;
     font-weight: 700;
     line-height: 48px;
@@ -10,7 +23,8 @@
     color: rgb(24, 28, 23);
     margin-top: 100px;
 }
-.executive-subhead{
+
+.executive-subhead {
     font-family: DM Sans;
     font-size: 20px;
     font-weight: 400;
@@ -19,87 +33,27 @@
     color: rgba(24, 28, 23, 0.8);
     margin: 28px auto 100px;
 }
-.executive-cont{
-    display: flex;
-    flex-direction: column;
-    gap: 52px;
+
+.executive-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+    gap: 5rem;
 }
-.executive-mem-cont{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 60px;
-}
-.executive-members{
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    border: 1px solid rgba(232, 232, 232, 0.933);
-    width: 590px;
-    height: 352px;
-    border-radius: 20px;
-    border: 1px solid rgba(232, 232, 232, 0.9);
-}
-.executive-members img{
-    width: 300px;
-    height: 352px;
-    border-radius: 20px 0px 0px 20px;
-}
-.executive-acad{
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    margin: 24px auto 100px;
-}
-.executive-name{
-    font-size: 20px;
-    font-weight: 700;
-    line-height: 25px;
-    text-align: left;
-}
-.executive-acad-detail{
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-.executive-acad-detail img{
-    width: 20px;
-    height: 20px;
-}
-.executive-acad-text{
-    font-family: DM Sans;
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 18px;
-    text-align: left;
-    color: rgba(24, 28, 23, 0.722);
-}
-.executive-sm{
-    display: flex;
-    align-items: center;
-    gap: 36px;
-}
-.executive-sm img{
-    width: 24px;
-    height: 24px;
-    transition: all 0.5s ease-in-out;
-}
-.executive-sm img:hover{
-    transform: translateY(-3px);
-}
-.vae{
+
+.vae {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 12px;
     margin: 80px auto 0px;
 }
-.vae img{
+
+.vae img {
     width: 24px;
     height: 24px;
 }
-.vae-text{
+
+.vae-text {
     font-family: DM Sans;
     font-size: 16px;
     font-weight: 700;
