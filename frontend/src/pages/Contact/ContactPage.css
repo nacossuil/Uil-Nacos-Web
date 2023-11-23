@@ -79,12 +79,15 @@ input::placeholder,
     border-radius: 8px;
 }
 
-input[type='submit'],
-.btn-submit {
+button.btn-submit {
+    padding: 1rem;
+    margin-top: 40px;
+    width: 100%;
     font-family: 'DM Sans', sans-serif;
-    background: #138601;
+    background-color: #138601;
     color: #fff;
     cursor: pointer;
+    border-radius: 8px;
 }
 
 .btn-submit:hover {

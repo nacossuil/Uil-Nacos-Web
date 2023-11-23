@@ -6,6 +6,8 @@ import Person from '../../assets/fluent_person-20-filled.svg'
 import Email from '../../assets/email-icon.svg'
 import Ic from '../../assets/ic_outline-subject.svg'
 import AntDesign from '../../assets/ant-design_message-filled.svg'
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -34,6 +36,20 @@ const ContactPage = () => {
       subject: '',
       message: '',
     }) // Reset the form state
+  }
+
+  const showToastMessage = () => {
+    const myPromise = new Promise((resolve) =>
+      fetch('https://jsonplaceholder.typicode.com/posts/1')
+        .then((response) => response.json())
+        .then((json) => setTimeout(() => resolve(json), 300)),
+    )
+
+    toast.promise(myPromise, {
+      pending: 'sending message',
+      success: 'Thanks for contacting us!',
+      error: 'error',
+    })
   }
 
   const { name, email, subject, message } = formData
@@ -78,6 +94,7 @@ const ContactPage = () => {
               value={subject}
               placeholder="Subject"
               onChange={handleChange}
+              required
             />
             <img src={AntDesign} alt="" className="icon" />
             <textarea
@@ -86,12 +103,16 @@ const ContactPage = () => {
               value={message}
               className="textarea"
               onChange={handleChange}
+              required
             ></textarea>
-            <input
+            <button
               type="submit"
-              value="Send Message"
               className="textSmall btn-submit"
-            />
+              onClick={showToastMessage}
+            >
+              Send Message
+            </button>
+            <ToastContainer />
           </form>
         </div>
         <div className="third">
