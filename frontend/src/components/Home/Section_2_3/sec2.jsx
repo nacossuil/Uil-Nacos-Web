@@ -7,7 +7,7 @@ import './sec2.css'
 const Section_2_3 = () => {
     return (
       <section>
-        <div className='nt'>
+        <div className='nacos-tree'>
           <img src={Nacos_tree} />
         </div>
 
