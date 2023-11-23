@@ -1,5 +1,7 @@
 import About from '../../components/Home/About/About'
 import Hero from '../../components/Home/Hero/Hero'
+import Events from '../../components/Home/Events/Events'
+import Executives from '../../components/Home/Executives/Executives'
 import './HomePage.css'
 
 /** SECTIONS
@@ -18,6 +20,8 @@ const HomePage = () => {
     <main>
       <Hero />
       <About />
+      <Events />
+      <Executives />
     </main>
   )
 }
