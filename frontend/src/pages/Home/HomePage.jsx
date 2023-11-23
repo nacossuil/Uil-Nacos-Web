@@ -2,7 +2,7 @@ import About from '../../components/Home/About/About'
 import Hero from '../../components/Home/Hero/Hero'
 import Events from '../../components/Home/Events/Events'
 import Executives from '../../components/Home/Executives/Executives'
-import FAQs from '../../components/Home/FAQs/Faqs'
+import FAQs from '../../components/Shared/FAQs/Faqs'
 
 import './HomePage.css'
 
