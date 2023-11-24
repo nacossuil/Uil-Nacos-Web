@@ -118,7 +118,7 @@ const ResourcesCard = ({ img, title, description, level }) => {
           <span
             style={{
               backgroundColor: level ? bgColor : "#c0c6e4",
-              color: level ? color : "#192666",
+              color: level ? color : "#1u92666",
             }}
             className="tag"
           >
