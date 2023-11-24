@@ -1,0 +1,84 @@
+.footer {
+    padding: 5rem 0rem;
+    text-align: center;
+    background: hsl(230, 61%, 88%) url("../../assets/pattern.png") center  ;
+    color: hsl(197, 5%, 25%);
+}
+
+.footer-container {
+    max-width: 80rem;
+    margin: 0 auto;
+}
+
+.footer-logos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0rem 3rem;
+
+}
+
+.footer-logos img:first-child {
+    width: 9rem;
+    height: auto;
+}
+
+.footer-logos img:nth-child(2) {
+    width: 4rem;
+    height: auto;
+}
+
+.footer-socials {
+    margin: 2rem 0rem;
+}
+
+.footer-socials h5{
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin: 0rem 0rem 1rem 0rem;
+}
+
+.footer-socials>div {
+    display: flex;
+    border-top: 1px solid hsl(230, 20%, 73%);
+    border-bottom: 1px solid hsl(230, 20%, 73%);
+   
+}
+
+
+
+.footer-social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0rem 1rem;
+    flex: 1 1 0;
+    font-weight: 600;
+    font-size: 1.5rem;
+    padding: 1rem 0rem;
+}
+
+.footer-social:not(:last-child) {
+    border-right: 1px solid hsl(230, 20%, 73%);
+}
+
+
+.footer-social-twitter svg {
+    fill: hsl(212, 96%, 49%);
+}
+
+.footer-social-instagram svg {
+    fill: #c317ff;
+}
+
+.footer-social-linkedin svg {
+    fill: #0A66C2;
+}
+
+.footer-social-facebook svg {
+    fill: #4867AA;
+}
+
+.footer aside {
+    font-weight: 500;
+}

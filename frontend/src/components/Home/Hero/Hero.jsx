@@ -1,5 +1,5 @@
 import "./hero.css"
-import { GoArrowDown } from 'react-icons/go'
+import { BsArrowDown } from "react-icons/bs"
 import img1 from "../../../assets/imgs/home-img1.webp"
 
 const Hero = () => {
@@ -23,7 +23,7 @@ const Hero = () => {
                         <p className="home-hero__text">We provide access to technical contents such as programming, networking etc.</p>
                         <button>
                             <span>Learn more</span>
-                            <GoArrowDown />
+                            <BsArrowDown />
                         </button>
                     </div>
                 </div>

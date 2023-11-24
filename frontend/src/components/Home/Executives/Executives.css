@@ -1,13 +1,17 @@
-.executive-members {
-    padding: 70px 30px;
-    cursor: default;
-    max-width: 84rem;
-    margin: 0 auto;
+.executives {
 
+    background: url("../../../assets/pattern-transparent.png") center repeat;
+}
+
+.executives-container {
+    padding: 4.375rem 1.875rem;
+    cursor: default;
+    margin: 0 auto;
+    max-width: 94rem;
 
 }
 
-.executive-members svg {
+.executives svg {
     width: 1.5rem;
     height: auto;
     fill: green;
@@ -16,22 +20,22 @@
 
 
 .executive-head {
-    font-size: 36px;
+    font-size: 2.25rem;
     font-weight: 700;
-    line-height: 48px;
+    line-height: 3rem;
     text-align: center;
     color: rgb(24, 28, 23);
-    margin-top: 100px;
+    margin-top: 6.25rem;
 }
 
 .executive-subhead {
     font-family: DM Sans;
-    font-size: 20px;
+    font-size: 1.25rem;
     font-weight: 400;
-    line-height: 28px;
+    line-height: 1.75rem;
     text-align: center;
     color: rgba(24, 28, 23, 0.8);
-    margin: 28px auto 100px;
+    margin: 1.75rem auto 6.25rem;
 }
 
 .executive-list {
@@ -44,20 +48,20 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 12px;
-    margin: 80px auto 0px;
+    gap: .75rem;
+    margin: 5rem auto 0rem;
 }
 
 .vae img {
-    width: 24px;
-    height: 24px;
+    width: 1.5rem;
+    height: 1.5rem;
 }
 
 .vae-text {
     font-family: DM Sans;
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 700;
-    line-height: 21px;
+    line-height: 1.3125rem;
     text-align: left;
     color: rgb(19, 134, 1);
 }
