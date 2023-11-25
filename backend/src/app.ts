@@ -1,23 +1,13 @@
+require("dotenv").config();
 const express = require('express');
-const mongoose = require('mongoose');
-const bodyParser = require('body-parser');
-
+require("./config/database").connect();
+const applicationRoutes = require("./routes/applicationRoutes");
+const authenticatedRoutes = require("./routes/authenticatedRoutes");
 const app = express();
 const port = process.env.PORT || 3000;
 
 // Middleware
-app.use(bodyParser.json());
-
-// Connect to MongoDB
-mongoose.connect('mongodb://localhost:27017/Nacos_DB');
-
-const db = mongoose.connection;
-db.on('error', (err) => {
-    console.error('MongoDB connection error:', err);
-});
-db.once('open', () => {
-    console.log('Connected to MongoDB');
-});
+app.use(express.json());
 
 //routes
 app.get('/', (req, res) => {
