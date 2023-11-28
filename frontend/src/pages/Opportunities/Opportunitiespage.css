@@ -137,11 +137,13 @@ img {
 
 /*##### RESOURCES SECTION #####*/
 
-.section-courses {
+.section-resources,
+.section-events {
   padding-block: 5rem;
 }
 
-.section-courses h1 {
+.section-resources h2,
+.section-events h2 {
   text-align: center;
 }
 

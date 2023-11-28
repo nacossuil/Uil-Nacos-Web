@@ -2,9 +2,9 @@ import PropTypes from "prop-types";
 
 const Resources = ({ data, heading }) => {
   return (
-    <section className="section-courses">
+    <section className="section-resources">
       <div className="container-center">
-        <h1 className="heading-md">{heading}</h1>
+        <h2 className="heading-md">{heading}</h2>
         <ResourcesCards data={data} />
       </div>
     </section>

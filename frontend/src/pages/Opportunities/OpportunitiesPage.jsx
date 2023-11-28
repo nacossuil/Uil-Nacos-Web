@@ -6,7 +6,7 @@ import {
   tempCoursesData,
   tempScholarshipsData,
   tempEventsData,
-} from "./tempData";
+} from "./tempPageData";
 
 const OpportunitiesPage = () => {
   return (
