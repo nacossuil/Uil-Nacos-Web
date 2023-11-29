@@ -4,7 +4,7 @@
 }
 
 .events-container {
-    max-width: 90rem;
+    max-width: 80rem;
     margin: 0 auto;
 }
 
@@ -51,7 +51,7 @@
 
 .events-card-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
     gap: 5rem 3rem;
     margin-top: 4.5rem;
 }

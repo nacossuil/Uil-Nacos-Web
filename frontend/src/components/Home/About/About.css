@@ -1,49 +1,49 @@
 .home-about {}
 
-.home-about__sec1 {
+.home-about-sec1 {
     display: flex;
     /* height: 100vh; */
 }
 
-.home-about .sec1__titles {
+.home-about .sec1-titles {
     display: flex;
     flex-direction: column;
     gap: 1rem 0rem;
 }
 
-.home-about .sec1__titles h3 {
+.home-about .sec1-titles h3 {
     font-size: 1.3rem;
     font-weight: 600;
     text-transform: uppercase;
     color: #138601;
 }
 
-.home-about .sec1__titles h1 {
+.home-about .sec1-titles h1 {
     font-size: 2.3rem;
     line-height: 1.2;
     font-weight: 600;
 }
 
-.home-about .sec1__text {
+.home-about .sec1-text {
     margin-top: 1rem;
     font-weight: 300;
 }
 
-.home-about .sec1__content {
+.home-about .sec1-content {
     flex: 1 1 50%;
     display: flex;
     align-items: center;
 }
 
-.home-about .sec1__content > div {
-    padding: 0rem 6rem ;
+.home-about .sec1-content>div {
+    padding: 0rem 6rem;
 }
 
-.home-about .sec1__img {
+.home-about .sec1-img {
     flex: 1 1 50%;
 }
 
-.home-about .sec1__img img {
+.home-about .sec1-img img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -61,7 +61,129 @@
 }
 
 .home-about button svg {
-    stroke-width: .2px;
+    stroke-width: 9px;
     width: 1.5rem;
+    height: auto;
+}
+
+.home-about .home-about-sec4 {
+    background: url("../../../assets/grid-bg.svg");
+    min-height: 63vw;
+}
+
+.home-about .activities {
+    padding: 7rem 0rem;
+    position: relative;
+}
+
+.home-about .activities .activity {
+    max-width: 25rem;
+    position: absolute;
+    background: white;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem 0rem;
+    z-index: 2;
+    margin: 3rem;
+    border-radius: .75rem;
+    box-shadow: 0rem 1.25rem 1.25rem .25rem rgba(0, 0, 0, 0.08);
+}
+
+
+
+.home-about .activities .activity-header {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+}
+
+.home-about .activities .activity-icn svg {
+    width: 2.5rem;
+    height: auto;
+}
+
+.home-about .activities .activity-title {
+    font-size: 1.25rem;
+    text-transform: capitalize;
+}
+
+.home-about .activities .activity-text {
+    font-size: .85rem;
+}
+
+.home-about .activities .activity-hack {
+    top: 50vh;
+    left: 5vw;
+}
+
+.home-about .activities .activity-camp {
+    right: 4vw;
+    top: 35vh;
+}
+
+.home-about .activities .activity-savy {
+    bottom: 0vw;
+    right: 15vw;
+}
+
+.home-about .activities svg.arr {
+    width: 3.3rem;
+    height: auto;
+    position: absolute;
+    stroke-width: .0187rem;
+}
+
+.home-about .activities .arr-t-left {
+    top: 14vw;
+    left: 16vw;
+}
+
+.home-about .activities .arr-t-right {
+    top: 14vw;
+    right: 20vw;
+}
+
+.home-about .activities .arr-b-left {
+    bottom: 7rem;
+    left: 12vw;
+}
+
+.home-about .activities-title {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+    text-align: center;
+    font-size: 2.25rem;
+    font-weight: 700;
+}
+
+.home-about .activities-title .text-green {
+    color: #138601;
+}
+
+.home-about .activities-img {
+    position: relative;
+    margin: 5rem auto 0rem auto;
+    max-width: 27.5rem;
+}
+
+.home-about .activities-img::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: 1rem;
+    width: 100%;
+    height: 100%;
+    background: rgba(19, 134, 1, 0.20);
+    border-radius: 3.75rem;
+    border: 2px solid #1DCA02;
+
+}
+
+
+
+.home-about .activities-img img {
+    width: 100%;
     height: auto;
 }
