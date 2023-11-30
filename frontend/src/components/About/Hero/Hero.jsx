@@ -5,7 +5,7 @@ import peopleImg from "../../../assets/imgs/people-group.webp"
 
 const Hero = () => {
   return (
-    <div className='hero-about'>
+    <div className='about-hero'>
         
     </div>
   )
