@@ -61,6 +61,10 @@
 
 .faqs-answers .line {
     background: rgba(255, 255, 255, 0.2);
+    height: .0625rem;
+    margin-top: 1.5625rem;
+    margin-bottom: 1.5rem;
+    border: none;
 }
 
 .faqs-questions .faqs-questions-list {
@@ -78,6 +82,7 @@
     border-radius: .75rem;
     border: .0625rem solid rgba(24, 28, 23, 0.12);
     transition: all 0.3s ease-in-out;
+    cursor: pointer;
 }
 
 .faqs-questions-list button:hover {
@@ -104,15 +109,14 @@
 }
 
 .faqs-answers {
-    background: #fff;
+    color: #fff;
+    background: rgba(25, 38, 102, 1);
     text-align: left;
     padding: 2.25rem 0 2.75rem;
     margin-right: 2.5rem;
     border: .0625rem solid rgba(17, 17, 17, 0.2);
     border-radius: 1.5rem;
     flex-basis: 50%;
-    background: rgba(25, 38, 102, 1);
-    color: #fff;
 }
 
 .faqs-answers>h3 {
