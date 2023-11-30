@@ -55,23 +55,8 @@ function App() {
         ) : null}
       </main>
       <Footer />
-<<<<<<< HEAD
     </>
   );
-=======
-      {scrollToTopVisible ? (
-        <div
-          className="scroll-to-top-icon"
-          onClick={() => {
-            scrollToTop()
-          }}
-        >
-          <ScrollToTop />
-        </div>
-      ) : null}
-    </main>
-  )
->>>>>>> eb13e3b34dd7913b4d11be782a0ad2ff3a677e13
 }
 
 export default App
