@@ -87,7 +87,6 @@
 
 .faqs-questions-list button:hover {
     background: rgba(25, 38, 102, 0.1);
-    font-weight: 700;
 }
 
 .faqs-questions-list .active {
