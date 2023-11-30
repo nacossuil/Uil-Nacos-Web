@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import FAQs from '../../components/FAQs/FAQs'
+import FAQs from '../../components/Shared/FAQs/Faqs'
 import './ContactPage.css'
 import Img from '../../assets/customer-support.png'
 import Person from '../../assets/fluent_person-20-filled.svg'
@@ -19,7 +19,6 @@ const ContactPage = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target
-
     setFormData({
       ...formData,
       [name]: value,

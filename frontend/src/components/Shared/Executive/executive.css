@@ -1,0 +1,67 @@
+.executive {
+    background: white;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    border: .0625rem solid rgba(232, 232, 232, 0.933);
+    height: 22rem;
+    border-radius: 1.25rem;
+    border: .0625rem solid rgba(232, 232, 232, 0.9);
+}
+
+
+.executive img {
+    width: 18.75rem;
+    height: 22rem;
+    border-radius: 1.25rem 0rem 0rem 1.25rem;
+}
+
+.executive-acad {
+    display: flex;
+    flex-direction: column;
+    gap: .75rem;
+    margin: 1.5rem auto 6.25rem;
+}
+.executive-details  {
+}
+
+.executive-name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.5625rem;
+    text-align: left;
+}
+
+.executive-acad-detail {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.executive-acad-detail svg {
+    fill: #595c58;
+    width: 1.3rem;
+    height: auto;
+}
+
+
+.executive-acad-text {
+    font-family: DM Sans;
+    font-size: .875rem;
+    font-weight: 500;
+    line-height: 1.125rem;
+    text-align: left;
+    color: rgba(24, 28, 23, 0.722);
+}
+
+.executive-sm {
+    display: flex;
+    align-items: center;
+    gap: 2.25rem;
+}
+
+
+
+.executive-sm img:hover {
+    transform: translateY(-0.1875rem);
+}
