@@ -147,3 +147,12 @@ button.btn-submit {
 .third .t-text {
     margin: 2rem auto;
 }
+
+@media (max-width: '678px') {
+    .c-heading>h1,
+    .s-text {
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 26px;
+    }
+}
