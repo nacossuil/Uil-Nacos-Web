@@ -3,6 +3,26 @@
     font-family: 'Mulish', sans-serif;
 }
 
+.flexCenter {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.textBig {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 48px;
+}
+
+.textSmall {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 26px;
+}
+
 
 /* first div */
 
@@ -65,8 +85,15 @@ input::placeholder,
     height: auto;
 }
 
-.icon {
+.icon,
+#icon {
     padding: 15px 20px;
+}
+
+#icon {
+    position: absolute;
+    width: auto;
+    height: auto;
 }
 
 .textarea {
@@ -94,6 +121,18 @@ button.btn-submit {
     transition: all 0.3s ease-in;
     filter: brightness(90%);
     color: white;
+}
+
+.switch {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.switch>p {
+    font-size: 1.2rem;
+    font-weight: 600;
 }
 
 
