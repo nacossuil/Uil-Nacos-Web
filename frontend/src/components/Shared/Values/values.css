@@ -1,0 +1,39 @@
+.values {
+    width: 100%;
+    margin: 3.75rem auto;
+    padding: 5.3125rem 6.25rem;
+    background: #f7f5f5;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    gap: 1.5rem;
+}
+
+.value {
+    padding: 2rem 1.75rem 1.75rem;
+    margin-right: 1.25rem;
+    border-radius: 1rem;
+    box-shadow: 0 1.25rem 2rem .25rem rgba(0, 0, 0, 0.06);
+
+}
+
+.mr-0 {
+    margin-right: 0;
+}
+
+.value img {
+    width: 3rem;
+    margin-bottom: 1rem;
+}
+
+.value h4 {
+    color: #181C17;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.value p {
+    color: rgba(24, 28, 23, 0.8);
+    font-size: 1rem;
+    font-weight: 400;
+}

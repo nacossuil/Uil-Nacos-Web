@@ -1,0 +1,54 @@
+.about-page-main .section1 {
+    background: linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.9)),url('../../../assets/Dots.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 5rem 0 5rem 6.25rem;
+    height: 100vh;
+    
+}
+
+.about-page-main .section1 .about {
+    max-width: 40rem;
+    margin-right: 4.875rem;
+}
+
+.about-page-main .section1 h4 {
+    color: rgba(19, 134, 1, 1);
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: .75rem;
+}
+
+.about-page-main .section1 h2 {
+    color: rgba(24, 28, 23, 1);
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-bottom: 1.75rem;
+}
+
+.section1 p {
+    color: rgba(24, 28, 23, 0.8);
+    font-weight: 400;
+    margin-bottom: 2.25rem;
+    max-width: 80%;
+}
+
+.about-page-main .learn-more {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.about-page-main .learn-more p {
+    color: rgba(19, 134, 1, 1);
+    font-weight: 700;
+    margin: 0 .75rem 0 0;
+}
+
+.about-page-main .learn-more img {
+    width: 1.5rem;
+}

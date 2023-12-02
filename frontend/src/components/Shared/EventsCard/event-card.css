@@ -1,0 +1,93 @@
+.events-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    max-width: 25rem;
+    margin: 0 auto;
+    min-height: 28.75rem;
+    padding: 0rem, 0rem, 2.1875rem, 0rem;
+    border-radius: 1rem;
+    /* border: .0625rem solid black; */
+    box-shadow: 0rem .75rem 1rem 0rem rgba(0, 0, 0, 0.06);
+}
+
+.events-card svg {
+    width: 1rem;
+    height: 1rem;
+} 
+
+.events-card img {
+    border-radius: 1rem 1rem 0rem 0rem;
+}
+
+.card-head {
+    font-family: Mulish;
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.5625rem;
+    text-align: left;
+}
+
+.card-desc {
+    font-family: DM Sans;
+    font-size: .875rem;
+    font-weight: 400;
+    line-height: 1.25rem;
+    text-align: left;
+}
+
+.events-content {
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.events-cal {
+    display: flex;
+    /* justify-content: center; */
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    
+}
+
+.events-cal button {
+    font-family: DM Sans;
+    font-size: .875rem;
+    font-weight: 700;
+    line-height: 1.125rem;
+    text-align: left;
+    background-color: rgb(19, 134, 1);
+    color: white;
+    padding: .625rem 1.75rem;
+    border-radius: 6.25rem;
+    gap: .625rem;
+    transition: all 0.5s ease-in-out;
+}
+
+.events-cal button:hover {
+    transform: scale(1.05);
+}
+
+.events-dtv {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.events-date {
+    display: flex;
+    align-items: center;
+    gap: .4375rem;
+    font-family: DM Sans;
+    font-size: .875rem;
+    font-weight: 400;
+    line-height: 1.125rem;
+    text-align: left;
+    color: rgba(24, 28, 23, 0.722);
+}
+
+.events-date img {
+    width: 1.25rem;
+}
