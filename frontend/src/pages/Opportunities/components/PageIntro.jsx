@@ -11,7 +11,7 @@ const PageIntro = () => {
               technology and beyond. Explore scholarships, internships,
               hackathons, and more to enhance your academic journey.
             </p>
-            <a href="/#" className="btn btn-lg">
+            <a href="/#" className="btn btn-lg text-md">
               Learn more ↓
             </a>
           </div>

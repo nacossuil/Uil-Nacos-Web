@@ -12,7 +12,7 @@
   --fs-text-sm: 0.75rem;
 
   --line-height-text: 1.6;
-  --btn-radius: 2.8vw;
+  --btn-radius: 27px;
   --card-radius: 17px;
   --custom-box-shadow: 0 6px 8px 0 hsla(0, 0%, 0%, 0.15);
 
@@ -37,7 +37,14 @@
   list-style-type: none;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  gap: 1.25rem;
+}
+
+@media (max-width: 50em) {
+  .cards {
+    grid-template-columns: 1fr;
+    row-gap: 4.8rem;
+  }
 }
 
 /* Card */
@@ -54,7 +61,7 @@
 }
 
 .card > div {
-  padding: 1rem;
+  padding: 1.25rem;
 }
 
 .card h3 {
@@ -86,8 +93,8 @@
   border: 0;
   border-radius: var(--btn-radius);
   cursor: pointer;
-  padding: 0.5em 1em;
-  font-size: var(--fs-text-sm);
+  padding: 0.75em 1.75em;
+  font-size: 0.875rem;
 }
 
 .card a:is(:hover, :active) {
