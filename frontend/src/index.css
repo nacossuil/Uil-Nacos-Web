@@ -15,23 +15,3 @@
 body {
     margin: 0;
 }
-
-.flexCenter {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-.textBig {
-    font-size: 36px;
-    font-weight: 700;
-    line-height: 48px;
-}
-
-.textSmall {
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 26px;
-}
