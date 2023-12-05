@@ -34,6 +34,10 @@ header div {
     gap: 2rem;
 }
 
+.toggle {
+    display: none;
+}
+
 nav a.active {
     color: #138601;
 }
@@ -57,4 +61,35 @@ nav a.active::after {
 
 header.scrolled {
     background-color: #ffffff;
+}
+
+@media (max-width: 960px) {
+    header {
+        padding-inline: 1rem;
+    }
+
+    .toggle {
+        display: block;
+    }
+
+    nav {
+        position: fixed;
+        height: 100svh;
+        top: 0;
+        left: 0;
+        width: min(50%, 15rem);
+        background-color: #DBFBD7;
+        padding: 10rem 1rem;
+        flex-direction: column;
+        transform: translateX(-100%);
+        transition: transform .5s ease-in-out;
+    }
+
+    nav a.active::after {
+        width: 0px;
+    }
+
+    nav[aria-expanded="true"] {
+        transform: translateX(0);
+    }
 }
