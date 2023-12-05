@@ -14,6 +14,7 @@ header {
     top: 0;
     transition: background 0.3s;
     z-index: 99;
+    background-color: #DBFBD7;
 }
 
 nav {
