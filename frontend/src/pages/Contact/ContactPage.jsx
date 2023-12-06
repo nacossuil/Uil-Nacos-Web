@@ -133,11 +133,7 @@ const ContactPage = () => {
             <ToastContainer />
           </form>
         </div>
-
-        <div className="third">
-          <div className="textBig t-text">FAQs and Answers.</div>
-          <FAQs />
-        </div>
+        <FAQs />
       </div>
     </section>
   )

@@ -125,8 +125,10 @@ button.btn-submit {
 
 .switch {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    width: 80%;
+    margin: 0 auto;
     gap: 10px;
 }
 
@@ -135,24 +137,55 @@ button.btn-submit {
     font-weight: 600;
 }
 
-
-/* third section  */
-
-.third {
-    font-family: 'Mulish', sans-serif;
-    width: 100%;
-    margin-top: 6rem;
-}
-
-.third .t-text {
-    margin: 2rem auto;
-}
-
-@media (max-width: '678px') {
+@media (max-width: 678px) {
     .c-heading>h1,
     .s-text {
-        font-size: 16px;
+        font-size: 18px;
         font-weight: 700;
         line-height: 26px;
+    }
+    .second {
+        margin-top: 2rem;
+    }
+    .c-heading,
+    .image-container,
+    .first {
+        width: 300px;
+        padding: 2rem auto;
+    }
+    .second .s-text {
+        width: 300px;
+        margin: 0 auto;
+        padding-bottom: 2rem;
+    }
+    .switch {
+        margin: 0 auto;
+        width: 300px;
+    }
+    .switch>p {
+        font-size: 1rem;
+        width: 200px;
+        padding: 0 auto;
+    }
+    .form {
+        width: 280px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .c-heading>h1,
+    .s-text {
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 26px;
+    }
+    .c-heading,
+    .image-container,
+    .first {
+        width: 400px;
+        padding: 2rem auto;
+    }
+    .form {
+        width: 500px;
     }
 }

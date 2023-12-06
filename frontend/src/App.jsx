@@ -34,7 +34,6 @@ function App() {
     <>
       <Navbar />
       <main>
-
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
@@ -47,7 +46,7 @@ function App() {
           <div
             className="scroll-to-top-icon"
             onClick={() => {
-              scrollToTop();
+              scrollToTop()
             }}
           >
             <ScrollToTop />
@@ -56,7 +55,7 @@ function App() {
       </main>
       <Footer />
     </>
-  );
+  )
 }
 
 export default App
