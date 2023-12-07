@@ -1,4 +1,23 @@
 .cards {
+  /*###### CUSTOM VARIABLES ######*/
+  --color-primary-tint: hsla(112, 99%, 92%);
+  --color-primary-shade: hsl(112, 99%, 26%);
+  --text-color: hsla(120, 6%, 14%, 1);
+  --text-color-light: hsla(108, 10%, 10%, 0.8);
+
+  --font-family: "DM Sans", sans-serif !important;
+
+  --fs-heading: 1.25rem;
+  --fs-text: 0.875rem;
+  --fs-text-sm: 0.75rem;
+
+  --line-height-text: 1.6;
+  --btn-radius: 27px;
+  --card-radius: 17px;
+  --custom-box-shadow: 0 6px 8px 0 hsla(0, 0%, 0%, 0.15);
+
+  /* GlOBAL STYLINGS */
+  font-family: var(--font-family);
     /*###### CUSTOM VARIABLES ######*/
     --color-primary-tint: hsla(112, 99%, 92%);
     --color-primary-shade: hsl(112, 99%, 26%);
@@ -34,10 +53,17 @@
 /* Cards */
 
 .cards {
-    list-style-type: none;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+@media (max-width: 50em) {
+  .cards {
+    grid-template-columns: 1fr;
+    row-gap: 4.8rem;
+  }
 }
 
 
@@ -55,8 +81,9 @@
     width: 100%;
 }
 
-.card>div {
-    padding: 1rem;
+
+.card > div {
+  padding: 1.25rem;
 }
 
 .card h3 {
@@ -80,16 +107,16 @@
 }
 
 .card a:is(:link, :visited) {
-    display: inline-block;
-    font-weight: 500;
-    text-decoration: none;
-    color: var(--color-primary-tint);
-    background-color: var(--color-primary-shade);
-    border: 0;
-    border-radius: var(--btn-radius);
-    cursor: pointer;
-    padding: 0.5em 1em;
-    font-size: var(--fs-text-sm);
+  display: inline-block;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--color-primary-tint);
+  background-color: var(--color-primary-shade);
+  border: 0;
+  border-radius: var(--btn-radius);
+  cursor: pointer;
+  padding: 0.75em 1.75em;
+  font-size: 0.875rem;
 }
 
 .card a:is(:hover, :active) {

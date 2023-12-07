@@ -1,23 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600;700;800&display=swap");
+
 .opportunities {
-    /*###### CUSTOM VARIABLES ######*/
-    --color-primary-tint: hsla(112, 99%, 92%);
-    --color-primary-shade: hsl(112, 99%, 26%);
-    --text-color: hsla(120, 6%, 14%, 1);
-    --text-color-light: hsla(108, 10%, 10%, 0.8);
-    --font-family: 'DM Sans', sans-serif !important;
-    --fs-heading-lg: 2.5rem;
-    --fs-heading-md: 2.25rem;
-    --fs-heading-sm: 1.25rem;
-    --fs-text-md: 1rem;
-    --fs-text-lg: 1.75rem;
-    --fs-text-sm: 0.875rem;
-    --fs-text-x-sm: 0.75rem;
-    --line-height-text: 1.6;
-    --btn-radius: 2.8vw;
-    --card-radius: 17px;
-    --custom-box-shadow: 0 6px 8px 0 hsla(0, 0%, 0%, 0.15);
-    /* GlOBAL STYLINGS */
-    font-family: var(--font-family);
+  /*###### CUSTOM VARIABLES ######*/
+  --color-primary-tint: hsla(112, 99%, 92%);
+  --color-primary-shade: hsl(112, 99%, 26%);
+  --text-color: hsla(120, 6%, 14%, 1);
+  --text-color-light: hsla(108, 10%, 10%, 0.8);
+
+  --font-family: "DM Sans", sans-serif;
+
+  --fs-heading-lg: 2.5rem;
+  --fs-heading-md: 2.25rem;
+  --fs-heading-sm: 1.25rem;
+  --fs-text-md: 1rem;
+  --fs-text-lg: 1.75rem;
+  --fs-text-sm: 0.875rem;
+  --fs-text-x-sm: 0.75rem;
+
+  --line-height-text: 1.6;
+  --btn-radius: 27px;
+  --card-radius: 17px;
+  --custom-box-shadow: 0rem 0.75rem 1rem 0rem rgba(0, 0, 0, 0.06);
+
+  /* GlOBAL STYLINGS */
+  font-family: var(--font-family);
 }
 
 
@@ -56,29 +62,30 @@ img {
 }
 
 .heading-lg {
-    font-size: var(--fs-heading-lg);
-    font-weight: 600;
-    margin-bottom: 2rem;
+  font-size: var(--fs-heading-lg);
+  font-weight: 600;
+  margin-bottom: 1.75rem;
 }
 
 .heading-md {
-    font-family: 'Mulish', var(--font-family), sans-serif;
-    font-size: var(--fs-heading-md);
-    font-weight: 600;
-    margin-bottom: 5rem;
+  font-family: "Mulish";
+  font-size: var(--fs-heading-md);
+  font-weight: 600;
+  margin-bottom: 5rem;
 }
 
 .heading-sm {
-    font-family: 'Mulish', var(--font-family), sans-serif;
-    font-size: var(--fs-heading-sm);
-    margin-bottom: 0.75rem;
+  font-family: "Mulish", var(--font-family), sans-serif;
+  font-size: var(--fs-heading-sm);
+  font-weight: 700;
+  margin-bottom: 0.75rem;
 }
 
 .text-md {
-    font-size: var(--fs-text-md);
-    font-weight: 500;
-    line-height: var(--line-height-text);
-    margin-bottom: 2rem;
+  font-size: var(--fs-text-md);
+  font-weight: 500;
+  line-height: var(--line-height-text);
+  margin-bottom: 2.5rem;
 }
 
 .text-sm {
@@ -103,12 +110,12 @@ img {
 }
 
 .btn-lg {
-    padding: 0.625em 1.25em;
+  padding: 0.875rem 1.75rem;
 }
 
 .btn-md {
-    padding: 0.5em 1em;
-    font-size: var(--fs-text-sm);
+  padding: 0.75rem 1.75rem;
+  font-size: var(--fs-text-sm);
 }
 
 
@@ -128,13 +135,30 @@ img {
     align-items: center;
 }
 
+@media (max-width: 50em) {
+  .intro__content {
+    grid-template-columns: 1fr;
+    row-gap: 6rem;
+  }
+
+  .intro__content-img-box {
+    display: block;
+  }
+
+  .intro__content-img-box img {
+    margin: 0 auto;
+    width: 90%;
+  }
+}
+
 .intro__content-img-box {
     display: grid;
     place-items: center;
 }
 
 .intro__content-img-box img {
-    width: 80%;
+  width: 80%;
+  justify-self: right;
 }
 
 
@@ -151,10 +175,17 @@ img {
 }
 
 .cards {
-    list-style-type: none;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+@media (max-width: 50em) {
+  .cards {
+    grid-template-columns: 1fr;
+    row-gap: 4.8rem;
+  }
 }
 
 .card {
@@ -165,20 +196,20 @@ img {
 }
 
 .card .content {
-    padding: 1rem;
+  padding: 1.25rem;
 }
 
 
 /* This element would be conditionally styled in the JSX */
 
 .card .tag {
-    display: inline-block;
-    color: #192666;
-    font-size: var(--fs-text-x-sm);
-    font-weight: 500;
-    background-color: #c0c6e4;
-    padding: 0.3rem 0.6rem;
-    border-radius: var(--btn-radius);
+  display: inline-block;
+  color: #192666;
+  font-size: var(--fs-text-x-sm);
+  font-weight: 500;
+  background-color: #c0c6e4;
+  padding: 0.375rem 0.75rem;
+  border-radius: var(--btn-radius);
 }
 
 .event-details {
