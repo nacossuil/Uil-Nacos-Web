@@ -118,5 +118,6 @@
 @media (max-width: 678px) {
     .cards {
         grid-template-columns: repeat(1, 1fr);
+        padding: 0 1rem;
     }
 }

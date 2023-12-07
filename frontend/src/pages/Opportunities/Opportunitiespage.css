@@ -206,5 +206,12 @@ img {
     }
     .cards {
         grid-template-columns: repeat(1, 1fr);
+        padding: 0 1rem;
+    }
+    .heading-md {
+        font-family: 'Mulish', var(--font-family), sans-serif;
+        font-size: var(--fs-heading-md);
+        font-weight: 600;
+        margin-bottom: 3rem;
     }
 }
