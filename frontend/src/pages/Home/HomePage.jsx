@@ -5,7 +5,7 @@ import Executives from '../../components/Home/Executives/Executives'
 import FAQs from '../../components/Shared/FAQs/Faqs'
 
 import './HomePage.css'
-import { useEffect } from 'react'
+// import { useEffect } from 'react'
 
 /** SECTIONS
  ** hero -- ashraf
@@ -19,14 +19,13 @@ import { useEffect } from 'react'
  */
 
 const HomePage = () => {
-
   // useEffect(() => {
   //   window.scrollTo({
   //     top: 0,
   //     behavior: "smooth"
   //   })
   // }, [])
-  
+
   return (
     <main>
       <Hero />

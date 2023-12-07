@@ -18,21 +18,40 @@
 
   /* GlOBAL STYLINGS */
   font-family: var(--font-family);
+    /*###### CUSTOM VARIABLES ######*/
+    --color-primary-tint: hsla(112, 99%, 92%);
+    --color-primary-shade: hsl(112, 99%, 26%);
+    --text-color: hsla(120, 6%, 14%, 1);
+    --text-color-light: hsla(108, 10%, 10%, 0.8);
+    --font-family: 'DM Sans', sans-serif !important;
+    --fs-heading: 1.25rem;
+    --fs-text: 0.875rem;
+    --fs-text-sm: 0.75rem;
+    --line-height-text: 1.6;
+    --btn-radius: 2.8vw;
+    --card-radius: 17px;
+    --custom-box-shadow: 0 6px 8px 0 hsla(0, 0%, 0%, 0.15);
+    /* GlOBAL STYLINGS */
+    font-family: var(--font-family);
 }
+
 
 /*###### GLOBAL RESETS ######*/
+
 .cards,
-.cards > * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+.cards>* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-.cards > * {
-  font-family: inherit !important;
+.cards>* {
+    font-family: inherit !important;
 }
+
 
 /* Cards */
+
 .cards {
   list-style-type: none;
   display: grid;
@@ -47,41 +66,44 @@
   }
 }
 
+
 /* Card */
+
 .card {
-  color: var(--text-color);
-  box-shadow: var(--custom-box-shadow);
-  border-radius: var(--card-radius);
-  overflow: hidden;
+    color: var(--text-color);
+    box-shadow: var(--custom-box-shadow);
+    border-radius: var(--card-radius);
+    overflow: hidden;
 }
 
 .card img {
-  display: block;
-  width: 100%;
+    display: block;
+    width: 100%;
 }
+
 
 .card > div {
   padding: 1.25rem;
 }
 
 .card h3 {
-  font-family: "Mulish", var(--font-family), sans-serif;
-  font-size: var(--fs-heading);
-  font-weight: 700;
-  margin-bottom: 0.625rem;
+    font-family: 'Mulish', var(--font-family), sans-serif;
+    font-size: var(--fs-heading);
+    font-weight: 700;
+    margin-bottom: 0.625rem;
 }
 
-.card h3 + p {
-  font-size: var(--fs-text);
-  font-weight: 400;
-  margin-bottom: 1.25rem;
+.card h3+p {
+    font-size: var(--fs-text);
+    font-weight: 400;
+    margin-bottom: 1.25rem;
 }
 
-.card > div > div {
-  font-size: var(--fs-text-sm);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.card>div>div {
+    font-size: var(--fs-text-sm);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .card a:is(:link, :visited) {
@@ -98,24 +120,31 @@
 }
 
 .card a:is(:hover, :active) {
-  transition: all 0.3s ease-in;
-  filter: brightness(90%);
-  color: white;
+    transition: all 0.3s ease-in;
+    filter: brightness(90%);
+    color: white;
 }
 
-.card > div > div > p {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
+.card>div>div>p {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
 }
 
 .card p span {
-  display: flex;
-  align-items: center;
-  gap: 0.375rem;
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
 }
 
 .card span img {
-  width: 1.125rem;
-  aspect-ratio: 1/1;
+    width: 1.125rem;
+    aspect-ratio: 1/1;
+}
+
+@media (max-width: 678px) {
+    .cards {
+        grid-template-columns: repeat(1, 1fr);
+        padding: 0 1rem;
+    }
 }

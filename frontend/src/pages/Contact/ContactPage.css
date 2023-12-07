@@ -51,8 +51,9 @@
 }
 
 .second>.s-text {
+    padding: 1rem;
     width: 49rem;
-    margin-bottom: 5rem;
+    margin-bottom: 3rem;
 }
 
 .form {
@@ -125,34 +126,42 @@ button.btn-submit {
 
 .switch {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    width: 80%;
+    margin: 0 auto;
     gap: 10px;
 }
 
 .switch>p {
     font-size: 1.2rem;
     font-weight: 600;
+    color: red;
 }
 
-
-/* third section  */
-
-.third {
-    font-family: 'Mulish', sans-serif;
-    width: 100%;
-    margin-top: 6rem;
-}
-
-.third .t-text {
-    margin: 2rem auto;
-}
-
-@media (max-width: '678px') {
-    .c-heading>h1,
-    .s-text {
-        font-size: 16px;
+@media (max-width: 678px) {
+    .first {
+        width: 100%;
+    }
+    .second {
+        margin: 2rem auto;
+        width: 100%;
+    }
+    .second .s-text {
         font-weight: 700;
         line-height: 26px;
+        font-size: 1.2rem;
+        width: auto;
+        padding: 0.5rem;
+        margin-bottom: 1rem;
+    }
+    .switch>p {
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 26px;
+    }
+    .form {
+        width: 100%;
+        padding: 0 1rem;
     }
 }

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, createRef } from "react";
 import "./Navbar.css";
 import { NavLink, Link } from "react-router-dom";
 
@@ -31,6 +31,17 @@ const Navbar = () => {
       path: "/calculator",
     },
   ];
+
+  const menuRef = createRef(null);
+
+  function toggleMenu() {
+    if (menuRef.current) {
+      const menuState = menuRef.current.getAttribute("aria-expanded");
+      menuState === "true"
+        ? menuRef.current.setAttribute("aria-expanded", "false")
+        : menuRef.current.setAttribute("aria-expanded", "true");
+    }
+  }
   //state to keep track of the scroll position.
   const [scrolled, setScrolled] = useState(false);
 
@@ -52,7 +63,7 @@ const Navbar = () => {
           <img src="/src/assets/unilorin-logo.svg" alt="" />
         </div>
       </Link>
-      <nav>
+      <nav ref={menuRef}>
         {/* Mapping over the links array and generating individual links 
         The key for each link is it's title  */}
         {links.map((link) => (
@@ -61,6 +72,17 @@ const Navbar = () => {
           </NavLink>
         ))}
       </nav>
+      <button onClick={toggleMenu} className="toggle">
+        {/* <span>menu</span> */}
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          height="24"
+          viewBox="0 -960 960 960"
+          width="24"
+        >
+          <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+        </svg>
+      </button>
     </header>
   );
 };
