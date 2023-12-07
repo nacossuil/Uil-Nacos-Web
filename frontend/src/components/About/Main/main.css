@@ -1,19 +1,26 @@
 .about-page-main .section1 {
-    background: linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.9)),url('../../../assets/Dots.png');
+    background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.9)), url('../../../assets/Dots.png');
     background-size: cover;
     background-position: center;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
     width: 100%;
     padding: 5rem 0 5rem 6.25rem;
     height: 100vh;
-    
+
 }
 
 .about-page-main .section1 .about {
-    max-width: 40rem;
+    flex: 1 1 30rem;
     margin-right: 4.875rem;
+}
+
+.about-page-main .section1-img {
+    max-width: 30rem;
+    margin: 0 auto;
+    flex: 1 1 30rem;
 }
 
 .about-page-main .section1 h4 {
@@ -34,7 +41,7 @@
     color: rgba(24, 28, 23, 0.8);
     font-weight: 400;
     margin-bottom: 2.25rem;
-    max-width: 80%;
+    max-width: 90%;
 }
 
 .about-page-main .learn-more {
@@ -51,4 +58,32 @@
 
 .about-page-main .learn-more img {
     width: 1.5rem;
+}
+
+@media screen and (max-width:768px) {
+    .about-page-main .section1-img {
+        display: none;
+    }
+}
+
+@media screen and (max-width:425px) {
+    .about-page-main .section1 {
+        padding: 4rem 2rem;
+    }
+
+    .about-page-main .section1 .about {
+        margin: 0;
+    }
+
+    .about-page-main .section1 h2 {
+        font-size: 1.8rem;
+    }
+
+    .about-page-main .section1 h4 {
+        font-size: 1.1rem;
+    }
+
+    .about-page-main .section1 p {
+        max-width: none;
+    }
 }

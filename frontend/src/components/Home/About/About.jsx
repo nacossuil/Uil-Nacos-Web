@@ -80,22 +80,26 @@ const About = () => {
                             <span> We empower computing students</span>
                             <span> to achieve <span className='text-green'>exponential growth</span></span>
                         </h1>
-                        <div className="activities-img">
-                            <img src={img2} alt="activity img" />
+                        <div className="activities-container">
+                            <div className="activities-img">
+                                <img src={img2} alt="activity img" />
+                            </div>
+                            <div className="activities-list">
+                                {
+                                    ACTIVITIES.map(({ title, icon, text, className }) => (
+                                        <div key={"activity" + title} className={`activity activity-${className}`}>
+                                            <div className='activity-header'>
+                                                <span className="activity-icn">{icon}</span>
+                                                <h4 className="activity-title">{title}</h4>
+                                            </div>
+                                            <div className="activity-text">
+                                                {text}
+                                            </div>
+                                        </div>
+                                    ))
+                                }
+                            </div>
                         </div>
-                        {
-                            ACTIVITIES.map(({ title, icon, text, className }) => (
-                                <div key={"activity" + title} className={`activity activity-${className}`}>
-                                    <div className='activity-header'>
-                                        <span className="activity-icn">{icon}</span>
-                                        <h4 className="activity-title">{title}</h4>
-                                    </div>
-                                    <div className="activity-text">
-                                        {text}
-                                    </div>
-                                </div>
-                            ))
-                        }
 
                     </div>
                 </div>

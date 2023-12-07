@@ -1,6 +1,8 @@
 import { useState } from "react";
 import "./Navbar.css";
 import { NavLink, Link } from "react-router-dom";
+import { FaBars } from 'react-icons/fa6'
+
 
 const Navbar = () => {
   // An array which contains link objects.
@@ -33,7 +35,7 @@ const Navbar = () => {
   ];
   //state to keep track of the scroll position.
   const [scrolled, setScrolled] = useState(false);
-
+  const [isMobileNavActive, setMobileNavAvtive] = useState(false)
   // function to toggle state when scrolled
   const toggle = () => {
     if (window.scrollY > 40) {
@@ -45,21 +47,25 @@ const Navbar = () => {
   window.addEventListener("scroll", toggle);
 
   return (
-    <header className={scrolled ? "scrolled" : ""}>
-      <Link to={"/"}>
-        <div>
+    <header className={`header ${scrolled ? "scrolled" : ""}`}>
+      <Link className="header-nav-home" to={"/"}>
+        <div className="header-nav-logo">
           <img src="/src/assets/nacos-logo.svg" alt="" />
           <img src="/src/assets/unilorin-logo.svg" alt="" />
         </div>
       </Link>
-      <nav>
-        {/* Mapping over the links array and generating individual links 
-        The key for each link is it's title  */}
-        {links.map((link) => (
-          <NavLink to={link.path} key={link.title} end>
-            {link.title}
-          </NavLink>
-        ))}
+      <button className="header-toggle" onClick={() => setMobileNavAvtive(!isMobileNavActive)}>
+        <FaBars />
+      </button>
+      <nav className={`header-nav ${isMobileNavActive ? "active" : ""}`}>
+        <div className="header-nav-links">
+
+          {links.map((link) => (
+            <NavLink className={"header-nav-link"} onClick={() => setMobileNavAvtive(!isMobileNavActive)} to={link.path} key={link.title} end>
+              {link.title}
+            </NavLink>
+          ))}
+        </div>
       </nav>
     </header>
   );

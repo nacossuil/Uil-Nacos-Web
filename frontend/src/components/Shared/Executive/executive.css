@@ -4,16 +4,15 @@
     align-items: center;
     gap: 1.5rem;
     border: .0625rem solid rgba(232, 232, 232, 0.933);
-    height: 22rem;
     border-radius: 1.25rem;
     border: .0625rem solid rgba(232, 232, 232, 0.9);
 }
 
 
 .executive img {
-    width: 18.75rem;
-    height: 22rem;
     border-radius: 1.25rem 0rem 0rem 1.25rem;
+    object-fit: cover;
+    flex: 1 1 0;
 }
 
 .executive-acad {
@@ -21,8 +20,12 @@
     flex-direction: column;
     gap: .75rem;
     margin: 1.5rem auto 6.25rem;
+
 }
-.executive-details  {
+
+.executive-details {
+    padding: 0rem 3rem 0rem 0rem;
+    flex: 1 1 0;
 }
 
 .executive-name {
@@ -46,7 +49,6 @@
 
 
 .executive-acad-text {
-    font-family: DM Sans;
     font-size: .875rem;
     font-weight: 500;
     line-height: 1.125rem;
@@ -64,4 +66,20 @@
 
 .executive-sm img:hover {
     transform: translateY(-0.1875rem);
+}
+
+@media screen and (max-width:645px) {
+    .executive {
+        flex-direction: column;
+    }
+    .executive img {
+        border-radius: 1.25rem 1.25rem 0rem 0rem;
+    }
+    .executive-acad {
+       margin-bottom: 4rem;
+    
+    }
+    .executive-details {
+        padding: 0rem 3rem 3rem 0rem;    }
+
 }

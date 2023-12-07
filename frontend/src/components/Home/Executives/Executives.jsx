@@ -8,8 +8,8 @@ const Executives = () => {
     return (
         <section className="executives">
             <div className="executives-container">
-                <p className="executive-head">Meet the NACOS Executives</p>
-                <p className="executive-subhead">Meet the current passionate students driving the success of the community</p>
+                <h1 className="executive-head">Meet the NACOS Executives</h1>
+                <h4 className="executive-subhead">Meet the current passionate students driving the success of the community</h4>
 
                 <div className="executive-list">
                     {EXECS.map((data, i) => (

@@ -10,7 +10,6 @@
 
 .value {
     padding: 2rem 1.75rem 1.75rem;
-    margin-right: 1.25rem;
     border-radius: 1rem;
     box-shadow: 0 1.25rem 2rem .25rem rgba(0, 0, 0, 0.06);
 
@@ -36,4 +35,35 @@
     color: rgba(24, 28, 23, 0.8);
     font-size: 1rem;
     font-weight: 400;
+}
+
+@media screen and (max-width:768px) {
+    .values {
+        padding: 2rem;
+    }
+}
+
+@media screen and (max-width:645px) {
+    .value img {
+        width: 2rem;
+
+    }
+
+    .value h4 {
+
+        font-size: 1.2rem;
+
+    }
+
+    .value p {
+
+        font-size: .9rem;
+    }
+
+}
+
+@media screen and (max-width:425px) {
+    .values {
+        grid-template-columns: 1fr;
+    }
 }

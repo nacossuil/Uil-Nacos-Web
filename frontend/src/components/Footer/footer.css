@@ -1,7 +1,7 @@
 .footer {
     padding: 5rem 0rem;
     text-align: center;
-    background: hsl(230, 61%, 88%) url("../../assets/grid-bg.svg") center  ;
+    background: hsl(230, 61%, 88%) url("../../assets/grid-bg.svg") center;
     color: hsl(197, 5%, 25%);
 }
 
@@ -32,7 +32,7 @@
     margin: 2rem 0rem;
 }
 
-.footer-socials h5{
+.footer-socials h5 {
     font-weight: 600;
     font-size: 1.1rem;
     margin: 0rem 0rem 1rem 0rem;
@@ -42,7 +42,7 @@
     display: flex;
     border-top: 1px solid hsl(230, 20%, 73%);
     border-bottom: 1px solid hsl(230, 20%, 73%);
-   
+
 }
 
 
@@ -81,4 +81,37 @@
 
 .footer aside {
     font-weight: 500;
+}
+
+@media screen and (max-width:1024px) {
+    .footer-social {
+        font-size: 1.3rem;
+    }
+}
+
+@media screen and (max-width:800px) {
+    .footer-social {
+        font-size: 1.1rem;
+    }
+}
+
+@media screen and (max-width:465px) {
+    .footer-social {
+        font-size: 1.1rem;
+    }
+
+    .footer-socials>div {
+        flex-direction: column;
+
+    }
+
+    .footer-logos img:first-child {
+        width: 8rem;
+        height: auto;
+    }
+    
+    .footer-logos img:nth-child(2) {
+        width: 4rem;
+        height: auto;
+    }
 }
