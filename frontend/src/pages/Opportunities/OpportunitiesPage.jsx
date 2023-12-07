@@ -1,12 +1,12 @@
-import "./Opportunitiespage.css";
-import PageIntro from "./components/PageIntro";
-import Resources from "./components/Resources";
-import Events from "./components/Events";
+import './Opportunitiespage.css'
+import PageIntro from './components/PageIntro'
+import Resources from './components/Resources'
+import Events from './components/Events'
 import {
   tempCoursesData,
   tempScholarshipsData,
   tempEventsData,
-} from "./tempPageData";
+} from './tempPageData'
 
 const OpportunitiesPage = () => {
   return (
@@ -22,7 +22,7 @@ const OpportunitiesPage = () => {
         heading="Tech Competitions and Hackathons"
       />
     </div>
-  );
-};
+  )
+}
 
-export default OpportunitiesPage;
+export default OpportunitiesPage
