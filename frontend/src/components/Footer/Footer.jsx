@@ -1,38 +1,35 @@
 import './footer.css'
 import nacosLogo from '../../assets/nacos-logo.svg'
 import unilorinLogo from '../../assets/unilorin-logo.svg'
-import { BsTwitter, BsInstagram, BsLinkedin, BsFacebook } from "react-icons/bs"
-
+import { BsTwitter, BsInstagram, BsLinkedin, BsFacebook } from 'react-icons/bs'
 
 const socials = [
   {
-    name: "twitter",
+    name: 'twitter',
     icon: <BsTwitter />,
-    url: "#"
+    url: '#',
   },
   {
-    name: "instagram",
+    name: 'instagram',
     icon: <BsInstagram />,
-    url: "#"
+    url: '#',
   },
   {
-    name: "linkedin",
+    name: 'linkedin',
     icon: <BsLinkedin />,
-    url: "#"
+    url: '#',
   },
   {
-    name: "facebook",
+    name: 'facebook',
     icon: <BsFacebook />,
-    url: "#"
+    url: '#',
   },
-
-
 ]
 
 const Footer = () => {
   return (
-    <footer className='footer'>
-      <div className='footer-container'>
+    <footer className="footer">
+      <div className="footer-container">
         <div className="footer-logos">
           <img src={nacosLogo} alt="" />
           <img src={unilorinLogo} alt="" />
@@ -40,14 +37,16 @@ const Footer = () => {
         <div className="footer-socials">
           <h5>Follow us on</h5>
           <div>
-            {
-              socials.map(({ name, url, icon }) => (
-                <a className={`footer-social footer-social-${name.toLowerCase()}`} key={name} href={url}>
-                  <span>{icon}</span>
-                  <span>{name}</span>
-                </a>
-              ))
-            }
+            {socials.map(({ name, url, icon }) => (
+              <a
+                className={`footer-social footer-social-${name.toLowerCase()}`}
+                key={name}
+                href={url}
+              >
+                <span>{icon}</span>
+                <span>{name}</span>
+              </a>
+            ))}
           </div>
         </div>
 
