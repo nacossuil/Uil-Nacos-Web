@@ -1,7 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Mulish&display=swap');
 
 #cgpa-container {
+    width: 50%;
     box-shadow: 0px 32px 40px 12px rgba(0, 0, 0, 0.08);
+    margin-bottom: 50px;
+}
+
+#cgpa-calc {
+    font-size: 24px;
 }
 
 #CGC-container {
@@ -16,14 +22,24 @@
     border-right: 1px solid rgba(33, 37, 33, 0.24);
 }
 
+#grade-credits {
+    display: flex;
+    /* flex: 1; */
+    width: 100%;
+    flex-direction: row;
+}
+
 #grade-container {
     padding-left: 10px;
     padding-right: 10px;
     border-right: 1px solid rgba(33, 37, 33, 0.24);
     color: rgba(33, 37, 33, 0.50);
     position: relative;
-    height: 48px;
+    /* height: 48px; */
+}
 
+#icon-btn {
+    padding-right: 2px;
 }
 
 #grade-header {
@@ -34,7 +50,6 @@
 #grade-option {
     border-bottom: 1px solid rgba(33, 37, 33, 0.08);
     width: 100%;
-
 }
 
 #credits-header {
@@ -88,10 +103,10 @@
 
 #add-btn {
     padding: 14px 31px;
-    justify-content: center;
-    align-items: center;
+    margin-right: 80px;
     border-radius: 100px;
     border: 1px solid #138601;
+    transition: 0.5s ease-in-out all;
 }
 
 #calc-btn {
@@ -138,7 +153,7 @@
 }
 
 #grade-bar-container {
-    width: 524px;
+    width: 85%;
     height: 24px;
     border-radius: 100px;
     border: 1px solid rgba(33, 37, 33, 0.12);
@@ -150,5 +165,85 @@
 }
 
 #grade-note {
-    color: rgba(33, 37, 33, 0.50);
+    color: rgba(33, 37, 33, 0.80);
+    font-weight: 700;
+}
+
+.new-course {
+    width: 100%;
+    margin: 24px auto;
+    padding: 0 68px 0 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* overflow: hidden; */
+    
+}
+
+
+@media (max-width: 768px) {
+    #cgpa-container {
+        width: 85%;
+        margin: auto auto 50px;
+        /* overflow: hidden; */
+    }
+
+    #CGC-container {
+        width: 80%;
+        flex-direction: column;
+        max-height: 400px;
+        margin-right: 4px;
+    }
+
+    #course {
+        font-size: 14px;
+        text-align: center;
+        flex: 1;
+        padding: 8px 0;
+        /* margin: 8px 0; */
+        border: none;
+        border-bottom: 1px solid rgba(33, 37, 33, 0.24);
+    }
+
+    #grade-container, #credits-container {
+        text-align: center;
+        padding: 4px 0 8px;
+        /* margin: 8px 0; */
+    }
+
+    #drop-button {
+        margin-top: -15px;
+        left: 0;
+        right: 0;
+    }
+
+    #remove-btn {
+        padding: 4px;
+    }
+
+    .new-course {
+        flex-direction: column;
+        justify-content: center;
+        margin: 24px 0;
+        padding: 0;
+    }
+
+    #add-btn {
+        padding: 12px 28px;
+        margin: 0 0 16px 0;
+    }
+
+    #calc-btn {
+        padding: 12px 40px;
+    }
+
+    #acad-stand {
+        flex-direction: column;
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    #grade, #grade-note {
+        text-align: center;
+    }
 }
