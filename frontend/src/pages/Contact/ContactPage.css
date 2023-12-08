@@ -3,6 +3,26 @@
     font-family: 'Mulish', sans-serif;
 }
 
+.flexCenter {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.textBig {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 48px;
+}
+
+.textSmall {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 26px;
+}
+
 
 /* first div */
 
@@ -31,8 +51,9 @@
 }
 
 .second>.s-text {
+    padding: 1rem;
     width: 49rem;
-    margin-bottom: 5rem;
+    margin-bottom: 3rem;
 }
 
 .form {
@@ -65,8 +86,15 @@ input::placeholder,
     height: auto;
 }
 
-.icon {
+.icon,
+#icon {
     padding: 15px 20px;
+}
+
+#icon {
+    position: absolute;
+    width: auto;
+    height: auto;
 }
 
 .textarea {
@@ -96,15 +124,44 @@ button.btn-submit {
     color: white;
 }
 
-
-/* third section  */
-
-.third {
-    font-family: 'Mulish', sans-serif;
-    width: 100%;
-    margin-top: 6rem;
+.switch {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+    gap: 10px;
 }
 
-.third .t-text {
-    margin: 2rem auto;
+.switch>p {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: red;
+}
+
+@media (max-width: 678px) {
+    .first {
+        width: 100%;
+    }
+    .second {
+        margin: 2rem auto;
+        width: 100%;
+    }
+    .second .s-text {
+        font-weight: 700;
+        line-height: 26px;
+        font-size: 1.2rem;
+        width: auto;
+        padding: 0.5rem;
+        margin-bottom: 1rem;
+    }
+    .switch>p {
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 26px;
+    }
+    .form {
+        width: 100%;
+        padding: 0 1rem;
+    }
 }

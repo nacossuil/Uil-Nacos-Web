@@ -14,8 +14,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: row;
     gap: 0rem 3rem;
-
 }
 
 .footer-logos img:first-child {
@@ -40,12 +40,11 @@
 
 .footer-socials>div {
     display: flex;
+    flex-direction: row;
     border-top: 1px solid hsl(230, 20%, 73%);
     border-bottom: 1px solid hsl(230, 20%, 73%);
 
 }
-
-
 
 .footer-social {
     display: flex;
@@ -62,7 +61,6 @@
     border-right: 1px solid hsl(230, 20%, 73%);
 }
 
-
 .footer-social-twitter svg {
     fill: hsl(212, 96%, 49%);
 }
@@ -72,11 +70,11 @@
 }
 
 .footer-social-linkedin svg {
-    fill: #0A66C2;
+    fill: #0a66c2;
 }
 
 .footer-social-facebook svg {
-    fill: #4867AA;
+    fill: #4867aa;
 }
 
 .footer aside {

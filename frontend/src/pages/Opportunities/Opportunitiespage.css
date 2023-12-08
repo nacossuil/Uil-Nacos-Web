@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600;700;800&display=swap");
+
 .opportunities {
   /*###### CUSTOM VARIABLES ######*/
   --color-primary-tint: hsla(112, 99%, 92%);
@@ -5,7 +7,7 @@
   --text-color: hsla(120, 6%, 14%, 1);
   --text-color-light: hsla(108, 10%, 10%, 0.8);
 
-  --font-family: "DM Sans", sans-serif !important;
+  --font-family: "DM Sans", sans-serif;
 
   --fs-heading-lg: 2.5rem;
   --fs-heading-md: 2.25rem;
@@ -16,53 +18,57 @@
   --fs-text-x-sm: 0.75rem;
 
   --line-height-text: 1.6;
-  --btn-radius: 2.8vw;
+  --btn-radius: 27px;
   --card-radius: 17px;
-  --custom-box-shadow: 0 6px 8px 0 hsla(0, 0%, 0%, 0.15);
+  --custom-box-shadow: 0rem 0.75rem 1rem 0rem rgba(0, 0, 0, 0.06);
 
   /* GlOBAL STYLINGS */
   font-family: var(--font-family);
 }
 
+
 /*###### GLOBAL RESETS ######*/
+
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-.opportunities > * {
-  font-family: inherit !important;
+.opportunities>* {
+    font-family: inherit !important;
 }
 
 img {
-  /* Making images responsive */
-  display: block;
-  width: 100%;
+    /* Making images responsive */
+    display: block;
+    width: 100%;
 }
 
+
 /*###### RE-USABLE CLASSES ######*/
+
 .container-center {
-  /* Ideal width not decided yet */
-  max-width: 1200px;
-  width: 85%;
-  margin-inline: auto;
+    /* Ideal width not decided yet */
+    max-width: 1200px;
+    width: 85%;
+    margin-inline: auto;
 }
 
 .justify-flex {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .heading-lg {
   font-size: var(--fs-heading-lg);
   font-weight: 600;
-  margin-bottom: 2rem;
+  margin-bottom: 1.75rem;
 }
 
 .heading-md {
-  font-family: "Mulish", var(--font-family), sans-serif;
+  font-family: "Mulish";
   font-size: var(--fs-heading-md);
   font-weight: 600;
   margin-bottom: 5rem;
@@ -71,6 +77,7 @@ img {
 .heading-sm {
   font-family: "Mulish", var(--font-family), sans-serif;
   font-size: var(--fs-heading-sm);
+  font-weight: 700;
   margin-bottom: 0.75rem;
 }
 
@@ -78,112 +85,164 @@ img {
   font-size: var(--fs-text-md);
   font-weight: 500;
   line-height: var(--line-height-text);
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
 }
 
 .text-sm {
-  font-size: var(--fs-text-sm);
-  font-weight: 400;
-  margin-bottom: 1rem;
+    font-size: var(--fs-text-sm);
+    font-weight: 400;
+    margin-bottom: 1rem;
 }
 
 .text-x-sm {
-  font-size: var(--fs-text-x-sm);
+    font-size: var(--fs-text-x-sm);
 }
 
 .btn {
-  display: inline-block;
-  font-weight: 500;
-  text-decoration: none;
-  color: var(--color-primary-tint);
-  background-color: var(--color-primary-shade);
-  border: 0;
-  border-radius: var(--btn-radius);
-  cursor: pointer;
+    display: inline-block;
+    font-weight: 500;
+    text-decoration: none;
+    color: var(--color-primary-tint);
+    background-color: var(--color-primary-shade);
+    border: 0;
+    border-radius: var(--btn-radius);
+    cursor: pointer;
 }
 
 .btn-lg {
-  padding: 0.625em 1.25em;
+  padding: 0.875rem 1.75rem;
 }
 
 .btn-md {
-  padding: 0.5em 1em;
+  padding: 0.75rem 1.75rem;
   font-size: var(--fs-text-sm);
 }
 
+
 /*##### INTRO SECTION #####*/
+
 .section-intro {
-  padding-block: 3rem;
-  background-color: var(--color-primary-tint);
-  background-image: url("./../../../src/assets/Opportunities/Grid.png");
-  background-size: cover;
-  background-repeat: no-repeat;
+    padding-block: 3rem;
+    background-color: var(--color-primary-tint);
+    background-image: url('./../../../src/assets/Opportunities/Grid.png');
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .intro__content {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  align-items: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+}
+
+@media (max-width: 50em) {
+  .intro__content {
+    grid-template-columns: 1fr;
+    row-gap: 6rem;
+  }
+
+  .intro__content-img-box {
+    display: block;
+  }
+
+  .intro__content-img-box img {
+    margin: 0 auto;
+    width: 90%;
+  }
 }
 
 .intro__content-img-box {
-  display: grid;
-  place-items: center;
+    display: grid;
+    place-items: center;
 }
 
 .intro__content-img-box img {
   width: 80%;
+  justify-self: right;
 }
+
 
 /*##### RESOURCES SECTION #####*/
 
-.section-courses {
-  padding-block: 5rem;
+.section-resources,
+.section-events {
+    padding-block: 5rem;
 }
 
-.section-courses h1 {
-  text-align: center;
+.section-resources h2,
+.section-events h2 {
+    text-align: center;
 }
 
 .cards {
   list-style-type: none;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  gap: 1.25rem;
+}
+
+@media (max-width: 50em) {
+  .cards {
+    grid-template-columns: 1fr;
+    row-gap: 4.8rem;
+  }
 }
 
 .card {
-  color: var(--text-color);
-  box-shadow: var(--custom-box-shadow);
-  border-radius: var(--card-radius);
-  overflow: hidden;
+    color: var(--text-color);
+    box-shadow: var(--custom-box-shadow);
+    border-radius: var(--card-radius);
+    overflow: hidden;
 }
 
 .card .content {
-  padding: 1rem;
+  padding: 1.25rem;
 }
 
+
 /* This element would be conditionally styled in the JSX */
+
 .card .tag {
   display: inline-block;
   color: #192666;
   font-size: var(--fs-text-x-sm);
   font-weight: 500;
   background-color: #c0c6e4;
-  padding: 0.3rem 0.6rem;
+  padding: 0.375rem 0.75rem;
   border-radius: var(--btn-radius);
 }
 
 .event-details {
-  display: flex;
-  flex-direction: column;
-  gap: 0.15rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
 }
 
 .heading-desc {
-  font-size: var(--fs-text-md);
-  color: var(--color-primary-shade);
-  font-weight: 600;
-  text-align: center;
-  text-transform: capitalize;
+    font-size: var(--fs-text-md);
+    color: var(--color-primary-shade);
+    font-weight: 600;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+@media (max-width: 678px) {
+    .intro__content {
+        grid-template-columns: repeat(1, 1fr);
+        width: 100%;
+        gap: 2rem;
+    }
+    .intro__content-img-box>img {
+        width: 100%;
+    }
+    .cards {
+        grid-template-columns: repeat(1, 1fr);
+        padding: 0 1rem;
+    }
+    .heading-md {
+        font-family: 'Mulish', var(--font-family), sans-serif;
+        font-size: var(--fs-heading-md);
+        font-weight: 600;
+        margin-bottom: 3rem;
+    }
 }

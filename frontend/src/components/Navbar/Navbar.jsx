@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, createRef } from "react";
 import "./Navbar.css";
 import { NavLink, Link } from "react-router-dom";
 import { FaBars } from 'react-icons/fa6'
@@ -33,6 +33,17 @@ const Navbar = () => {
       path: "/calculator",
     },
   ];
+
+  const menuRef = createRef(null);
+
+  function toggleMenu() {
+    if (menuRef.current) {
+      const menuState = menuRef.current.getAttribute("aria-expanded");
+      menuState === "true"
+        ? menuRef.current.setAttribute("aria-expanded", "false")
+        : menuRef.current.setAttribute("aria-expanded", "true");
+    }
+  }
   //state to keep track of the scroll position.
   const [scrolled, setScrolled] = useState(false);
   const [isMobileNavActive, setMobileNavAvtive] = useState(false)
@@ -67,6 +78,17 @@ const Navbar = () => {
           ))}
         </div>
       </nav>
+      <button onClick={toggleMenu} className="toggle">
+        {/* <span>menu</span> */}
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          height="24"
+          viewBox="0 -960 960 960"
+          width="24"
+        >
+          <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+        </svg>
+      </button>
     </header>
   );
 };

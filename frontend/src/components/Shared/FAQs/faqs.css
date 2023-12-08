@@ -11,7 +11,7 @@
 }
 
 .faqs h2 {
-    color: #181C17;
+    color: #181c17;
     font-size: 2.25rem;
     font-weight: 700;
     text-align: center;
@@ -35,7 +35,6 @@
     flex-basis: 50%;
 }
 
-
 .faqs-questions>h3 {
     color: #111111;
     font-size: 1.75rem;
@@ -54,7 +53,7 @@
 
 .faqs-questions hr {
     background: rgba(17, 17, 17, 0.12);
-    height: .0625rem;
+    height: 0.0625rem;
     margin-top: 1.5625rem;
     margin-bottom: 1.5rem;
     border: none;
@@ -62,7 +61,7 @@
 
 .faqs-answers .line {
     background: rgba(255, 255, 255, 0.2);
-    height: .0625rem;
+    height: 0.0625rem;
     margin-top: 1.5625rem;
     margin-bottom: 1.5rem;
     border: none;
@@ -80,8 +79,8 @@
     width: 100%;
     padding: 1.25rem;
     margin-bottom: 1.375rem;
-    border-radius: .75rem;
-    border: .0625rem solid rgba(24, 28, 23, 0.12);
+    border-radius: 0.75rem;
+    border: 0.0625rem solid rgba(24, 28, 23, 0.12);
     transition: all 0.3s ease-in-out;
     cursor: pointer;
 }
@@ -94,14 +93,16 @@
     color: #fff;
     background: rgba(19, 134, 1, 1);
     font-weight: 700;
-    border: .0625rem solid rgba(93, 50, 227, 0.16);
+    border: 0.0625rem solid rgba(93, 50, 227, 0.16);
 }
 
 .faqs-questions-list .active:hover {
     background: rgba(19, 134, 1, 1);
 }
 
+
 /* Answers Section... */
+
 .faqs-answers p {
     font-size: 1.25rem;
     line-height: 2rem;
