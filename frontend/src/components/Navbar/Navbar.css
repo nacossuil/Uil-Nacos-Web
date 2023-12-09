@@ -89,7 +89,7 @@ header.scrolled {
         width: 0px;
     }
 
-    nav[aria-expanded="true"] {
+    nav.open {
         transform: translateX(0);
     }
 }
