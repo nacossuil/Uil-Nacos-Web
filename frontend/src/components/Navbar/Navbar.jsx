@@ -35,15 +35,12 @@ const Navbar = () => {
   const menuRef = createRef(null);
 
   function toggleMenu() {
-    if (menuRef.current) {
-      const menuState = menuRef.current.getAttribute("aria-expanded");
-      menuState === "true"
-        ? menuRef.current.setAttribute("aria-expanded", "false")
-        : menuRef.current.setAttribute("aria-expanded", "true");
-    }
+    setToggled(!toggled);
   }
   //state to keep track of the scroll position.
   const [scrolled, setScrolled] = useState(false);
+  //state variable to keep track of menu toggle state
+  const [toggled, setToggled] = useState(false);
 
   // function to toggle state when scrolled
   const toggle = () => {
@@ -63,7 +60,7 @@ const Navbar = () => {
           <img src="/src/assets/unilorin-logo.svg" alt="" />
         </div>
       </Link>
-      <nav ref={menuRef}>
+      <nav className={`${toggled ? "open" : "close"}`}>
         {/* Mapping over the links array and generating individual links 
         The key for each link is it's title  */}
         {links.map((link) => (
@@ -73,15 +70,25 @@ const Navbar = () => {
         ))}
       </nav>
       <button onClick={toggleMenu} className="toggle">
-        {/* <span>menu</span> */}
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          height="24"
-          viewBox="0 -960 960 960"
-          width="24"
-        >
-          <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
-        </svg>
+        {!toggled ? (
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="24"
+            viewBox="0 -960 960 960"
+            width="24"
+          >
+            <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+          </svg>
+        ) : (
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="24"
+            viewBox="0 -960 960 960"
+            width="24"
+          >
+            <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+          </svg>
+        )}
       </button>
     </header>
   );
