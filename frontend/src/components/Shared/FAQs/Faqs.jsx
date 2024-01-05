@@ -26,7 +26,7 @@ const FAQs = () => {
             </div>
           </div>
           <div className='faqs-answers'>
-            <h3 >Your Answers</h3>
+            <h3 >{FAQS[activeFaqIndex].question}</h3>
             <hr className='line'></hr>
             <p>
               {FAQS[activeFaqIndex].answer}

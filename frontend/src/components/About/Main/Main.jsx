@@ -15,7 +15,7 @@ const Main = () => {
                         <BsArrowRight className='arrow-right' />
                     </div>
                 </div>
-                <div className='nacos-connect'>
+                <div className='section1-img'>
                     <img src={Nacos_connect} alt='' />
                 </div>
             </div>

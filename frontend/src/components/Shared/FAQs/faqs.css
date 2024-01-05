@@ -5,8 +5,8 @@
 }
 
 .faqs {
-    width: 85%;
-    margin: 3.75rem auto 8.25rem;
+    max-width: 80rem;
+    margin: 3.875rem auto;
     /* background: #f7f5f5; */
 }
 
@@ -21,7 +21,8 @@
 .faqs-container {
     display: flex;
     justify-content: space-between;
-    flex-direction: row;
+    gap: 2rem;
+  
     /* align-items: center; */
 }
 
@@ -29,8 +30,7 @@
     background: #fff;
     text-align: left;
     padding: 2.25rem 0 2.75rem;
-    margin-right: 2.5rem;
-    border: 0.0625rem solid rgba(17, 17, 17, 0.2);
+    border: .0625rem solid rgba(17, 17, 17, 0.2);
     border-radius: 1.5rem;
     flex-basis: 50%;
 }
@@ -114,8 +114,7 @@
     background: rgba(25, 38, 102, 1);
     text-align: left;
     padding: 2.25rem 0 2.75rem;
-    margin-right: 2.5rem;
-    border: 0.0625rem solid rgba(17, 17, 17, 0.2);
+    border: .0625rem solid rgba(17, 17, 17, 0.2);
     border-radius: 1.5rem;
     flex-basis: 50%;
 }
@@ -126,20 +125,39 @@
     margin: 0 1.75rem;
 }
 
-@media (max-width: 678px) {
+@media screen and (max-width:1280px) {
+    .faqs-container {
+        padding: 0rem 1rem;
+    }
+}
+
+
+@media screen and (max-width:1024px) {
     .faqs-container {
         flex-direction: column;
-        width: 100%;
-        margin: 0 auto;
-        gap: 1rem;
+        padding: 0rem 2rem  ;
     }
-    .faqs-questions {
-        width: 100%;
+
+    .faqs-answers >h3, .faqs-questions>h3   {
+        font-size: 1.3rem;
     }
-    .faqs-answers {
-        width: 100%;
+    
+
+    .faqs > h2 {
+        font-size: 1.8rem;
+        margin-bottom: 4rem;
     }
-    .faqs h2 {
-        margin-bottom: 3rem;
+
+}
+
+@media screen and (max-width:425px) {
+    .faqs-answers >h3{
+        font-size: 1.2rem;
     }
+
+    .faqs > h2 {
+        font-size: 1.5rem;
+        margin-bottom: 4rem;
+    }
+ 
 }
