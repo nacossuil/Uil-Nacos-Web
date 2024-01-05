@@ -162,9 +162,13 @@ const CgpaCalculator = () => {
       {/* CGPA calculator */}
       <div
         id="cgpa-container"
-        className="max-h-[2000px] mx-auto bg-white rounded-[20px] pb-10 ">
+        className="max-h-[2000px] mx-auto bg-white rounded-[20px] pb-10 "
+      >
         {/* CGPA calculator title*/}
-        <h1 id="cgpa-calc" className="text-[#212521] leading-[26px] py-10 font-bold text-center">
+        <h1
+          id="cgpa-calc"
+          className="text-[#212521] leading-[26px] py-10 font-bold text-center"
+        >
           CGPA Calculator
         </h1>
 
@@ -194,9 +198,13 @@ const CgpaCalculator = () => {
                       <div
                         onClick={() => toggleGradeDropDown(container.id)}
                         id={`grade-select-${container.id}`}
-                        className="relative cursor-pointer">
+                        className="relative cursor-pointer"
+                      >
                         {container.grade}
-                        <div className="absolute mt-[-32px] right-2" id="drop-button">
+                        <div
+                          className="absolute mt-[-32px] right-2"
+                          id="drop-button"
+                        >
                           <IconButton>
                             <svg
                               width="24"
@@ -221,7 +229,8 @@ const CgpaCalculator = () => {
                       {isOpen && selectedIndex === container.id && (
                         <div
                           id="grade-option-select"
-                          className="absolute top-full left-0 bg-white z-50">
+                          className="absolute top-full left-0 bg-white z-50"
+                        >
                           <h1 className="px-3" id="grade-header">
                             Select Grade
                           </h1>
@@ -242,7 +251,10 @@ const CgpaCalculator = () => {
                     </div>
 
                     {/* credits container */}
-                    <div className="flex-1 relative py-3" id="credits-container">
+                    <div
+                      className="flex-1 relative py-3"
+                      id="credits-container"
+                    >
                       <div
                         onClick={() => toggleCreditsDropDown(container.id)}
                         id={`credits-select-${container.id}`}
@@ -251,7 +263,10 @@ const CgpaCalculator = () => {
                         {isCreditsOpen && selectedIndex === container.id
                           ? "Credits"
                           : container.credit}
-                        <div className="absolute mt-[-32px] right-2" id="drop-button">
+                        <div
+                          className="absolute mt-[-32px] right-2"
+                          id="drop-button"
+                        >
                           <IconButton>
                             <svg
                               width="24"
@@ -276,18 +291,22 @@ const CgpaCalculator = () => {
                       {isCreditsOpen && selectedIndex === container.id && (
                         <div
                           id={`credits-option-select`}
-                          className="absolute top-full left-0 bg-white z-50  rounded text-black">
+                          className="absolute top-full left-0 bg-white z-50  rounded text-black"
+                        >
                           <h1 id="credits-header" className="px-3">
                             Select Credit
                           </h1>
                           <div
                             className="flex items-center justify-between px-3"
-                            id="credits-option">
+                            id="credits-option"
+                          >
                             <span className="mr-auto">{container.credit}</span>
 
                             <div className="flex items-center">
                               <IconButton
-                                onClick={() => decreaseCreditValue(container.id)}
+                                onClick={() =>
+                                  decreaseCreditValue(container.id)
+                                }
                               >
                                 <svg
                                   width="20"
@@ -313,7 +332,9 @@ const CgpaCalculator = () => {
                                 </svg>
                               </IconButton>
                               <IconButton
-                                onClick={() => increaseCreditValue(container.id)}
+                                onClick={() =>
+                                  increaseCreditValue(container.id)
+                                }
                               >
                                 <svg
                                   width="20"
@@ -340,7 +361,10 @@ const CgpaCalculator = () => {
                   </div>
                 </div>
 
-                <IconButton onClick={() => removeContainer(container.id)} id="remove-btn">
+                <IconButton
+                  onClick={() => removeContainer(container.id)}
+                  id="remove-btn"
+                >
                   <svg
                     width="24"
                     height="24"
@@ -375,7 +399,8 @@ const CgpaCalculator = () => {
           <button
             id="add-btn"
             onClick={addNewContainer}
-            className="text-[#138601] leading-5 font-bold  hover:bg-[#138601] hover:text-white duration-200">
+            className="text-[#138601] leading-5 font-bold  hover:bg-[#138601] hover:text-white duration-200"
+          >
             Add New Course
           </button>
 
@@ -385,13 +410,14 @@ const CgpaCalculator = () => {
             onClick={handleCalculateCGPA}
             className={`bg-[#138601] leading-5 font-bold text-white ${
               isDisabled ? `opacity-50` : `opacity-1`
-            }`}>
+            }`}
+          >
             Calculate CGPA
           </button>
         </div>
 
         {/* Result section */}
-        <div className="flex">
+        <div className="flex mx-2">
           {/* credits section */}
           <div id="credits-section">
             <h2 className="font-medium leading-5 text-xs">TOTAL CREDITS</h2>
