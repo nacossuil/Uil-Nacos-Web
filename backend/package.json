@@ -1,0 +1,20 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Nacos Unilorin Backend.",
+  "main": "server.mjs",
+  "scripts": {
+    "server": "node server.mjs"
+  },
+  "author": "Ibitomihi Eniola",
+  "license": "ISC",
+  "dependencies": {
+    "cloudinary": "^1.41.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-validator": "^7.2.0",
+    "mongoose": "^8.5.2",
+    "multer": "^1.4.5-lts.1",
+    "multer-storage-cloudinary": "^4.0.0"
+  }
+}
