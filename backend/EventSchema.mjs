@@ -2,13 +2,16 @@ import mongoose from 'mongoose';
 
 // Event Schema
 const eventsSchema = new mongoose.Schema({
-    title: String,
+    title: {
+        type: String,
+        unique: true
+    },
     description: String,
-    startDate: Date,
-    endDate: Date,
-    price: Number,
-    location: String,
-    imageUrl: String
+    startDateAndTime: String,
+    endDateAndTime: String,
+    price: String,
+    venue: String,
+    image: String
 });
 
 const Events = mongoose.model('Event', eventsSchema);

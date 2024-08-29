@@ -6,7 +6,7 @@ const execsSchema = new mongoose.Schema({
     studentId: {type: String, index: true, unique: true}, // Added index for faster queries
     position: {type: String, unique: true},
     session: String,
-    imageUrl: String
+    image: String
 });
 
 // static method to find by matric_number

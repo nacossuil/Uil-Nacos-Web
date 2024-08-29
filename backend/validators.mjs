@@ -4,11 +4,11 @@ import check from 'express-validator';
 export const newEventValidator = [
     check.check("title").not().isEmpty().withMessage("Title is required"),
     check.check("description").not().isEmpty().withMessage("Description is required"),
-    check.check("startDate").not().isEmpty().withMessage("Start date is required"),
-    check.check("endDate").not().isEmpty().withMessage("End date is required"),
+    check.check("startDateAndTime").not().isEmpty().withMessage("Start date is required"),
+    check.check("endDateAndTime").not().isEmpty().withMessage("End date is required"),
     check.check("price").not().isEmpty().withMessage("Price is required"),
-    check.check("location").not().isEmpty().withMessage("Location is required"),
-    check.check("imageUrl").not().isEmpty().withMessage("Image URL is required"),
+    check.check("venue").not().isEmpty().withMessage("Location is required"),
+    check.check("image").not().isEmpty().withMessage("Image is required"),
 ];
 
 const matricNumberIsValid = (studentId) => {

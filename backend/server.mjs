@@ -47,51 +47,48 @@ mongoose.connect(`${mongoDBUrI}`).then(() => {
 // Routes
 app.get('/api/events', async (req, res) => {
     try {
-        const {page = 1, limit = 10, startDate, endDate} = req.query;
-
-        let dbQuery = {};
-        if (startDate && endDate) {
-            dbQuery.startDate = {$gte: new Date(startDate)};
-            dbQuery.endDate = {$lte: new Date(endDate)};
-        }
-
         const events = await Events
-            .find(dbQuery)
-            .skip((page - 1) * limit)
+            .find()
+            .select("-_id -__v")
             .lean()
             .exec();
-
-        const count = await Events.countDocuments(dbQuery);
-
-        res.json({
-            events, totalPages: Math.ceil(count / limit), currentPage: page
-        });
+        res.status(200).json(events);
 
     } catch (error) {
         res.status(500).json({message: error.message});
     }
 });
 
-app.post('/api/events', newEventValidator, async (req, res) => {
-    const errors = validationResult(req);
-    if (!errors.isEmpty()) {
-        return res.status(400).json({errors: errors.array()});
-    }
-
-    const event = new Events({
-        title: req.body.title,
-        description: req.body.description,
-        startDate: req.body.startDate,
-        endDate: req.body.endDate,
-        price: req.body.price,
-        location: req.body.location,
-        imageUrl: req.body.imageUrl
-    });
+app.post('/api/events', upload.single('image'), newEventValidator, async (req, res) => {
     try {
+        const errors = validationResult(req);
+        if (!errors.isEmpty()) {
+            return res.status(400).json({errors: errors.array()});
+        }
+
+        const {title, description, startDateAndTime, endDateAndTime, price, venue} = req.body;
+
+        const eventData = {
+            title,
+            description,
+            startDate: startDateAndTime,
+            endDate: endDateAndTime,
+            price,
+            venue
+        };
+
+        if (req.file) {
+            // The image should already be uploaded to Cloudinary by this point
+            eventData.image = req.file.path; // This should be the Cloudinary URL
+        }
+
+        const event = new Events(eventData);
         const newEvent = await event.save();
+
         res.status(201).json(newEvent);
     } catch (error) {
-        res.status(400).json({message: error.message});
+        console.error('Error creating event:', error);
+        res.status(500).json({message: 'Internal server error', error: error.message});
     }
 });
 
@@ -137,49 +134,8 @@ app.post('/api/execs', upload.single('image'), execsValidator, async (req, res) 
     }
 });
 
-app.get('/api/events/:id', async (req, res) => {
-    try {
-        const event = await Events.findById(req.params.id);
-        if (!event) {
-            return res.status(404).json({message: "Event not found"});
-        }
-        res.json(event);
-    } catch (error) {
-        res.status(500).json({message: error.message});
-    }
-});
-
-app.put('/api/events/:id', newEventValidator, async (req, res) => {
-    const errors = validationResult(req);
-    if (!errors.isEmpty()) {
-        return res.status(400).json({errors: errors.array()});
-    }
-
-    try {
-        const updatedEvent = await Events.findByIdAndUpdate(req.params.id, req.body, {new: true});
-        if (!updatedEvent) {
-            return res.status(404).json({message: "Event not found"});
-        }
-        res.json(updatedEvent);
-    } catch (error) {
-        res.status(400).json({message: error.message});
-    }
-});
-
-app.delete('/api/events/:id', async (req, res) => {
-    try {
-        const deletedEvent = await Events.findByIdAndDelete(req.params.id);
-        if (!deletedEvent) {
-            return res.status(404).json({message: "Event not found"});
-        }
-        res.json({message: "Event deleted successfully"});
-    } catch (error) {
-        res.status(500).json({message: error.message});
-    }
-});
-
 // Error handling middleware
-app.use((err, req, res, next) => {
+app.use((err, req, res) => {
     console.error(err);
     res.status(500).json({message: "Internal Server Error: Something went wrong!"});
 });
