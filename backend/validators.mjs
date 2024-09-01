@@ -8,7 +8,6 @@ export const newEventValidator = [
     check.check("endDateAndTime").not().isEmpty().withMessage("End date is required"),
     check.check("price").not().isEmpty().withMessage("Price is required"),
     check.check("venue").not().isEmpty().withMessage("Location is required"),
-    check.check("image").not().isEmpty().withMessage("Image is required"),
 ];
 
 const matricNumberIsValid = (studentId) => {

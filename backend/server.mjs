@@ -7,7 +7,7 @@ import cloudinary from 'cloudinary';
 import {CloudinaryStorage} from 'multer-storage-cloudinary';
 import multer from 'multer';
 import {newEventValidator, execsValidator, sessionvalidator} from "./validators.mjs";
-import {validationResult} from 'express-validator';
+import check, {validationResult} from 'express-validator';
 import cors from 'cors';
 
 dotenv.config();
@@ -95,17 +95,15 @@ app.post('/api/events', upload.single('image'), newEventValidator, async (req, r
         const eventData = {
             title,
             description,
-            startDate: startDateAndTime,
-            endDate: endDateAndTime,
+            startDateAndTime,
+            endDateAndTime,
             price,
             venue
         };
 
-        if (req.file) {
-            // The image should already be uploaded to Cloudinary by this point
-            eventData.image = req.file.path; // This should be the Cloudinary URL
-        }
-
+        if (!req.file)
+            res.status(400).json("An image file has to be attached.");
+        eventData.image = req.file.path; // This should be the Cloudinary URL
         const event = new Events(eventData);
         const newEvent = await event.save();
 
