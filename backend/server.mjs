@@ -7,7 +7,7 @@ import cloudinary from 'cloudinary';
 import {CloudinaryStorage} from 'multer-storage-cloudinary';
 import multer from 'multer';
 import {newEventValidator, execsValidator, sessionvalidator} from "./validators.mjs";
-import check, {validationResult} from 'express-validator';
+import {validationResult} from 'express-validator';
 import cors from 'cors';
 
 dotenv.config();
@@ -116,11 +116,12 @@ app.post('/api/events', upload.single('image'), newEventValidator, async (req, r
 
 app.get('/api/execs', sessionvalidator, async (req, res) => {
     try {
-        const {session} = req.body;
+        const {session} = req.query;
 
-        if (!session) return res.status(400).json({message: "Session is required in the request body"});
-        const execs = await Execs.findBySession(session);
-        // res.json({execs})
+        if (!session) return res.status(400).json({message: "Session is required in the request object"});
+        const execs = await Execs
+            .findBySession(session)
+
         res.status(200).json({
             execs, totalExecs: execs.length
         });
