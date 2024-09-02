@@ -1,8 +1,8 @@
 import PropTypes from "prop-types";
 import styles from "./EventCards.module.css";
-import locationIcon from "./../../assets/location-icon.svg";
-import timeIcon from "./../../assets/time-icon.svg";
-import dateIcon from "./../../assets/date-icon.svg";
+import locationIcon from "./../../../assets/location-icon.svg";
+import timeIcon from "./../../../assets/time-icon.svg";
+import dateIcon from "./../../../assets/date-icon.svg";
 
 const EventCards = ({ eventsData }) => {
   return (
