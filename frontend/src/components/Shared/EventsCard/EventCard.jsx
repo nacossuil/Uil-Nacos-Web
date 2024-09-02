@@ -31,9 +31,10 @@ const EventCard = ({ data }) => {
     startDateAndTime,
     endDateAndTime,
   } = data;
-  const [startDay, startMonth, startYear, startTime] =
+
+  const [startYear, startMonth, startDay, startTime] =
     startDateAndTime?.split("-");
-  const [endDay, endMonth, endYear, endTime] = endDateAndTime?.split("-");
+  const [endYear, endMonth, endDay, endTime] = endDateAndTime?.split("-");
   const dateRange = `${startDay} ${
     months[Number(startMonth)]
   }, ${startYear} - ${endDay} ${months[Number(endMonth)]}, ${endYear}`;

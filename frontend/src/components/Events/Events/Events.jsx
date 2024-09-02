@@ -13,8 +13,9 @@ const Events = () => {
         const res = await axios.get(
           "https://uil-nacos-web.onrender.com/api/events"
         );
-        console.log(res);
         const eventData = res.data;
+        console.log(res.data);
+
         setEvents(eventData);
         setEventsLoading(false);
       } catch (error) {
