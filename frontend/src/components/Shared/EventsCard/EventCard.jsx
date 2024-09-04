@@ -64,7 +64,8 @@ const EventCard = ({ data }) => {
           </div>
 
           <button>
-            <Link to={`${onclick}`}>RSVP</Link>
+            {/* <Link to={`${onclick}`}>RSVP</Link> */}
+            <Link to={`${onclick}`}>Catch Up!</Link>
           </button>
         </div>
       </div>

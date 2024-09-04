@@ -1,51 +1,56 @@
-import './footer.css'
-import nacosLogo from '../../assets/nacos-logo.svg'
-import unilorinLogo from '../../assets/unilorin-logo.svg'
-import { BsTwitter, BsInstagram, BsLinkedin, BsFacebook } from 'react-icons/bs'
+import "./footer.css";
+import nacosLogo from "../../assets/new-nacos-logo.png";
+import unilorinLogo from "../../assets/unilorin-logo.svg";
+import { BsTwitter, BsInstagram, BsLinkedin, BsFacebook } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 const socials = [
   {
-    name: 'twitter',
+    name: "twitter",
     icon: <BsTwitter />,
-    url: '#',
+    url: "https://x.com/NACOSS_UIL",
   },
   {
-    name: 'instagram',
+    name: "instagram",
     icon: <BsInstagram />,
-    url: '#',
+    url: "https://www.instagram.com/nacos_unilorin/",
   },
-  {
-    name: 'linkedin',
-    icon: <BsLinkedin />,
-    url: '#',
-  },
-  {
-    name: 'facebook',
-    icon: <BsFacebook />,
-    url: '#',
-  },
-]
+  // {
+  //   name: "linkedin",
+  //   icon: <BsLinkedin />,
+  //   url: "#",
+  // },
+  // {
+  //   name: "facebook",
+  //   icon: <BsFacebook />,
+  //   url: "#",
+  // },
+];
 
 const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-container">
         <div className="footer-logos">
-          <img src={nacosLogo} alt="" />
+          <img
+            src={nacosLogo}
+            alt=""
+            style={{ width: "auto", height: "75px" }}
+          />
           <img src={unilorinLogo} alt="" />
         </div>
         <div className="footer-socials">
           <h5>Follow us on</h5>
           <div>
             {socials.map(({ name, url, icon }) => (
-              <a
+              <Link
                 className={`footer-social footer-social-${name.toLowerCase()}`}
                 key={name}
-                href={url}
+                to={`${url}`}
               >
                 <span>{icon}</span>
                 <span>{name}</span>
-              </a>
+              </Link>
             ))}
           </div>
         </div>
@@ -53,7 +58,7 @@ const Footer = () => {
         <aside>© 2023 Chumskiisama. All rights reserved.</aside>
       </div>
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

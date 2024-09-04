@@ -86,14 +86,5 @@ const EXECS = [
     ],
   },
 ];
-const sample = {
-  email: "20-52HA026@students.unilorin.edu.ng",
-  imageUrl:
-    "https://res.cloudinary.com/dwghcbyua/image/upload/v1724421748/execs/zkwjqb6bbgcxxtrarkdd.jpg",
-  name: "Alabi Abdullah",
-  position: "General Secretary",
-  session: "2022-2023",
-  studentId: "20/52HA026",
-};
 
 export { EXECS };

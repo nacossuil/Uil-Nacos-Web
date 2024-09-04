@@ -37,17 +37,20 @@ const Executives = () => {
           Meet the current passionate students driving the success of the
           community
         </h4>
-
+        <div className="executives-nav">
+          <button className="cp-button">Upcoming Executives</button>
+          <button className="cp-button active">Past Executives</button>
+        </div>
         <div className="executive-list">
           {execs.map((data, i) => (
             <Executive key={i} data={data} />
           ))}
         </div>
 
-        <a href="#" className="vae">
+        {/* <a href="#" className="vae">
           <p className="vae-text">View all Executives</p>
           <BsArrowRight />
-        </a>
+        </a> */}
       </div>
     </section>
   );
