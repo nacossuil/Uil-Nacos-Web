@@ -55,7 +55,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <aside>© 2023 Chumskiisama. All rights reserved.</aside>
+        <aside>© 2022/2023 NACOS. All rights reserved.</aside>
       </div>
     </footer>
   );
