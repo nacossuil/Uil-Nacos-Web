@@ -19,7 +19,7 @@ execsSchema.statics.findByMatricNumber = function (matricNumber) {
 
 // Define the order of positions
 const positionOrder = [
-    'President',
+    'Executive President',
     'Vice President',
     'General Secretary',
     'Assistant General Secretary',
@@ -29,7 +29,7 @@ const positionOrder = [
     'Social Director 1',
     'Social Director 2',
     'Sport Director',
-    'PRO',
+    'Public Relations Officer',
     'Welfare Secretary',
     'Treasurer'
 ];
