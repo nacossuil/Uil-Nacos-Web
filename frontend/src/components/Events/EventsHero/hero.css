@@ -1,0 +1,33 @@
+.hero-about {
+    background: #dcffd7;
+    width: 100%;
+    background-image: url('./../../../src/assets/Opportunities/Grid.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.hero-about-cont{
+    padding-top: 2.75rem;
+}
+.hero-about-cont img{
+    width: 31.25rem;
+    margin: auto;
+}
+.hero-about-heading {
+    text-align: center;
+    margin: auto auto 0.5rem;
+    font-family: Mulish;
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: #212521;
+}
+
+@media screen and (max-width:640px) {
+    .hero-about-heading{
+        font-size: 1.8rem;
+    }
+}
+@media screen and (max-width:425px) {
+    .hero-about-heading{
+        font-size: 1.5rem;
+    }
+}

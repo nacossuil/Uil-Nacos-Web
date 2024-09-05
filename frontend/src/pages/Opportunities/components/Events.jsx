@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import EventCards from "../../../components/EventCards/EventCards";
+import EventCards from "../../../components/Events/EventCards/EventCards";
 
 const Events = ({ eventsData, heading }) => {
   return (
