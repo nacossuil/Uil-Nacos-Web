@@ -24,11 +24,11 @@ const positionOrder = [
     'General Secretary',
     'Assistant General Secretary',
     'Financial Secretary',
+    'Sport Director',
     'Software Director 1',
     'Software Director 2',
     'Social Director 1',
     'Social Director 2',
-    'Sport Director',
     'Public Relations Officer',
     'Welfare Secretary',
     'Treasurer'
