@@ -17,17 +17,43 @@ execsSchema.statics.findByMatricNumber = function (matricNumber) {
         .exec();
 };
 
-//static method to find by session
+// Define the order of positions
+const positionOrder = [
+    'Executive President',
+    'Vice President',
+    'General Secretary',
+    'Assistant General Secretary',
+    'Financial Secretary',
+    'Sport Director',
+    'Software Director 1',
+    'Software Director 2',
+    'Social Director 1',
+    'Social Director 2',
+    'Public Relations Officer',
+    'Welfare Secretary',
+    'Treasurer'
+];
+
+// A map for quick lookup of position priorities
+const positionPriority = new Map(positionOrder.map((position, index) => [position.toLowerCase(), index]));
+
+// Custom sorting function
+const sortExecutives = (a, b) => {
+    const priorityA = positionPriority.get(a.position.toLowerCase()) ?? positionOrder.length;
+    const priorityB = positionPriority.get(b.position.toLowerCase()) ?? positionOrder.length;
+    return priorityA - priorityB;
+};
+
+// Updated static method to find and sort by session
 execsSchema.statics.findBySession = async (session) => {
     try {
-        // const result = await mongoose.connection.db.collection('executives').find({session}).toArray();
-        // console.log('Raw query result:', result);
-        // return result;
-        return await Execs.find({session}).select("-_id -__v").lean().exec();
+        const executives = await Execs.find({ session }).select("-_id -__v").lean().exec();
+        return executives.sort(sortExecutives);
     } catch (error) {
         throw error;
     }
 };
+
 
 const Execs = mongoose.model('Executives', execsSchema);
 
