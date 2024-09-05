@@ -14,12 +14,11 @@ const Events = () => {
           "https://uil-nacos-web.onrender.com/api/events"
         );
         const eventData = res.data;
-        console.log(res.data);
 
         setEvents(eventData);
         setEventsLoading(false);
       } catch (error) {
-        console.error("Fetching events failed", error);
+        console.error("Fetching events failed");
       }
     };
     fetchEvents();
