@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
 import { Routes, Route } from "react-router-dom";
@@ -13,6 +13,11 @@ import ScrollToTop from "./assets/up-arrow-icon.svg?react";
 
 function App() {
   const [scrollToTopVisible, setScrollToTopVisible] = useState(false);
+
+  // zoom level functionality
+  useEffect(() => {
+    document.body.style.zoom = "95%"; // Set default zoom level to 90%
+  }, []);
 
   const toggleVisible = () => {
     const scrolled = document.documentElement.scrollTop;
@@ -29,32 +34,34 @@ function App() {
       behavior: "smooth",
     });
   };
+
   window.addEventListener("scroll", toggleVisible);
+
   return (
-    <>
-      <Navbar />
-      <main>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/events" element={<EventsPage />} />
-          <Route path="/contact" element={<ContactPage />} />
-          <Route path="/opportunities" element={<OpportunitiesPage />} />
-          {/* <Route path="/calculator" element={<CgpaCalculatorPage />} /> */}
-        </Routes>
-        {scrollToTopVisible ? (
-          <div
-            className="scroll-to-top-icon"
-            onClick={() => {
-              scrollToTop();
-            }}
-          >
-            <ScrollToTop />
-          </div>
-        ) : null}
-      </main>
-      <Footer />
-    </>
+      <>
+        <Navbar />
+        <main>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/events" element={<EventsPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/opportunities" element={<OpportunitiesPage />} />
+            {/* <Route path="/calculator" element={<CgpaCalculatorPage />} /> */}
+          </Routes>
+          {scrollToTopVisible ? (
+              <div
+                  className="scroll-to-top-icon"
+                  onClick={() => {
+                    scrollToTop();
+                  }}
+              >
+                <ScrollToTop />
+              </div>
+          ) : null}
+        </main>
+        <Footer />
+      </>
   );
 }
 

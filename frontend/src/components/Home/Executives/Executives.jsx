@@ -1,8 +1,6 @@
 import "./Executives.css";
 
-import { EXECS } from "./data";
 import Executive from "../../Shared/Executive/Executive";
-import { BsArrowRight } from "react-icons/bs";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
