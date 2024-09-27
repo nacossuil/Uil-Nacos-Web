@@ -8,7 +8,6 @@ import Footer from "./components/Footer/Footer";
 import AboutPage from "./pages/About/AboutPage";
 import EventsPage from "./pages/Events/EventsPage";
 import OpportunitiesPage from "./pages/Opportunities/OpportunitiesPage";
-import CgpaCalculatorPage from "./pages/CgpaCalculator/CgpaCalculatorPage";
 import ScrollToTop from "./assets/up-arrow-icon.svg?react";
 
 function App() {
@@ -16,7 +15,7 @@ function App() {
 
   // zoom level functionality
   useEffect(() => {
-    document.body.style.zoom = "95%"; // Set default zoom level to 90%
+    document.body.style.zoom = "95%"; // Set default zoom level to 95%
   }, []);
 
   const toggleVisible = () => {

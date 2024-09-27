@@ -50,8 +50,7 @@ const Navbar = () => {
     <header className={`header ${scrolled ? "scrolled" : ""}`}>
       <Link className="header-nav-home" to={"/"}>
         <div className="header-nav-logo">
-          <img
-            src="/src/assets/new-nacos-logo.png"
+          <img src="/src/assets/new-nacos-logo.png"
             style={{ width: "auto", height: "75px" }}
             alt=""
           />

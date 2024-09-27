@@ -17,12 +17,12 @@ const Executives = () => {
             session: "2022-2023",
           }
         );
-        console.log(res);
+        // console.log(res);
         const execsData = res.data.execs;
         setExecutives(execsData);
         setExecutivesLoading(false);
       } catch (error) {
-        console.error("Fetching executives failed", error);
+        console.error("Fetching executives failed");
       }
     };
     fetchExecs();

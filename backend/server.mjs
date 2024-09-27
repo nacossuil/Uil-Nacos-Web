@@ -48,7 +48,7 @@ app.use(cors({
 mongoose.connect(`${mongoDBUrI}`).then(() => {
     console.log("Connected successfully to MongoDB");
 }).catch((error) => {
-    console.error("Failed to connect to MongoDB", error);
+    console.error("Failed to connect to MongoDB");
 });
 
 // Routes
@@ -92,7 +92,7 @@ app.post('/api/events', upload.single('image'), newEventValidator, async (req, r
 
         res.status(201).json(newEvent);
     } catch (error) {
-        console.error('Error creating event:', error);
+        console.error('Error creating event');
         res.status(500).json({message: 'Internal server error', error: error.message});
     }
 });
@@ -142,7 +142,7 @@ app.post('/api/execs', upload.single('image'), execsValidator, async (req, res) 
 
 // Error handling middleware
 app.use((err, req, res) => {
-    console.error(err);
+    // console.error(err);
     res.status(500).json({message: "Internal Server Error: Something went wrong!"});
 });
 
