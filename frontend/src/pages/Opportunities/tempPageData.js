@@ -1,71 +1,77 @@
-export const tempCoursesData = [
-  {
-    img: "./../../../src/assets/Opportunities/resources-img1.png",
-    title: "JavaScript best pratices",
-    description:
-      "This course is designed to take your existing JavaScript knowledge and teach you how to leverage patterns and practices to take...",
+import pluralsightImage from '../../assets/Opportunities/pluralsight image.png';
+import dataStructuresImage from '../../assets/Opportunities/data structure and algorithms.jpg';
+import machineLearningImage from '../../assets/Opportunities/Machine-Learning.avif';
+import googleAfricaImage from '../../assets/Opportunities/google africa.webp';
+import andelaImage from '../../assets/Opportunities/andela image.png';
+import outreachyImage from '../../assets/Opportunities/outreachy.png';
+import defconImage from '../../assets/Opportunities/defcon.png';
+import shecodeImage from '../../assets/Opportunities/shecode.png';
+import devfestImage from '../../assets/Opportunities/devfest.png';
+
+export const imageUrls = [
+    pluralsightImage,
+    dataStructuresImage,
+    machineLearningImage,
+    googleAfricaImage,
+    andelaImage,
+    outreachyImage,
+    defconImage,
+    shecodeImage,
+    devfestImage
+];
+
+export const tempCoursesData = [{
+    img: imageUrls[0],
+    title: "Web Development Fundamentals",
+    description: "Master HTML, CSS, and JavaScript with hands-on projects and expert guidance. Build responsive websites and interactive web applications.",
     level: "Beginner",
-  },
-  {
-    img: "./../../../src/assets/Opportunities/resources-img2.png",
-    title: "JavaScript best pratices",
-    description:
-      "This course is designed to take your existing JavaScript knowledge and teach you how to leverage patterns and practices to take...",
-    level: "Expert",
-  },
-  {
-    img: "./../../../src/assets/Opportunities/resources-img3.png",
-    title: "JavaScript best pratices",
-    description:
-      "This course is designed to take your existing JavaScript knowledge and teach you how to leverage patterns and practices to take...",
+}, {
+    img: imageUrls[1],
+    title: "Data Structures and Algorithms",
+    description: "Enhance your problem-solving skills and prepare for technical interviews. Learn essential data structures and algorithms used in software development.",
     level: "Intermediate",
-  },
-];
+}, {
+    img: imageUrls[2],
+    title: "Machine Learning Essentials",
+    description: "Dive into AI and ML with Python, covering key algorithms and real-world applications. Build predictive models and analyze complex datasets.",
+    level: "Advanced",
+}];
 
-export const tempScholarshipsData = [
-  {
-    img: "./../../../src/assets/Opportunities/scholarship-img1.png",
-    title: "Study in Abroad",
-    description:
-      "This course is designed to take your existing JavaScript knowledge and teach you how to leverage patterns and practices to take...",
-  },
-  {
-    img: "./../../../src/assets/Opportunities/scholarship-img2.png",
-    title: "Study in Abroad",
-    description:
-      "This course is designed to take your existing JavaScript knowledge and teach you how to leverage patterns and practices to take...",
-  },
-  {
-    img: "./../../../src/assets/Opportunities/scholarship-img-3.png",
-    title: "Study in Abroad",
-    description:
-      "This course is designed to take your existing JavaScript knowledge and teach you how to leverage patterns and practices to take...",
-  },
-];
+export const tempScholarshipsData = [{
+    img: imageUrls[3],
+    title: "Google Africa Developer Scholarship",
+    description: "Fully-funded program for aspiring and professional developers in Africa. Gain skills in mobile and web development, cloud computing, and machine learning.",
+}, {
+    img: imageUrls[4],
+    title: "Andela Learning Community",
+    description: "Free tech skills training and mentorship for African developers. Access courses in web and mobile development, data science, and cloud computing.",
+    level: "Community",
+}, {
+    img: imageUrls[5],
+    title: "Outreachy | Internships Supporting Diversity in Tech",
+    description: "Outreachy provides internships to people subject to systemic bias and impacted by under-representation in the technical industry where they are living.",
+    level: "Financial Support",
+}];
 
-export const tempEventsData = [
-  {
-    img: "./../../../src/assets/Opportunities/competitions-img1.png",
-    title: "National Innovation Summit",
-    description: "Is to become a network of committed Student IT Professionals",
-    date: "12 Sep, 2023 - 28 Sep, 2023",
-    time: "12 PM - 2:30 PM",
-    venue: "CISLT",
-  },
-  {
-    img: "./../../../src/assets/Opportunities/competitions-img2.png",
-    title: "National Innovation Summit",
-    description: "Is to become a network of committed Student IT Professionals",
-    date: "12 Sep, 2023 - 28 Sep, 2023",
-    time: "12 PM - 2:30 PM",
-    venue: "CISLT",
-  },
-  {
-    img: "./../../../src/assets/Opportunities/competitions-img3.png",
-    title: "National Innovation Summit",
-    description: "Is to become a network of committed Student IT Professionals",
-    date: "12 Sep, 2023 - 28 Sep, 2023",
-    time: "12 PM - 2:30 PM",
-    venue: "CISLT",
-  },
-];
+export const tempEventsData = [{
+    img: imageUrls[6],
+    title: "DEF CON",
+    description: "One of the world's largest hacker conventions, DEF CON offers a student track, which includes workshops, talks, and hands-on experience for students interested in hacking and cybersecurity.",
+    date: "Annually in August",
+    time: "9 AM - 5 PM",
+    venue: "Las Vegas, NV (Also online)",
+}, {
+    img: imageUrls[7],
+    title: "Shecode Africa",
+    description: "A registered non-profit organization dedicated to empowering and celebrating girls and women in technology across Africa",
+    date: "Upcoming...",
+    time: "Upcoming...",
+    venue: "To be updated...",
+}, {
+    img: imageUrls[8],
+    title: "DevFest Ilorin",
+    description: "DevFest Ilorin is a community-driven tech event organized by Google Developer Groups (GDGs) in Ilorin. It offers workshops, tech talks, and networking opportunities for developers to enhance their skills and knowledge in various areas of technology.",
+    date: "Upcoming...",
+    time: "Upcoming...",
+    venue: "To be updated...",
+}];
