@@ -1,23 +1,14 @@
-import pluralsightImage from '@/assets/Opportunities/pluralsight image.png'
-import dataStructuresImage from '@/assets/Opportunities/data structure and algorithms.jpg';
-import machineLearningImage from '@/assets/Opportunities/Machine-Learning.avif';
-import googleAfricaImage from '@/assets/Opportunities/google africa.webp';
-import andelaImage from '@/assets/Opportunities/andela image.png';
-import outreachyImage from '@/assets/Opportunities/outreachy.png';
-import defconImage from '@/assets/Opportunities/defcon.png';
-import shecodeImage from '@/assets/Opportunities/shecode.png';
-import devfestImage from '@/assets/Opportunities/devfest.png';
-
-export const imageUrls = [
-    pluralsightImage,
-    dataStructuresImage,
-    machineLearningImage,
-    googleAfricaImage,
-    andelaImage,
-    outreachyImage,
-    defconImage,
-    shecodeImage,
-    devfestImage
+// Use dynamic imports for image assets
+const imageUrls = [
+    new URL('../../assets/pluralsight image.png', import.meta.url).href,
+    new URL('../../assets/data structure and algorithms.jpg', import.meta.url).href,
+    new URL('../../assets/Machine-Learning.png', import.meta.url).href,
+    new URL('../../assets/google africa.webp', import.meta.url).href,
+    new URL('../../assets/andela image.png', import.meta.url).href,
+    new URL('../../assets/outreachy.png', import.meta.url).href,
+    new URL('../../assets/defcon.png', import.meta.url).href,
+    new URL('../../assets/shecode.png', import.meta.url).href,
+    new URL('../../assets/devfest.png', import.meta.url).href
 ];
 
 export const tempCoursesData = [{

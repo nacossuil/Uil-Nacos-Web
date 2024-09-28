@@ -1,7 +1,3 @@
-import TechnologyopportunitiesImg
-    from
-        '@/assets/Opportunities/Technology-in-Schools-Opportunities-and-Challenges.jpg';
-
 const PageIntro = () => {
     return (
         <section className="section-intro">
@@ -20,8 +16,7 @@ const PageIntro = () => {
                     </div>
                     <div className="intro__content-img-box">
                         <img
-                            src={TechnologyopportunitiesImg}
-                            alt="Opportunities in Technology"
+                            src={new URL('../../../assets/Technology-in-Schools-Opportunities-and-Challenges.jpg', import.meta.url).href}                            alt="Opportunities in Technology"
                         />
                     </div>
                 </div>

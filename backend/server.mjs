@@ -40,10 +40,10 @@ const upload = multer({storage: storage});
 // Middleware
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
-app.use(cors({
-    origin: 'https://uil-nacos-web.vercel.app'
-}));
-
+// app.use(cors({
+//     origin: 'https://uil-nacos-web.vercel.app'
+// }));
+// https://uil-nacos-web.vercel.app/
 // Connect to MongoDB
 mongoose.connect(`${mongoDBUrI}`).then(() => {
     console.log("Connected successfully to MongoDB");
@@ -101,7 +101,7 @@ app.get('/api/execs', sessionvalidator, async (req, res) => {
     try {
         const {session} = req.query;
 
-        if (!session) return res.status(400).json({message: "Session is required in the request body"});
+        if (!session) return res.status(400).json({message: "Session is required in the request object"});
         const execs = await Execs
             .findBySession(session)
 
