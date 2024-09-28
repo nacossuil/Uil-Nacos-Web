@@ -1,12 +1,12 @@
-import pluralsightImage from '../../assets/Opportunities/pluralsight image.png';
-import dataStructuresImage from '../../assets/Opportunities/data structure and algorithms.jpg';
-import machineLearningImage from '../../assets/Opportunities/Machine-Learning.avif';
-import googleAfricaImage from '../../assets/Opportunities/google africa.webp';
-import andelaImage from '../../assets/Opportunities/andela image.png';
-import outreachyImage from '../../assets/Opportunities/outreachy.png';
-import defconImage from '../../assets/Opportunities/defcon.png';
-import shecodeImage from '../../assets/Opportunities/shecode.png';
-import devfestImage from '../../assets/Opportunities/devfest.png';
+import pluralsightImage from '@/assets/Opportunities/pluralsight image.png'
+import dataStructuresImage from '@/assets/Opportunities/data structure and algorithms.jpg';
+import machineLearningImage from '@/assets/Opportunities/Machine-Learning.avif';
+import googleAfricaImage from '@/assets/Opportunities/google africa.webp';
+import andelaImage from '@/assets/Opportunities/andela image.png';
+import outreachyImage from '@/assets/Opportunities/outreachy.png';
+import defconImage from '@/assets/Opportunities/defcon.png';
+import shecodeImage from '@/assets/Opportunities/shecode.png';
+import devfestImage from '@/assets/Opportunities/devfest.png';
 
 export const imageUrls = [
     pluralsightImage,

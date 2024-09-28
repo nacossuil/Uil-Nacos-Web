@@ -1,6 +1,6 @@
 import TechnologyopportunitiesImg
     from
-        '../../../assets/Opportunities/Technology-in-Schools-Opportunities-and-Challenges.jpg';
+        '@/assets/Opportunities/Technology-in-Schools-Opportunities-and-Challenges.jpg';
 
 const PageIntro = () => {
     return (
