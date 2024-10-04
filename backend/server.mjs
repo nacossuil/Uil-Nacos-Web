@@ -6,7 +6,7 @@ import Events from './EventSchema.mjs';
 import cloudinary from 'cloudinary';
 import {CloudinaryStorage} from 'multer-storage-cloudinary';
 import multer from 'multer';
-import {newEventValidator, execsValidator, sessionvalidator} from "./validators.mjs";
+import {execsValidator, newEventValidator, sessionvalidator} from "./validators.mjs";
 import {validationResult} from 'express-validator';
 import cors from 'cors';
 
@@ -14,7 +14,6 @@ dotenv.config();
 const app = express();
 const mongoDBUrI = process.env.mongoDBUrI;
 const portNumber = process.env.PORT;
-
 
 
 // Configure Cloudinary
@@ -40,10 +39,9 @@ const upload = multer({storage: storage});
 // Middleware
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
-// app.use(cors({
-//     origin: 'https://uil-nacos-web.vercel.app'
-// }));
-// https://uil-nacos-web.vercel.app/
+app.use(cors({
+    origin: 'http://localhost:5173'
+}));
 // Connect to MongoDB
 mongoose.connect(`${mongoDBUrI}`).then(() => {
     console.log("Connected successfully to MongoDB");
@@ -76,16 +74,10 @@ app.post('/api/events', upload.single('image'), newEventValidator, async (req, r
         const {title, description, startDateAndTime, endDateAndTime, price, venue} = req.body;
 
         const eventData = {
-            title,
-            description,
-            startDateAndTime,
-            endDateAndTime,
-            price,
-            venue
+            title, description, startDateAndTime, endDateAndTime, price, venue
         };
 
-        if (!req.file)
-            res.status(400).json("An image file has to be attached.");
+        if (!req.file) res.status(400).json("An image file has to be attached.");
         eventData.image = req.file.path; // This should be the Cloudinary URL
         const event = new Events(eventData);
         const newEvent = await event.save();

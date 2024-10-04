@@ -11,7 +11,7 @@ const imageUrls = [
     new URL('../../assets/devfest.png', import.meta.url).href
 ];
 
-export const tempCoursesData = [{
+export const coursesData = [{
     img: imageUrls[0],
     title: "Web Development Fundamentals",
     description: "Master HTML, CSS, and JavaScript with hands-on projects and expert guidance. Build responsive websites and interactive web applications.",
@@ -28,7 +28,7 @@ export const tempCoursesData = [{
     level: "Advanced",
 }];
 
-export const tempScholarshipsData = [{
+export const scholarshipsData = [{
     img: imageUrls[3],
     title: "Google Africa Developer Scholarship",
     description: "Fully-funded program for aspiring and professional developers in Africa. Gain skills in mobile and web development, cloud computing, and machine learning.",
@@ -44,7 +44,7 @@ export const tempScholarshipsData = [{
     level: "Financial Support",
 }];
 
-export const tempEventsData = [{
+export const eventsData = [{
     img: imageUrls[6],
     title: "DEF CON",
     description: "One of the world's largest hacker conventions, DEF CON offers a student track, which includes workshops, talks, and hands-on experience for students interested in hacking and cybersecurity.",
