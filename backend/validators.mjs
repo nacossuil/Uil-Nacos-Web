@@ -36,3 +36,8 @@ export const sessionvalidator = [
         .check("session")
         .custom(sessionIsValid)
         .withMessage("Invalid Session. The valid format is - 2022-2023")];
+
+export const formValidator = [
+    check.check('email').isEmail().withMessage("Invalid Email address."),
+    check.check('subject').notEmpty().withMessage("Field cannot be blank"),
+    check.check('message').notEmpty().withMessage("Field cannot be blank")]

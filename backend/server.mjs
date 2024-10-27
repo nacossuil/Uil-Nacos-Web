@@ -6,14 +6,18 @@ import Events from './EventSchema.mjs';
 import cloudinary from 'cloudinary';
 import {CloudinaryStorage} from 'multer-storage-cloudinary';
 import multer from 'multer';
-import {execsValidator, newEventValidator, sessionvalidator} from "./validators.mjs";
+import {execsValidator, formValidator, newEventValidator, sessionvalidator} from "./validators.mjs";
 import {validationResult} from 'express-validator';
+import nodemailer from 'nodemailer';
 import cors from 'cors';
 
 dotenv.config();
+
 const app = express();
 const mongoDBUrI = process.env.mongoDBUrI;
 const portNumber = process.env.PORT;
+const nacosUnilorinEmailAddress = process.env.NACOSS_UNILORIN_EMAIL;
+const nacossUnilorinEmailPassword = process.env.NACOSS_UNILORIN_EMAIL_PASSWORD;
 
 
 // Configure Cloudinary
@@ -132,8 +136,49 @@ app.post('/api/execs', upload.single('image'), execsValidator, async (req, res) 
     }
 });
 
+app.post('api/submit-contact-form', formValidator, async (req, res) => {
+    const errors = validationResult(req);
+
+    if (!errors.isEmpty()) {
+        return res.status(400).json({errors: errors.array()});
+    }
+
+    const {email, subject, message} = req.body;
+    try {
+        sendEmail(email, subject, message);
+        return res.status(200).json();
+    } catch (err) {
+        return res.status(400).json({Error: "An error occurred."});
+    }
+})
+
+function sendEmail(from, subject, text) {
+    // Create a transporter using SMTP
+    let transporter = nodemailer.createTransport({
+        host: 'smtp.example.com', port: 587, secure: false, // Use TLS
+        auth: {
+            user: nacosUnilorinEmailAddress, pass: nacossUnilorinEmailPassword
+        }
+    });
+
+    // email options
+    let mailOptions = {
+        from, to: nacosUnilorinEmailAddress, subject, text
+    };
+
+    // Send email
+    transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+            console.log('An error occurred when sending email.',);
+            throw error;
+        } else {
+            console.log("Email sent");
+        }
+    });
+}
+
 // Error handling middleware
-app.use((err, req, res) => {
+app.use((req, res, next) => {
     // console.error(err);
     res.status(500).json({message: "Internal Server Error: Something went wrong!"});
 });
