@@ -3,11 +3,13 @@ import axios from 'axios';
 import grid from "../../../assets/grid-bg.svg";
 import emailpng from "../../../assets/email-icon.svg";
 import linkedInpng from "../../../assets/linkedin-icon.svg";
+import Grid from "@/assets/grid-bg.svg";
 
 // Base URL
 const BASE_API_URL = "http://localhost:8000/api/execs";
 
 // ExecutiveCard Component
+// eslint-disable-next-line react/prop-types
 const ExecutiveCard = ({executive}) => {
     return (
         <div
@@ -20,7 +22,7 @@ const ExecutiveCard = ({executive}) => {
                     onError={(e) => {
                         e.target.src = 'https://via.placeholder.com/200x200?text=No+Image';
                     }}
-                    loading="lazy"
+                    loading="eager"
                 />
             </div>
             <div className="flex flex-col items-center justify-center flex-grow">
@@ -135,10 +137,15 @@ const Executives = () => {
     return (
         <section
             id="executives"
-            className="relative container mx-auto flex flex-col justify-center items-center sm:px-8 md:px-16"
-            style={{backgroundImage: `url(${grid})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat'}}
-        >
-            <div className="flex flex-col items-center w-full max-w-6xl mx-auto px-4 my-12">
+            className="min-h-screen bg-repeat"
+            style={{
+                backgroundImage: `url(${Grid})`,
+                backgroundSize: 'cover',
+                backgroundRepeat: 'no-repeat',
+                backgroundAttachment: 'fixed'
+            }}>
+            <div
+                className="flex flex-col items-center w-full max-w-6xl mx-auto px-4 pt-12 pb-0"> {/* Changed my-12 to pt-12 pb-0 */}
                 <h1 className="text-4xl font-bold mb-4 mt-8 text-center">Meet Your Executives</h1>
                 <h4 className="text-xl text-gray-600 mb-8 text-center max-w-2xl">
                     Meet the passionate students driving the success of the community 🚀
@@ -156,7 +163,7 @@ const Executives = () => {
                         Current Executives
                     </button>
                     <button
-                        className={`p-4 w-full rounded-[10px] bg-[#1D4E8D] shadow-md text-white`}
+                        className={`p-4 w-full rounded-[10px] bg-[rgba(19,134,1,1)] shadow-md text-white`}
                         onClick={() => handleTabClick('past')}
                         disabled={activeTab === 'past'}
                         aria-label="View Past Executives"
@@ -167,7 +174,7 @@ const Executives = () => {
 
                 {/* Year Range Display */}
                 <div className="mb-6 text-lg font-medium text-gray-700">
-                    Showing Executives for <span className="text-blue-700">{yearRange}</span> Session
+                    Showing Executives for the <span className="text-green-700">{yearRange}</span> Session
                 </div>
 
                 {/* Executives Grid */}
