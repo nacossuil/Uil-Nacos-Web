@@ -1,18 +1,28 @@
+.values-section {
+    padding-top: 3rem;
+    background-image: url('../../../assets/grid-bg.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center top;
+}
+
 .values {
     width: 100%;
-    margin: 3.75rem auto;
-    padding: 5.3125rem 6.25rem;
-    background: #f7f5f5;
+    padding: 0 6.25rem;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
     gap: 1.5rem;
 }
 
 .value {
-    padding: 2rem 1.75rem 1.75rem;
+    padding: 0 1.75rem;
     border-radius: 1rem;
     box-shadow: 0 1.25rem 2rem .25rem rgba(0, 0, 0, 0.06);
+    background-color: #f7f5f5;
+}
 
+.value:hover {
+    background-color: rgba(19, 134, 1, 1);
 }
 
 .mr-0 {
@@ -21,6 +31,7 @@
 
 .value img {
     width: 3rem;
+    margin-top: 1.75rem;
     margin-bottom: 1rem;
 }
 
@@ -35,34 +46,30 @@
     color: rgba(24, 28, 23, 0.8);
     font-size: 1rem;
     font-weight: 400;
+    padding-bottom: 1.75rem;
 }
 
-@media screen and (max-width:768px) {
+@media screen and (max-width: 768px) {
     .values {
-        padding: 2rem;
+        padding: 0 2rem;
     }
 }
 
-@media screen and (max-width:645px) {
+@media screen and (max-width: 645px) {
     .value img {
         width: 2rem;
-
     }
 
     .value h4 {
-
         font-size: 1.2rem;
-
     }
 
     .value p {
-
         font-size: .9rem;
     }
-
 }
 
-@media screen and (max-width:425px) {
+@media screen and (max-width: 425px) {
     .values {
         grid-template-columns: 1fr;
     }

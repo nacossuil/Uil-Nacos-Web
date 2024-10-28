@@ -144,7 +144,7 @@ const answer5 = (
     <p>Have questions or need more information? Reach out to us through:</p>
     <p>
       - Email:{" "}
-      <a href="mailto:nacosunilorin@gmail.com">nacosunilorin@gmail.com</a>
+      <a href="mailto:nacossuil@gmail.com">nacosunilorin@gmail.com</a>
       <br />- Social Media: Send us a message on Facebook, Twitter, Instagram,
       or LinkedIn
     </p>

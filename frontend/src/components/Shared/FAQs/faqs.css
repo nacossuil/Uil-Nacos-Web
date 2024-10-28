@@ -1,163 +1,139 @@
-    * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+.faqs-section {
+    padding: 5rem 1rem;
 }
 
 .faqs {
-    max-width: 80rem;
-    margin: 3.875rem auto;
-    /* background: #f7f5f5; */
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .faqs h2 {
     color: #181c17;
-    font-size: 2.25rem;
+    font-size: 2.5rem;
     font-weight: 700;
     text-align: center;
-    margin-bottom: 6.25rem;
+    margin-bottom: 3rem;
 }
 
 .faqs-container {
     display: flex;
     justify-content: space-between;
     gap: 2rem;
-  
-    /* align-items: center; */
+}
+
+.faqs-questions,
+.faqs-answers {
+    flex-basis: calc(50% - 1rem);
+    background: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
 }
 
 .faqs-questions {
-    background: #fff;
-    text-align: left;
-    padding: 2.25rem 0 2.75rem;
-    border: .0625rem solid rgba(17, 17, 17, 0.2);
-    border-radius: 1.5rem;
-    flex-basis: 50%;
+    padding: 2rem;
 }
 
-.faqs-questions>h3 {
+.faqs-questions > h3,
+.faqs-answers > h3 {
     color: #111111;
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     font-weight: 700;
-    margin: 0 1.75rem;
-    /* padding-bottom: 1.5625rem;
-    border-bottom: .0625rem solid rgba(17, 17, 17, 0.2); */
-}
-
-.faqs-questions .ans {
-    color: #fff;
-    font-size: 1.75rem;
-    font-weight: 700;
-    margin: 0 1.75rem;
-}
-
-.faqs-questions hr {
-    background: rgba(17, 17, 17, 0.12);
-    height: 0.0625rem;
-    margin-top: 1.5625rem;
     margin-bottom: 1.5rem;
-    border: none;
 }
 
-.faqs-answers .line {
-    background: rgba(255, 255, 255, 0.2);
-    height: 0.0625rem;
-    margin-top: 1.5625rem;
-    margin-bottom: 1.5rem;
-    border: none;
+.faqs-questions-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
-.faqs-questions .faqs-questions-list {
-    margin: 0 1.75rem;
-}
-
-.faqs-questions-list button {
+.faq-question {
     color: rgba(24, 28, 23, 0.8);
     background: rgba(25, 38, 102, 0.03);
     font-weight: 500;
     text-align: left;
     width: 100%;
-    padding: 1.25rem;
-    margin-bottom: 1.375rem;
-    border-radius: 0.75rem;
-    border: 0.0625rem solid rgba(24, 28, 23, 0.12);
+    padding: 1rem 1.25rem;
+    border-radius: 0.5rem;
+    border: 1px solid rgba(24, 28, 23, 0.12);
     transition: all 0.3s ease-in-out;
     cursor: pointer;
 }
 
-.faqs-questions-list button:hover {
+.faq-question:hover {
     background: rgba(25, 38, 102, 0.1);
 }
 
-.faqs-questions-list .active {
+.faq-question.active {
     color: #fff;
     background: rgba(19, 134, 1, 1);
     font-weight: 700;
-    border: 0.0625rem solid rgba(93, 50, 227, 0.16);
-}
-
-.faqs-questions-list .active:hover {
-    background: rgba(19, 134, 1, 1);
-}
-
-
-/* Answers Section... */
-
-.faqs-answers p {
-    font-size: 1.25rem;
-    line-height: 2rem;
-    margin: 0 1.25rem;
+    border: 1px solid rgba(93, 50, 227, 0.16);
 }
 
 .faqs-answers {
     color: #fff;
     background: rgba(25, 38, 102, 1);
-    text-align: left;
-    padding: 2.25rem 0 2.75rem;
-    border: .0625rem solid rgba(17, 17, 17, 0.2);
-    border-radius: 1.5rem;
-    flex-basis: 50%;
+    padding: 2rem;
 }
 
-.faqs-answers>h3 {
-    font-size: 1.75rem;
-    font-weight: 700;
-    margin: 0 1.75rem;
+.faq-answer {
+    font-size: 1rem;
+    line-height: 1.6;
 }
 
-@media screen and (max-width:1280px) {
-    .faqs-container {
-        padding: 0rem 1rem;
-    }
+.faq-answer p {
+    margin-bottom: 1rem;
 }
 
+.faq-answer h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.25rem;
+}
 
-@media screen and (max-width:1024px) {
+.faq-answer ul {
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 1024px) {
     .faqs-container {
         flex-direction: column;
-        padding: 0rem 2rem  ;
     }
 
-    .faqs-answers >h3, .faqs-questions>h3   {
+    .faqs-questions,
+    .faqs-answers {
+        flex-basis: 100%;
+    }
+
+    .faqs h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .faqs-questions > h3,
+    .faqs-answers > h3 {
         font-size: 1.3rem;
     }
-    
-
-    .faqs > h2 {
-        font-size: 1.8rem;
-        margin-bottom: 4rem;
-    }
-
 }
 
-@media screen and (max-width:425px) {
-    .faqs-answers >h3{
-        font-size: 1.2rem;
+@media screen and (max-width: 480px) {
+    .faqs-section {
+        padding: 3rem 1rem;
     }
 
-    .faqs > h2 {
-        font-size: 1.5rem;
-        margin-bottom: 4rem;
+    .faqs h2 {
+        font-size: 1.75rem;
     }
- 
+
+    .faqs-questions,
+    .faqs-answers {
+        padding: 1.5rem;
+    }
+
+    .faq-question {
+        padding: 0.75rem 1rem;
+    }
 }
