@@ -1,16 +1,17 @@
+/* Hero About Section Styles */
+
 .hero-about {
     width: 100%;
-    height: 300px; /* Adjust as needed */
+    height: 300px;
+    background-image: url('./../../../assets/grid-bg.svg');
     background-size: cover;
-    background: #dcffd7 url('./../../../assets/grid-bg.svg') no-repeat center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.hero-about-cont {
-    text-align: center;
-}
 
 .hero-about-heading {
     margin: 0;
@@ -18,16 +19,33 @@
     font-size: 2.25rem;
     font-weight: 700;
     color: #212521;
+    text-align: center;
 }
+
+.hero-text {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: bold;
+    line-height: 28px;
+    margin-bottom: 1.5rem;
+}
+
+/* Responsive Font Sizes */
 
 @media screen and (max-width: 640px) {
     .hero-about-heading {
         font-size: 1.8rem;
+    }
+    .hero-text {
+        font-size: 2.5rem;
     }
 }
 
 @media screen and (max-width: 425px) {
     .hero-about-heading {
         font-size: 1.5rem;
+    }
+    .hero-text {
+        font-size: 2rem;
     }
 }

@@ -1,16 +1,17 @@
-import "./hero.css";
-
+import "./eventshero.css";
 import heroImg from "../../../assets/imgs/eventshero.png";
 
-const
-    EventsHero = () => {
-        return (
-            <div className="hero-about">
-                <div className="hero-about-cont">
-                    <h1 className="hero-about-heading">Events and Bootcamps</h1>
-                    <img src={heroImg} alt="bgImg"/></div>
+const EventsHero = () => {
+    return (
+        <div className="hero-about">
+            <div className="hero-about-cont">
+                <p className="text-center leading-[28px] font-bold text-[3rem] mb-4 hero-text">
+                    Events and Bootcamps
+                </p>
+                <img src={heroImg} alt="bgImg"/>
             </div>
-        );
-    };
+        </div>
+    );
+};
 
 export default EventsHero;
