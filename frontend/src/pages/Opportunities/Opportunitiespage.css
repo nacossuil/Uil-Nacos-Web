@@ -114,53 +114,11 @@ img {
 }
 
 .btn-md {
-    padding: 0.75rem 1.75rem;
+    padding: 0.75rem 1.00rem;
     font-size: var(--fs-text-sm);
 }
 
-/*##### INTRO SECTION #####*/
-
-.section-intro {
-    padding-block: 3rem;
-    background-color: var(--color-primary-tint);
-    background-image: url('../../../public/Opportunities/Grid.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-.intro__content {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    align-items: center;
-}
-
-@media (max-width: 50em) {
-    .intro__content {
-        grid-template-columns: 1fr;
-        row-gap: 6rem;
-    }
-
-    .intro__content-img-box {
-        display: block;
-    }
-
-    .intro__content-img-box img {
-        margin: 0 auto;
-        width: 90%;
-    }
-}
-
-.intro__content-img-box {
-    display: grid;
-    place-items: center;
-}
-
-.intro__content-img-box img {
-    width: 80%;
-    justify-self: right;
-}
-
-/*##### RESOURCES SECTION #####*/
+/*##### RESOURCES AND EVENTS SECTION #####*/
 
 .section-resources,
 .section-events {

@@ -1,12 +1,8 @@
 import './Opportunitiespage.css';
 import PageIntro from './components/PageIntro';
 import Resources from './components/Resources';
-import Events from './components/Events';
-import {
-    coursesData,
-    scholarshipsData,
-    eventsData,
-} from './opportunitiesPageData.js';
+import Events from "./components/Events.jsx";
+import {coursesData, eventsData, scholarshipsData,} from './opportunitiesPageData.js';
 
 const OpportunitiesPage = () => {
     return (
@@ -18,14 +14,11 @@ const OpportunitiesPage = () => {
                     <Resources data={scholarshipsData} heading="Discover Scholarships & Financial Support"/>
                 </section>
                 <section id="events-section">
-                    <Events
-                        eventsData={eventsData}
-                        heading="Tech Competitions and Hackathons"
+                    <Events heading="Tech Competitions and Hackathons" eventsData={eventsData}
                     />
                 </section>
             </div>
         </div>
     );
 }
-
 export default OpportunitiesPage;
