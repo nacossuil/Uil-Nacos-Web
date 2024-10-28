@@ -6,7 +6,7 @@ import linkedInpng from "../../../assets/linkedin-icon.svg";
 import Grid from "@/assets/grid-bg.svg";
 
 // Base URL
-const BASE_API_URL = "http://localhost:8000/api/execs";
+const BASE_API_URL = "https://uil-nacos-web.onrender.com/api/execs";
 
 // ExecutiveCard Component
 // eslint-disable-next-line react/prop-types
