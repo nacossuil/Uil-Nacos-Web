@@ -7,15 +7,15 @@ import FAQs from "../../components/Shared/FAQs/Faqs";
 import "./HomePage.css";
 
 const HomePage = () => {
-  return (
-    <main>
-      <Hero />
-      <About />
-      <Events />
-      <Executives />
-      <FAQs />
-    </main>
-  );
+    return (
+        <main>
+            <Hero/>
+            <About/>
+            <Executives/>
+            <Events/>
+            <FAQs/>
+        </main>
+    );
 };
 
 export default HomePage;
