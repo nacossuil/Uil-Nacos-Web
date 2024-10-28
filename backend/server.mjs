@@ -9,7 +9,7 @@ import multer from 'multer';
 import {execsValidator, formValidator, newEventValidator, sessionvalidator} from "./validators.mjs";
 import {validationResult} from 'express-validator';
 import nodemailer from 'nodemailer';
-import cors from 'cors';
+import cors from 'cors'
 
 dotenv.config();
 
@@ -40,18 +40,40 @@ const storage = new CloudinaryStorage({
 // Configure multer with Cloudinary storage
 const upload = multer({storage: storage});
 
+
+//cors
+const allowedOrigins = [  //
+    'https://uil-nacos-web.vercel.app'  //To be replaced with the actual Netlify domain when deployed.
+];
+
+const corsOptions = {
+    origin: function (origin, callback) {
+        // Allow requests with no origin (like mobile apps or curl requests)
+        if (!origin || allowedOrigins.indexOf(origin) !== -1) return callback(null, true);
+        if (allowedOrigins.indexOf(origin) === -1) {
+            const msg = 'The CORS policy for this site does not allow access from the specified Origin.';
+            return callback(new Error(msg), false);
+        }
+        return callback(null, true);
+    }, methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], allowedHeaders: ['Content-Type', 'Authorization']
+};
+
 // Middleware
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
-app.use(cors({
-    origin: 'http://localhost:5173'
-}));
+app.use(cors(corsOptions));
+app.use((req, res, next) => {
+    console.log('Origin:', req.headers.origin);
+    next();
+});
+
 // Connect to MongoDB
 mongoose.connect(`${mongoDBUrI}`).then(() => {
     console.log("Connected successfully to MongoDB");
 }).catch((error) => {
     console.error("Failed to connect to MongoDB");
 });
+
 
 // Routes
 app.get('/api/events', async (req, res) => {
