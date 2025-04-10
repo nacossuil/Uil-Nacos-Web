@@ -4,6 +4,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center top;
+    padding-bottom: 50px;
 }
 
 .values {
@@ -17,12 +18,20 @@
 .value {
     padding: 0 1.75rem;
     border-radius: 1rem;
-    box-shadow: 0 1.25rem 2rem .25rem rgba(0, 0, 0, 0.06);
+    /* box-shadow: 0 1.25rem 2rem .25rem rgba(0, 0, 0, 0.06); */
+    border: 1px solid #e0e0e0;
     background-color: #f7f5f5;
 }
 
 .value:hover {
-    background-color: rgba(19, 134, 1, 1);
+    background-color: #194b88;
+    color: white;
+    transition: all 0.3s ease-in-out;
+}
+
+
+.hover-white{
+    color: white;
 }
 
 .mr-0 {
@@ -36,14 +45,14 @@
 }
 
 .value h4 {
-    color: #181C17;
     font-size: 1.5rem;
     font-weight: 600;
     margin-bottom: 1rem;
 }
 
+
+
 .value p {
-    color: rgba(24, 28, 23, 0.8);
     font-size: 1rem;
     font-weight: 400;
     padding-bottom: 1.75rem;

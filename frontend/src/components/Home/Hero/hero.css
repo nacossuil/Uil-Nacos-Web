@@ -1,11 +1,19 @@
-.home-hero {}
+.home-hero {
+    position: relative;
+    padding: 80px 0;
+    background-color: #f5f5f5; /* Light background for contrast */
+    color: #333; /* Ensure text is readable */
+}
 
 .home-hero-container {
     display: flex;
     /* height: 100vh; */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-.home-hero-content>div {}
+.home-hero-content > div {}
 
 .home-hero-img {
     flex: 1 1 50%;
@@ -15,6 +23,8 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for depth */
 }
 
 .home-hero-content {
@@ -22,8 +32,8 @@
     display: flex;
     padding: 0rem 0rem 0rem 4rem;
     padding-top: 15%;
+    align-items: flex-start; /* Ensure content aligns at the top */
 }
-
 
 .home-hero-titles {
     display: flex;
@@ -37,43 +47,56 @@
     flex-direction: column;
     line-height: 1.2;
     font-weight: 600;
+    color: #194b88; /* Changed from any green to blue */
 }
 
 .home-hero-title--blue {
-    color: hsl(230, 61%, 25%);
+    color: #194b88 !important; /* Ensure this stays blue, matching your request */
     font-weight: 600;
 }
 
 .home-hero h3 {
     font-size: 1.8rem;
+    color: #194b88; /* Changed from any green to blue */
 }
 
 .home-hero-text {
     font-size: 1.3rem;
     max-width: 80%;
     margin-top: 1rem;
+    color: #666; /* Subtle text color for contrast */
+    line-height: 1.6;
 }
 
 .home-hero button {
     display: flex;
     align-items: center;
-    gap: 0rem .7rem;
+    gap: 0rem 0.7rem;
     font-size: 1.2rem;
     margin: 5rem 0rem 0rem 0rem;
-    color: #138601;
+    background-color: #194b88; /* Changed button background from green (#138601) to blue */
+    color: white; /* White text for contrast with blue background */
+    border: none;
+    padding: 12px 24px;
+    border-radius: 5px;
+    cursor: pointer;
     font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.home-hero button:hover {
+    background-color: #153a6a; /* Darker shade of blue for hover effect */
 }
 
 .home-hero button svg {
-    stroke-width: .2px;
+    stroke-width: 0.2px;
     width: 1.4rem;
     height: auto;
     animation: slideUpDown 600ms ease 0s infinite alternate none;
     position: relative;
     top: -12px;
+    fill: white; /* Ensure icon is white to match button text */
 }
-
-
 
 @keyframes slideUpDown {
     0% {
@@ -85,8 +108,7 @@
     }
 }
 
-
-@media screen and (max-width:1024px) {
+@media screen and (max-width: 1024px) {
     .home-hero {}
 
     .home-hero-container {
@@ -98,7 +120,6 @@
         flex: 1 1 0;
     }
 
-
     .home-hero-content {
         flex: 1 1 0;
         display: flex;
@@ -106,13 +127,13 @@
         align-items: center;
     }
 
-
     .home-hero-titles h1 {
         font-size: 1.8rem;
     }
 
     .home-hero h3 {
         font-size: 1.3rem;
+        color: #194b88; /* Ensure blue color in media query */
     }
 
     .home-hero-text {
@@ -124,7 +145,7 @@
     } */
 }
 
-@media screen and (max-width:800px) {
+@media screen and (max-width: 800px) {
     .home-hero-container {
         flex-direction: column;
     }
@@ -140,11 +161,34 @@
     .home-hero-content {
         order: 1;
         padding: 4rem;
+        align-items: flex-start; /* Reset alignment for mobile */
+    }
+
+    .home-hero button {
+        margin: 3rem 0rem 0rem 0rem; /* Adjust button margin for mobile */
     }
 }
 
-@media screen and (max-width:425px) {
+@media screen and (max-width: 425px) {
     .home-hero-content {
         padding: 4rem 2rem;
+    }
+
+    .home-hero-titles h1 {
+        font-size: 1.5rem;
+    }
+
+    .home-hero h3 {
+        font-size: 1.1rem;
+    }
+
+    .home-hero-text {
+        font-size: 1rem;
+        max-width: 100%;
+    }
+
+    .home-hero button {
+        font-size: 1rem;
+        padding: 10px 20px;
     }
 }

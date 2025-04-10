@@ -13,6 +13,7 @@
 
 .textBig {
     font-size: 36px;
+    color: white;
     font-weight: 700;
     line-height: 48px;
 }
@@ -23,11 +24,10 @@
     line-height: 26px;
 }
 
-
-/* first div */
+/* First Div */
 
 .c-container .first {
-    background: #dcffd7;
+    background: #194b88; /* Kept as is, no green here */
     width: 100%;
     background-image: url('./../../../src/assets/Opportunities/Grid.png');
     background-size: cover;
@@ -41,10 +41,10 @@
 .first .c-heading>h1 {
     text-align: center;
     margin: 2.8rem auto 0;
+    color: white; /* Ensure text is white for contrast against blue background */
 }
 
-
-/* second div  */
+/* Second Div */
 
 .second {
     margin-top: 5rem;
@@ -54,6 +54,7 @@
     padding: 1rem;
     width: 49rem;
     margin-bottom: 3rem;
+    color: #333; /* Default text color for contrast */
 }
 
 .form {
@@ -78,6 +79,7 @@ input::placeholder,
     font-size: 16px;
     font-weight: 400;
     line-height: 26px;
+    color: #666; /* Subtle placeholder color */
 }
 
 .form>img {
@@ -112,16 +114,17 @@ button.btn-submit {
     margin-top: 40px;
     width: 100%;
     font-family: 'DM Sans', sans-serif;
-    background-color: #138601;
+    background-color: #194b88; /* Changed from #138601 (green) to blue */
     color: #fff;
     cursor: pointer;
     border-radius: 8px;
+    transition: all 0.3s ease-in; /* Smooth transition */
 }
 
 .btn-submit:hover {
-    transition: all 0.3s ease-in;
     filter: brightness(90%);
     color: white;
+    background-color: #153a6a; /* Darker shade of blue on hover for better feedback */
 }
 
 .switch {
@@ -136,17 +139,19 @@ button.btn-submit {
 .switch>p {
     font-size: 1.2rem;
     font-weight: 600;
-    color: red;
+    color: red; /* Kept red as is, no green here */
 }
 
 @media (max-width: 678px) {
     .first {
         width: 100%;
     }
+
     .second {
         margin: 2rem auto;
         width: 100%;
     }
+
     .second .s-text {
         font-weight: 700;
         line-height: 26px;
@@ -154,14 +159,22 @@ button.btn-submit {
         width: auto;
         padding: 0.5rem;
         margin-bottom: 1rem;
+        color: #333; /* Ensure text remains readable */
     }
+
     .switch>p {
         font-size: 12px;
         font-weight: 500;
         line-height: 26px;
+        color: red; /* Kept red */
     }
+
     .form {
         width: 100%;
         padding: 0 1rem;
+    }
+
+    button.btn-submit {
+        font-size: 0.9rem; /* Slightly smaller button text on mobile */
     }
 }

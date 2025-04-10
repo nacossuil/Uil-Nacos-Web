@@ -29,17 +29,19 @@
     max-width: 100%;
     height: auto;
     object-fit: contain;
+    border-radius: 8px; 
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
 }
 
 .about-page-main .section1 h4 {
-    color: rgba(19, 134, 1, 1);
+    color: #194b88; 
     font-size: 1.25rem;
     font-weight: 700;
-    margin-bottom: .75rem;
+    margin-bottom: 0.75rem;
 }
 
 .about-page-main .section1 h2 {
-    color: rgba(24, 28, 23, 1);
+    color: rgba(24, 28, 23, 1); 
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 1.75rem;
@@ -47,13 +49,13 @@
 }
 
 .section1 p {
-    color: rgba(24, 28, 23, 0.8);
+    color: rgba(24, 28, 23, 0.8); 
     font-weight: 400;
     margin-bottom: 1.5rem;
 }
 
 .section1 ul {
-    color: rgba(24, 28, 23, 0.8);
+    color: rgba(24, 28, 23, 0.8); 
     margin-bottom: 1.5rem;
     padding-left: 1.5rem;
 }
@@ -63,7 +65,7 @@
 }
 
 .learn-more-btn {
-    color: #138601;
+    color: #194b88; 
     border: none;
     font-size: 1.1rem;
     font-weight: 1000;
@@ -71,11 +73,25 @@
     display: flex;
     align-items: center;
     gap: 15px;
-    transition: background-color 0.3s ease;
+    padding: 12px 24px; 
+    border-radius: 5px; 
+    background-color: transparent; 
+    transition: color 0.3s ease, border-color 0.3s ease; 
+}
+
+.learn-more-btn:hover {
+    color: white; 
+    background-color: #194b88; 
+    border: 2px solid #194b88;
 }
 
 .arrow-icon {
     animation: upDown 1s ease-in-out infinite;
+    fill: #194b88;
+}
+
+.learn-more-btn:hover .arrow-icon {
+    fill: white; 
 }
 
 @keyframes upDown {
@@ -112,11 +128,17 @@
     .about-page-main .section1 h2 {
         font-size: 2rem;
     }
+
+    .learn-more-btn {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
 }
 
 @media screen and (max-width: 480px) {
     .about-page-main .section1 {
         padding: 2rem 1.5rem;
+        min-height: 80vh;
     }
 
     .about-page-main .section1 h2 {
@@ -125,5 +147,10 @@
 
     .about-page-main .section1 h4 {
         font-size: 1.1rem;
+    }
+
+    .learn-more-btn {
+        font-size: 0.9rem;
+        padding: 8px 16px;
     }
 }

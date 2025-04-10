@@ -1,5 +1,5 @@
 import "./footer.css";
-import nacosLogo from "../../assets/new-nacos-logo.png";
+import nacosLogo from "../../assets/imgs/nacos-logo.png";
 import unilorinLogo from "../../assets/unilorin-logo.svg";
 import {BsInstagram, BsTwitter} from "react-icons/bs";
 import {Link} from "react-router-dom";

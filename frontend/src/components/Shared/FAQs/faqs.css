@@ -36,7 +36,7 @@
 
 .faqs-questions > h3,
 .faqs-answers > h3 {
-    color: #111111;
+    /* color: white; */
     font-size: 1.5rem;
     font-weight: 700;
     margin-bottom: 1.5rem;
@@ -49,7 +49,7 @@
 }
 
 .faq-question {
-    color: rgba(24, 28, 23, 0.8);
+    /* color: white; */
     background: rgba(25, 38, 102, 0.03);
     font-weight: 500;
     text-align: left;
@@ -67,7 +67,7 @@
 
 .faq-question.active {
     color: #fff;
-    background: rgba(19, 134, 1, 1);
+    background: #194b88;
     font-weight: 700;
     border: 1px solid rgba(93, 50, 227, 0.16);
 }
@@ -79,15 +79,18 @@
 }
 
 .faq-answer {
+    color: white;
     font-size: 1rem;
     line-height: 1.6;
 }
 
 .faq-answer p {
     margin-bottom: 1rem;
+    color: #fff;
 }
 
 .faq-answer h3 {
+    color: white;
     margin-top: 1.5rem;
     margin-bottom: 0.5rem;
     font-size: 1.25rem;

@@ -1,6 +1,6 @@
 .hero-about {
     width: 100%;
-    background: #dcffd7 url('./../../../assets/grid-bg.svg') no-repeat center bottom;
+    background: #194b88  url('./../../../assets/grid-bg.svg') no-repeat center bottom;
     background-size: 90% auto;
     position: relative;
     padding-top: 2.75rem;
@@ -20,7 +20,7 @@
     font-family: Mulish, sans-serif;
     font-size: 2.25rem;
     font-weight: 700;
-    color: #212521;
+    color: white;
 }
 
 .hero-about-cont img {
