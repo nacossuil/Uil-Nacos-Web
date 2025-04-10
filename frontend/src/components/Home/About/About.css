@@ -1,10 +1,12 @@
 .home-about {
     padding-top: 2rem;
     padding-bottom: 0;
+    /* padding: 30px; */
 }
 
 .home-about-sec1 {
     display: flex;
+    padding: 80px;
 }
 
 .home-about .sec1-titles {
@@ -17,27 +19,31 @@
     font-size: 1.3rem;
     font-weight: 600;
     text-transform: uppercase;
-    color: #138601;
+    color: #194b88; /* Changed from #138601 (green) to blue */
 }
 
 .home-about button svg {
-    stroke-width: .2px;
+    stroke-width: 0.2px;
     width: 1.4rem;
     height: auto;
     animation: slideUpDown 600ms ease 0s infinite alternate none;
     position: relative;
     top: -12px;
+    fill: white; /* Ensure icon is white to match button */
 }
 
 .home-about .sec1-titles h1 {
     font-size: 2.3rem;
     line-height: 1.2;
     font-weight: 600;
+    color: #194b88; /* Changed from any green to blue */
 }
 
 .home-about .sec1-text {
     margin-top: 1rem;
     font-weight: 300;
+    color: #666; /* Subtle text color for contrast */
+    line-height: 1.6;
 }
 
 .home-about .sec1-content {
@@ -57,23 +63,29 @@
 .home-about .sec1-img img {
     width: 100%;
     object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for depth */
 }
 
 .home-about button {
     display: flex;
     align-items: center;
-    gap: 0rem .6rem;
+    gap: 0rem 0.6rem;
     font-size: 1.2rem;
     margin: 5rem 0rem 0rem 0rem;
-    color: #138601;
+    background-color: #194b88; /* Changed button background from #138601 to blue */
+    color: white; /* White text for contrast */
+    border: none;
+    padding: 12px 24px;
+    border-radius: 5px;
+    cursor: pointer;
     font-weight: 500;
     text-transform: capitalize;
+    transition: background-color 0.3s ease;
 }
 
-.home-about button svg {
-    stroke-width: .2px;
-    width: 1.5rem;
-    height: auto;
+.home-about button:hover {
+    background-color: #153a6a; /* Darker shade of blue for hover effect */
 }
 
 .home-about .home-about-sec4 {
@@ -97,17 +109,17 @@
     padding: 1rem;
     display: flex;
     flex-direction: column;
-    gap: .5rem 0rem;
+    gap: 0.5rem 0rem;
     z-index: 2;
     margin: 3rem;
-    border-radius: .75rem;
-    box-shadow: 0rem 1.25rem 1.25rem .25rem rgba(0, 0, 0, 0.08);
+    border-radius: 0.75rem;
+    box-shadow: 0rem 1.25rem 1.25rem 0.25rem rgba(0, 0, 0, 0.08);
 }
 
 .home-about .activities .activity-header {
     display: flex;
     align-items: center;
-    gap: .75rem;
+    gap: 0.75rem;
 }
 
 .home-about .activities .activity-icn svg {
@@ -118,10 +130,12 @@
 .home-about .activities .activity-title {
     font-size: 1.25rem;
     text-transform: capitalize;
+    color: #194b88; /* Changed to blue for consistency */
 }
 
 .home-about .activities .activity-text {
-    font-size: .85rem;
+    font-size: 0.85rem;
+    color: #666; /* Subtle text color */
 }
 
 .home-about .activities .activity-hack {
@@ -143,7 +157,8 @@
     width: 3.3rem;
     height: auto;
     position: absolute;
-    stroke-width: .0187rem;
+    stroke-width: 0.0187rem;
+    fill: #194b88; /* Changed arrow SVG fill to blue */
 }
 
 .home-about .activities .arr-t-left {
@@ -168,10 +183,11 @@
     text-align: center;
     font-size: 2.25rem;
     font-weight: 700;
+    color: #194b88; /* Changed to blue */
 }
 
 .home-about .activities-title .text-green {
-    color: #138601;
+    color: #194b88 !important; /* Changed from #138601 to blue */
 }
 
 .home-about .activities-img {
@@ -187,19 +203,20 @@
     inset: 1rem;
     width: 100%;
     height: 100%;
-    background: rgba(19, 134, 1, 0.20);
+    background: rgba(25, 75, 136, 0.20); /* Changed to blue transparency */
     border-radius: 3.75rem;
-    border: 2px solid #1DCA02;
+    border: 2px solid #194b88; /* Changed border from #1DCA02 to blue */
 }
 
 .home-about .activities-img img {
     width: 100%;
     height: auto;
+    border-radius: 8px;
 }
 
 @media screen and (max-width: 1280px) {
-    .home-about .sec1-titles h3 {
-        font-size: 1.2rem;
+    .home-about .sec1-titles h5 {
+        font-size: 1.1rem;
     }
 
     .home-about .sec1-titles h1 {
@@ -256,6 +273,7 @@
 
     .home-about .activities-title {
         font-size: 2rem;
+        color: #194b88; /* Ensure blue in media query */
     }
 }
 
@@ -274,7 +292,8 @@
 
     .home-about .activities-title {
         font-size: 1.8rem;
-        padding: 0rem .5rem;
+        padding: 0rem 0.5rem;
+        color: #194b88; /* Ensure blue */
     }
 
     .home-about .activities .arr-t-right {
@@ -293,7 +312,7 @@
     .home-about .activities .activity-header {
         display: flex;
         align-items: center;
-        gap: .75rem;
+        gap: 0.75rem;
     }
 
     .home-about .activities .activity-icn svg {
@@ -302,6 +321,7 @@
 
     .home-about .activities .activity-title {
         font-size: 1rem;
+        color: #194b88; /* Ensure blue */
     }
 
     .home-about .sec1-content > div {
@@ -338,5 +358,6 @@
 
     .home-about .activities .activities-title {
         font-size: 1.5rem;
+        color: #194b88; /* Ensure blue */
     }
 }

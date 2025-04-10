@@ -2,7 +2,7 @@ import {useState} from "react";
 import "./Navbar.css";
 import {NavLink, Link} from "react-router-dom";
 import {FaBars} from "react-icons/fa6";
-import img1 from "/src/assets/new-nacos-logo.png";
+import img1 from "/src/assets/imgs/nacos-logo.png";
 import img2 from "/src/assets/unilorin-logo.svg";
 
 const Navbar = () => {
@@ -56,7 +56,9 @@ const Navbar = () => {
                          style={{width: "auto", height: "75px"}}
                          alt=""
                     />
-                    <img src={img2} alt=""/>
+                    <img src={img2}
+                     style={{width: "auto", height: "75px"}}
+                     alt=""/>
                 </div>
             </Link>
             <button
