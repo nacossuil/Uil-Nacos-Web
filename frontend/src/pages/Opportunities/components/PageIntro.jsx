@@ -29,7 +29,6 @@ const PageIntro = () => {
         <section className="min-h-[300px] bg-[194b88] py-20">
             <div className="max-w-7xl mx-auto px-8">
                 <div className="flex flex-col lg:flex-row items-center justify-between gap-16">
-                    {/* Text Content */}
                     <div className="flex-1">
                         <motion.h1
                             initial={{ opacity: 0, y: 20 }}
