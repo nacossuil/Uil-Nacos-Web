@@ -1,6 +1,6 @@
 const answer1 = (
   <p>
-    NACOS Unilorin is open to all! Membership is automatic for students of:
+    NACOSS Unilorin is open to all! Membership is automatic for students of:
     <br />
     - Computer Science (CSC)
     <br />
@@ -20,7 +20,7 @@ const answer1 = (
 );
 const answer2 = (
   <div>
-    <p>Joining NACOS Unilorin is easy! Here's how:</p>
+    <p>Joining NACOSS Unilorin is easy! Here's how:</p>
     <p>
       1. <strong>Automatic Membership</strong>: If you're a student of CSC, TCS,
       CENG, ICS, or CEDU, you're already a member!
@@ -64,7 +64,7 @@ const answer2 = (
 const answer3 = (
   <div>
     <p>
-      At NACOS Unilorin, events and bootcamps are a regular occurrence! As a
+      At NACOSS Unilorin, events and bootcamps are a regular occurrence! As a
       collaborative community, we frequently host:
     </p>
     <p>
@@ -87,7 +87,7 @@ const answer3 = (
       <br />- Student clubs and societies
     </p>
     <p>
-      With NACOS Unilorin, you'll have ample opportunities to learn, network,
+      With NACOSS Unilorin, you'll have ample opportunities to learn, network,
       and grow with like-minded individuals. Stay tuned for updates on our
       events calendar!
     </p>
@@ -160,7 +160,7 @@ const FAQS = [
     answer: answer1,
   },
   {
-    question: "How can I join NACOS- Unilorin?",
+    question: "How can I join NACOSS- Unilorin?",
     answer: answer2,
   },
   {

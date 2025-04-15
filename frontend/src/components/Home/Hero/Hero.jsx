@@ -23,7 +23,7 @@ const Hero = () => {
                             <h3>Welcome to</h3>
                             <h1>
                                 <span>Nigeria Association Of </span>
-                                <span>Computing Students (NACOS)</span>
+                                <span> Computer Science Students(NACOSS )</span>
                             </h1>
                             <h3 className="home-hero-title--blue">
                                 The University of Ilorin Chapter

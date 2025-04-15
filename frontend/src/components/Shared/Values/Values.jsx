@@ -16,8 +16,8 @@ const values = [
     },
     {
         icon: BulbSvg,
-        title: "Why NACOS (Unilorin)?",
-        text: `NACOS Unilorin's strong alumni network fosters a lasting bond between members, departments, and industry professionals, driving collaboration and innovation. As the tech field continues to evolve, our community remains at the forefront, embracing new technologies and trends to stay ahead of the curve. Together, we're shaping the future of tech in Nigeria and beyond, one connection at a time.`,
+        title: "Why NACOSS (Unilorin)?",
+        text: `NACOSS Unilorin's strong alumni network fosters a lasting bond between members, departments, and industry professionals, driving collaboration and innovation. As the tech field continues to evolve, our community remains at the forefront, embracing new technologies and trends to stay ahead of the curve. Together, we're shaping the future of tech in Nigeria and beyond, one connection at a time.`,
     },
 ];
 
