@@ -8,15 +8,15 @@ const Main = () => {
             <div className="section1">
                 <div className="about">
                     <h4>ABOUT US</h4>
-                    <h2>NACOS Unilorin: Empowering Tech Leaders of Tomorrow</h2>
+                    <h2>NACOSS Unilorin: Empowering Tech Leaders of Tomorrow</h2>
                     <p>
-                        The Nigeria Association of Computing Students (NACOS) Unilorin chapter is the premier hub for
+                    Nigerian Association of Computer Science Students (NACOSS) Unilorin chapter is the premier hub for
                         tech enthusiasts across multiple disciplines. We unite students from Computer Science, Computer
                         Engineering, Telecommunication Science, Information Technology, and Computer Science Education
                         under one dynamic umbrella.
                     </p>
                     <p>
-                        With over two decades of excellence and a nationwide network, NACOS Unilorin offers:
+                        With over two decades of excellence and a nationwide network, NACOSS Unilorin offers:
                     </p>
                     <ul>
                         <li>Cutting-edge workshops and seminars</li>
