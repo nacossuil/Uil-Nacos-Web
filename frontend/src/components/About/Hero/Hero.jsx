@@ -7,7 +7,7 @@ const Hero = () => {
   return (
     <div className='hero-about'>
       <div className="hero-about-cont">
-        <h1 className="hero-about-heading text-white">About NACOS - Unilorin</h1>
+        <h1 className="hero-about-heading text-white">About NACOSS - Unilorin</h1>
         <img src={peopleImg} alt="bgImg" />
       </div>
     </div>

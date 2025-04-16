@@ -1,18 +1,12 @@
 const answer1 = (
   <p>
-    NACOS Unilorin is open to all! Membership is automatic for students of:
+    NACOSS Unilorin is open to all! Membership is automatic for students of:
     <br />
     - Computer Science (CSC)
     <br />
-    - Telecommunication Science (TCS)
+    But that's not all 
     <br />
-    - Computer Engineering (CENG)
-    <br />
-    - Information and Communication Science (ICS)
-    <br />
-    - Educational Technology (CEDU).
-    <br />
-    But that's not all - our doors are also open to students from other
+    - our doors are also open to students from other
     departments, alumni, and tech enthusiasts from industry and academia.
     Everyone is welcome to join our dynamic community and be part of shaping the
     future of tech in Nigeria!
@@ -20,10 +14,9 @@ const answer1 = (
 );
 const answer2 = (
   <div>
-    <p>Joining NACOS Unilorin is easy! Here's how:</p>
+    <p>Joining NACOSS Unilorin is easy! Here's how:</p>
     <p>
-      1. <strong>Automatic Membership</strong>: If you're a student of CSC, TCS,
-      CENG, ICS, or CEDU, you're already a member!
+      1. <strong>Automatic Membership</strong>: If you're a student of CSC
     </p>
     <p>
       2. <strong>Register Online</strong>: Fill out our online registration form
@@ -64,7 +57,7 @@ const answer2 = (
 const answer3 = (
   <div>
     <p>
-      At NACOS Unilorin, events and bootcamps are a regular occurrence! As a
+      At NACOSS Unilorin, events and bootcamps are a regular occurrence! As a
       collaborative community, we frequently host:
     </p>
     <p>
@@ -87,7 +80,7 @@ const answer3 = (
       <br />- Student clubs and societies
     </p>
     <p>
-      With NACOS Unilorin, you'll have ample opportunities to learn, network,
+      With NACOSS Unilorin, you'll have ample opportunities to learn, network,
       and grow with like-minded individuals. Stay tuned for updates on our
       events calendar!
     </p>
