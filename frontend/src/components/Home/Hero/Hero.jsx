@@ -22,19 +22,13 @@ const Hero = () => {
                         <hgroup className="home-hero-titles">
                             <h3>Welcome to</h3>
                             <h1>
-<<<<<<< HEAD
                                 <span>Nigerian Association Of </span>
                                 <span>Computer Science Students (NACOSS)</span>
-=======
-                                <span>Nigeria Association Of </span>
-                                <span> Computer Science Students(NACOSS )</span>
->>>>>>> e9f66e3b9717c1c266268c02675d0b86733416b9
                             </h1>
                             <h3 className="home-hero-title--blue">
                                 The University of Ilorin Chapter
                             </h3>
                         </hgroup>
-
                         <p className="home-hero-text">
                             We empower innovation and excellence in tech through resources,
                             industry updates, and connections.
