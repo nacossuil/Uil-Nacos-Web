@@ -23,8 +23,14 @@ const About = () => {
                                 <h1> NACOSS Unilorin: Empowering Tech Talent</h1>
                             </hgroup>
                             <p className="sec1-text">
+<<<<<<< HEAD
                                 The Nigerian Association of Computer Science Students (NACOSS), University of Ilorin Chapter, is
                                 the premier community for students of Computer Science.
+=======
+                                The Nigerian Association of Computer Science Students (NACOSS), University of Ilorin Chapter, is
+                                the premier community for students of Computer Science, Computer Engineering,
+                                Telecommunication Science, Information Technology, and Computer Science Education.
+>>>>>>> e9f66e3b9717c1c266268c02675d0b86733416b9
                                 With over two decades of excellence and a strong national footprint, NACOSS Unilorin
                                 fosters a dynamic ecosystem for networking, professional growth, and innovative
                                 collaborations, shaping the next generation of tech leaders.

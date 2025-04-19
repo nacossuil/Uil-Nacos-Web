@@ -153,7 +153,7 @@ const FAQS = [
     answer: answer1,
   },
   {
-    question: "How can I join NACOS- Unilorin?",
+    question: "How can I join NACOSS- Unilorin?",
     answer: answer2,
   },
   {
