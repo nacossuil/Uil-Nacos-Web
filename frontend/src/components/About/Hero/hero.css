@@ -22,7 +22,10 @@
     font-weight: 700;
     color: white;
 }
-
+/* .home-hero-img img{
+    width: 90%;
+    height: 90%;
+}  */
 .hero-about-cont img {
     width: 100%;
     height: auto;

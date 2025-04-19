@@ -1,5 +1,5 @@
 import {BsArrowDown} from 'react-icons/bs';
-import Nacos_connect from "../../../assets/imgs/nacos-connect.webp";
+import Nacos_connect from "../../../assets/imgs/peoples-img.jpg";
 import "./main.css"
 
 const Main = () => {
@@ -10,10 +10,15 @@ const Main = () => {
                     <h4>ABOUT US</h4>
                     <h2>NACOSS Unilorin: Empowering Tech Leaders of Tomorrow</h2>
                     <p>
+<<<<<<< HEAD
+                        The Nigerian Association of Computer Science Students (NACOSS) Unilorin chapter is the premier hub for
+                        tech enthusiasts across multiple disciplines. We unite students from Computer Science under one community umbrella.
+=======
                     Nigerian Association of Computer Science Students (NACOSS) Unilorin chapter is the premier hub for
                         tech enthusiasts across multiple disciplines. We unite students from Computer Science, Computer
                         Engineering, Telecommunication Science, Information Technology, and Computer Science Education
                         under one dynamic umbrella.
+>>>>>>> e9f66e3b9717c1c266268c02675d0b86733416b9
                     </p>
                     <p>
                         With over two decades of excellence and a nationwide network, NACOSS Unilorin offers:
@@ -28,10 +33,12 @@ const Main = () => {
                     <p>
                         Join us to innovate, collaborate, and shape the future of technology in Nigeria and beyond!
                     </p>
-                    <button className="learn-more-btn">
+                    <a href="https://www.instagram.com/nacoss_unilorin/" target="_blank" rel="noopener noreferrer">
+                        <button className="learn-more-btn">
                         <span>Learn More</span>
-                        <BsArrowDown className="arrow-icon"/>
-                    </button>
+                        <BsArrowDown className="arrow-icon" />
+                        </button>
+                    </a>
                 </div>
                 <div className="section1-img">
                     <img src={Nacos_connect} alt="NACOS Unilorin community illustration"/>
