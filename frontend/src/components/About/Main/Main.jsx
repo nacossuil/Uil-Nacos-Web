@@ -31,7 +31,7 @@ const Main = () => {
             Join us to innovate, collaborate, and shape the future of technology
             in Nigeria and beyond!
           </p>
-          <a
+          {/* <a
             href="https://www.instagram.com/nacoss_unilorin/"
             target="_blank"
             rel="noopener noreferrer"
@@ -40,6 +40,10 @@ const Main = () => {
               <span>Learn More</span>
               <BsArrowDown className="arrow-icon" />
             </button>
+          </a> */}
+          <a className="learn-more-btn" href="#values-section">
+            Learn More
+            <BsArrowDown />
           </a>
         </div>
         <div className="section1-img">

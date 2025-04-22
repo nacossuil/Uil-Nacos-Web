@@ -1,46 +1,47 @@
 .hero-about {
-    width: 100%;
-    background: #194b88  url('./../../../assets/grid-bg.svg') no-repeat center bottom;
-    background-size: 90% auto;
-    position: relative;
-    padding-top: 2.75rem;
+  width: 100%;
+  background: #194b88 url("./../../../assets/grid-bg.svg") no-repeat center
+    bottom;
+  background-size: 90% auto;
+  position: relative;
+  padding-top: 2.75rem;
 }
 
 .hero-about-cont {
-    max-width: 31.25rem;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  max-width: 31.25rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .hero-about-heading {
-    text-align: center;
-    margin: 0 0 0.5rem;
-    font-family: Mulish, sans-serif;
-    font-size: 2.25rem;
-    font-weight: 700;
-    color: white;
+  text-align: center;
+  margin: 0 0 0.5rem;
+  font-family: Mulish, sans-serif;
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: white;
 }
 /* .home-hero-img img{
     width: 90%;
     height: 90%;
 }  */
 .hero-about-cont img {
-    width: 100%;
-    height: auto;
-    display: block;
-    margin-top: auto;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-top: auto;
 }
 
 @media screen and (max-width: 640px) {
-    .hero-about-heading {
-        font-size: 1.8rem;
-    }
+  .hero-about-heading {
+    font-size: 1.8rem;
+  }
 }
 
 @media screen and (max-width: 425px) {
-    .hero-about-heading {
-        font-size: 1.5rem;
-    }
+  .hero-about-heading {
+    font-size: 1.5rem;
+  }
 }
