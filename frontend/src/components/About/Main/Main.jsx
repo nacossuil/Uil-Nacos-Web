@@ -10,7 +10,7 @@ const Main = () => {
           <h4>ABOUT US</h4>
           <h2>NACOSS Unilorin: Empowering Tech Leaders of Tomorrow</h2>
           <p>
-            Nigerian Association of Computer Science Students (NACOSS) Unilorin
+            Nigerian Association of Computer Science Students (NACOSS) Unilorin
             chapter is the premier hub for tech enthusiasts across multiple
             disciplines. We unite students from Computer Science, Computer
             Engineering, Telecommunication Science, Information Technology, and
