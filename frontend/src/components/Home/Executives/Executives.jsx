@@ -5,11 +5,9 @@ import emailpng from "../../../assets/email-icon.svg";
 import linkedInpng from "../../../assets/linkedin-icon.svg";
 import Grid from "@/assets/grid-bg.svg";
 
-// Base URL
-const BASE_API_URL = "https://uil-nacos-web.onrender.com/api/execs";
+const baseUrl = import.meta.env.VITE_API_BASE_URL || 'https://nacoss-backend.onrender.com';
+const BASE_API_URL = `${baseUrl}/api/execs`;
 
-// ExecutiveCard Component
-// eslint-disable-next-line react/prop-types
 const ExecutiveCard = ({executive}) => {
     return (
         <div
@@ -45,11 +43,26 @@ const ExecutiveCard = ({executive}) => {
     );
 };
 
-// LoadingSpinner Component
-const LoadingSpinner = () => (
-    <div className="text-black p-5 text-center">Loading executives data...</div>
-);
 
+
+const LoadingSpinner = () => {
+    return (
+      <div className="flex flex-col items-center justify-center min-h-[40vh]">
+        {/* Spinner */}
+        <div className="flex space-x-2 animate-pulse">
+          <span className="w-4 h-4 bg-blue-600 rounded-full animate-bounce delay-0" />
+          <span className="w-4 h-4 bg-blue-600 rounded-full animate-bounce delay-0" />
+          <span className="w-4 h-4 bg-blue-600 rounded-full animate-bounce delay-0" />
+        </div>
+  
+        {/* Text */}
+        <p className="mt-4 text-lg font-semibold text-[#194b88] animate-pulse">
+          Loading executives data...
+        </p>
+      </div>
+    );
+  };
+  
 // ErrorMessage Component
 const ErrorMessage = ({message, retry}) => (
     <div className="text-red-500 p-5 text-center">
@@ -70,12 +83,12 @@ const Executives = () => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const [activeTab, setActiveTab] = useState('past');
-    const [yearRange, setYearRange] = useState('2022/2023');
+    const [yearRange, setYearRange] = useState('2023/2024');
 
     const fetchExecutives = async (retryCount = 0) => {
         setLoading(true);
         setError(null);
-        const session = activeTab === 'current' ? '2023-2024' : '2022-2023';
+        const session = activeTab === 'current' ? '2024-2025' : '2022-2023';
         const API_URL = `${BASE_API_URL}?session=${session}`;
 
         try {
@@ -100,7 +113,6 @@ const Executives = () => {
                 } else if (err.response) {
                     setError(`Server responded with error: ${err.response.status} ${err.response.statusText}`);
                 } else if (err.request) {
-                    // setError('No response received from the server. Please check your internet connection.');
                     setError(err.message);
                 } else {
                     setError(`Error setting up the request: ${err.message}`);
@@ -125,14 +137,13 @@ const Executives = () => {
     const handleTabClick = (tab) => {
         if (tab !== activeTab) {
             setActiveTab(tab);
-            setYearRange(tab === 'current' ? '2023/2024' : '2022/2023');
+            setYearRange(tab === 'current' ? '2024/2025' : '2022/2023');
         }
     };
 
-    if (loading) return <LoadingSpinner/>;
-    if (error) return <ErrorMessage message={error} retry={() => fetchExecutives()}/>;
-    if (executives.length === 0) return <div className="text-black p-5 text-center">No executives data available for the
-        selected session.</div>;
+    if (loading) return <LoadingSpinner />;
+    if (error) return <ErrorMessage message={error} retry={() => fetchExecutives()} />;
+    if (executives.length === 0) return <div className="text-black p-5 text-center">No executives data available for the selected session.</div>;
 
     return (
         <section
@@ -144,9 +155,8 @@ const Executives = () => {
                 backgroundRepeat: 'no-repeat',
                 backgroundAttachment: 'fixed'
             }}>
-            <div
-                className="flex flex-col items-center w-full max-w-6xl mx-auto px-4 pt-12 pb-0"> {/* Changed my-12 to pt-12 pb-0 */}
-                <h1 className="text-4xl font-bold mb-4 mt-8 text-center">Meet Your Executives</h1>
+            <div className="flex flex-col items-center w-full max-w-6xl mx-auto px-4 pt-12 pb-0">
+                <h1 className="text-4xl font-bold mb-4 mt-8 text-center text-[#194b88]">Meet Your Executives</h1>
                 <h4 className="text-xl text-gray-600 mb-8 text-center max-w-2xl">
                     Meet the passionate students driving the success of the community 🚀
                 </h4>
@@ -154,18 +164,15 @@ const Executives = () => {
                 {/* Tabs */}
                 <div className="flex w-full max-w-[22rem] bg-gray-200 rounded-lg mb-8">
                     <button
-                        className={`w-full py-2 px-4 rounded-l-lg focus:outline-none bg-gray-300 cursor-not-allowed`}
-                        onClick={() => {
-                        }}
-                        disabled={activeTab === 'current'}
+                        className={`w-full py-2 px-4 rounded-l-lg focus:outline-none ${activeTab === 'current' ? 'bg-[#194b88] text-white' : 'bg-gray-300'}`}
+                        onClick={() => handleTabClick('current')}
                         aria-label="View Current Executives"
                     >
                         Current Executives
                     </button>
                     <button
-                        className={`p-4 w-full rounded-[10px] bg-[rgba(19,134,1,1)] shadow-md text-white`}
+                        className={`p-4 w-full rounded-[10px] ${activeTab === 'past' ? 'bg-[#194b88] text-white' : ''}`}
                         onClick={() => handleTabClick('past')}
-                        disabled={activeTab === 'past'}
                         aria-label="View Past Executives"
                     >
                         Past Executives
@@ -174,13 +181,13 @@ const Executives = () => {
 
                 {/* Year Range Display */}
                 <div className="mb-6 text-lg font-medium text-gray-700">
-                    Showing Executives for the <span className="text-green-700">{yearRange}</span> Session
+                    Showing Executives for the <span className="text-[#194b88]">{yearRange}</span> Session
                 </div>
 
                 {/* Executives Grid */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     {executives.map((executive) => (
-                        <ExecutiveCard key={executive.email} executive={executive}/>
+                        <ExecutiveCard key={executive.email} executive={executive} />
                     ))}
                 </div>
             </div>

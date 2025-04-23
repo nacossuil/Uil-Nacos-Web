@@ -1,4 +1,5 @@
-import {useEffect, useState} from 'react';
+import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import time from "../../../assets/time.png";
 import location from "../../../assets/location-icon.svg";
 import cal from "../../../assets/cal.png";
@@ -10,6 +11,8 @@ const Events = () => {
     const [activeTab, setActiveTab] = useState('past');
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const baseUrl = import.meta.env.VITE_API_BASE_URL;
+    const navigate = useNavigate();
 
     useEffect(() => {
         fetchEvents();
@@ -19,7 +22,7 @@ const Events = () => {
         setLoading(true);
         setError(null);
         try {
-            const response = await fetch("https://uil-nacos-web.onrender.com/api/events?session=2022-2023");
+            const response = await fetch(`${baseUrl}/api/events?session=2022-2023`);
             if (!response.ok) {
                 throw new Error('Failed to fetch events');
             }
@@ -38,7 +41,6 @@ const Events = () => {
     };
 
     const splitDateTime = (dateTimeStr) => {
-        // Validate the input format
         const regex = /^(\d{4}-\d{2}-\d{2})-(\d{1,2}:\d{2})(am|pm)$/i;
         const match = dateTimeStr.match(regex);
 
@@ -66,7 +68,19 @@ const Events = () => {
     };
 
     if (loading) {
-        return <div>Loading events...</div>;
+        return  <div className="flex flex-col items-center justify-center min-h-[40vh]">
+        {/* Spinner */}
+        <div className="flex space-x-2 animate-pulse">
+          <span className="w-4 h-4 bg-blue-600 rounded-full animate-bounce delay-0" />
+          <span className="w-4 h-4 bg-blue-600 rounded-full animate-bounce delay-0" />
+          <span className="w-4 h-4 bg-blue-600 rounded-full animate-bounce delay-0" />
+        </div>
+        {/* Text */}
+        <p className="mt-4 text-lg font-semibold text-[#194b88] animate-pulse">
+          Loading executives data...
+        </p>
+      </div>
+        ;
     }
 
     if (error) {
@@ -89,7 +103,6 @@ const Events = () => {
                     Discover upcoming tech innovation gatherings and hands-on learning experiences
                 </h2>
 
-
                 <div className="flex flex-col flex-wrap justify-center items-center">
                     <div className="flex w-[22rem] bg-[#E1E1E1] rounded-[10px] event-btn">
                         <button
@@ -98,7 +111,7 @@ const Events = () => {
                             Upcoming events
                         </button>
                         <button
-                            className={`p-4 w-full rounded-[10px] bg-[rgba(19,134,1,1)] shadow-md text-white`}
+                            className={`p-4 w-full rounded-[10px] bg-[#194b88] shadow-md text-white`}
                             onClick={() => setActiveTab('past')}
                         >
                             Past events
@@ -106,53 +119,55 @@ const Events = () => {
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 py-16">
                         {eventInfo.map((info) => {
-                            console.log(info.startDateAndTime)
                             const startDateTime = splitDateTime(info.startDateAndTime);
                             const endDateTime = splitDateTime(info.endDateAndTime);
 
-                            const handleCatchUpClick = () => {
-                                window.open(info.onclick, '_blank');
+                            const handleReadMoreClick = () => {
+                                navigate(`/event/${encodeURIComponent(info.title)}`, { state: { event: info } });
                             };
 
                             return (
-                                <div key={info.title}
-                                     className="flex flex-col w-full sm:w-[300px] mx-6 shadow-lg bg-white rounded-md hover:shadow-xl transition-shadow">
-                                    <img src={getImageSource(info.image)} alt={info.title}
-                                         className="w-full h-[250px] object-cover rounded-t-md"
-                                         style={{objectFit: 'cover'}}/>
+                                <div
+                                    key={info.title}
+                                    className="flex flex-col w-full sm:w-[300px] mx-6 shadow-lg bg-white rounded-md hover:shadow-xl transition-shadow"
+                                >
+                                    <img
+                                        src={getImageSource(info.image)}
+                                        alt={info.title}
+                                        className="w-full h-[250px] object-cover rounded-t-md"
+                                        style={{ objectFit: 'cover' }}
+                                    />
                                     <div className="px-6 py-6 flex-grow">
                                         <p className="font-semibold my-2 event-txt">{info.title}</p>
-                                        <p className="text-[14px] sub-text">{info.description}</p>
+shear: <p className="text-[14px] sub-text">{info.description}</p>
                                     </div>
                                     <div className="flex flex-col justify-between px-6 py-4">
                                         <div className="mb-4">
                                             <span className="flex items-center mb-2">
-                                                <img src={cal} className="w-[14px] h-[14px]" alt="Calendar"/>
-                                                <p className="text-[12px] sub-text ml-2">
-                                                    {startDateTime.date}
-                                                </p>
+                                                <img src={cal} className="w-[14px] h-[14px]" alt="Calendar" />
+                                                <p className="text-[12px] sub-text ml-2">{startDateTime.date}</p>
                                             </span>
                                             <span className="flex items-center mb-2">
-                                                <img src={time} className="w-[14px] h-[14px]" alt="Time"/>
+                                                <img src={time} className="w-[14px] h-[14px]" alt="Time" />
                                                 <p className="text-[12px] sub-text ml-2">
                                                     {startDateTime.time} - {endDateTime.time}
                                                 </p>
                                             </span>
                                             <span className="flex items-center mb-2">
-                                                <img src={location} className="w-[14px] h-[14px]" alt="Location"/>
+                                                <img src={location} className="w-[14px] h-[14px]" alt="Location" />
                                                 <p className="text-[12px] sub-text ml-2">{info.venue}</p>
                                             </span>
                                             <span className="flex items-center">
-                                                <img src={cost} className="w-[14px] h-[14px]" alt="Cost"/>
-                                                <p className="text-[12px] sub-text ml-2">{"Free. "}</p>
+                                                <img src={cost} className="w-[14px] h-[14px]" alt="Cost" />
+                                                <p className="text-[12px] sub-text ml-2">Free</p>
                                             </span>
                                         </div>
                                         <div className="flex justify-end">
                                             <button
-                                                className="bg-[rgba(19,134,1,1)] hover:bg-[#29176B] text-[#fff] text-[12px] py-2 px-4 rounded-[30px]"
-                                                onClick={handleCatchUpClick}
+                                                className="bg-[#194b88] hover:bg-[#123a6b] text-[#fff] text-[12px] py-2 px-4 rounded-[30px]"
+                                                onClick={handleReadMoreClick}
                                             >
-                                                Catch Up!
+                                                Read More
                                             </button>
                                         </div>
                                     </div>

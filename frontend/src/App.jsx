@@ -9,6 +9,7 @@ import AboutPage from "./pages/About/AboutPage";
 import EventsPage from "./pages/Events/EventsPage";
 import OpportunitiesPage from "./pages/Opportunities/OpportunitiesPage";
 import ScrollToTop from "./assets/up-arrow-icon.svg?react";
+import EventDetail from "./components/Events/Events/EventDetails";
 
 function App() {
   const [scrollToTopVisible, setScrollToTopVisible] = useState(false);
@@ -44,6 +45,7 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/events" element={<EventsPage />} />
+            <Route path="/event/:title" element={<EventDetail/>} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/opportunities" element={<OpportunitiesPage />} />
             {/* <Route path="/calculator" element={<CgpaCalculatorPage />} /> */}
