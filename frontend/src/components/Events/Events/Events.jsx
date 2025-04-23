@@ -77,7 +77,7 @@ const Events = () => {
         </div>
         {/* Text */}
         <p className="mt-4 text-lg font-semibold text-[#194b88] animate-pulse">
-          Loading executives data...
+          Loading executives data..
         </p>
       </div>
         ;
