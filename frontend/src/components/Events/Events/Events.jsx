@@ -183,14 +183,9 @@ shear: <p className="text-[14px] sub-text">{info.description}</p>
 
                     </div>
                   </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </div>
-    </section>
-  );
+            </div>
+          </section>
+        );
 };
 
 export default Events;
