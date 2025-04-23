@@ -1,7 +1,7 @@
 import "./footer.css";
 import nacosLogo from "../../assets/imgs/nacos-logo.png";
 import unilorinLogo from "../../assets/unilorin-logo.svg";
-import {BsInstagram, BsTwitter} from "react-icons/bs";
+import {BsInstagram, BsTwitter, BsLinkedin} from "react-icons/bs";
 import {Link} from "react-router-dom";
 
 const socials = [
@@ -13,18 +13,13 @@ const socials = [
     {
         name: "instagram",
         icon: <BsInstagram/>,
-        url: "https://www.instagram.com/nacos_unilorin/",
+        url: "https://www.instagram.com/nacoss_unilorin",
     },
-    // {
-    //   name: "linkedin",
-    //   icon: <BsLinkedin />,
-    //   url: "#",
-    // },
-    // {
-    //   name: "facebook",
-    //   icon: <BsFacebook />,
-    //   url: "#",
-    // },
+    {
+      name: "linkedin",
+      icon: <BsLinkedin />,
+      url: "https://www.linkedin.com/company/nigerian-association-of-computer-science-students-unilorin",
+    },
 ];
 
 const Footer = () => {
@@ -55,7 +50,7 @@ const Footer = () => {
                     </div>
                 </div>
 
-                <aside>© 2022/2023 NACOS. All rights reserved.</aside>
+                <p>© {new Date().getFullYear()} NACOSS Unilorin. All rights reserved.</p>
             </div>
         </footer>
     );

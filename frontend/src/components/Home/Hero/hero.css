@@ -68,7 +68,8 @@
     line-height: 1.6;
 }
 
-.home-hero button {
+.home-hero button, a.scroll-btn {
+    width: fit-content;
     display: flex;
     align-items: center;
     gap: 0rem 0.7rem;
@@ -84,11 +85,11 @@
     transition: background-color 0.3s ease;
 }
 
-.home-hero button:hover {
+.home-hero button:hover, a.scroll-btn:hover {
     background-color: #153a6a; /* Darker shade of blue for hover effect */
 }
 
-.home-hero button svg {
+.home-hero button svg, a.scroll-btn svg {
     stroke-width: 0.2px;
     width: 1.4rem;
     height: auto;

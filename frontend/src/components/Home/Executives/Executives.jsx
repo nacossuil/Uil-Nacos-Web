@@ -1,12 +1,14 @@
-import {useEffect, useState} from 'react';
-import axios from 'axios';
+import { useEffect, useState } from "react";
+import axios from "axios";
 import grid from "../../../assets/grid-bg.svg";
 import emailpng from "../../../assets/email-icon.svg";
 import linkedInpng from "../../../assets/linkedin-icon.svg";
 import Grid from "@/assets/grid-bg.svg";
+import { ThreeDotsLoader } from "../../Shared/three-dots-loader";
 
 const baseUrl = import.meta.env.VITE_API_BASE_URL || 'https://nacoss-backend.onrender.com';
 const BASE_API_URL = `${baseUrl}/api/execs`;
+
 
 const ExecutiveCard = ({executive}) => {
     return (
@@ -64,21 +66,22 @@ const LoadingSpinner = () => {
   };
   
 // ErrorMessage Component
-const ErrorMessage = ({message, retry}) => (
-    <div className="text-red-500 p-5 text-center">
-        <p>Error: {message}</p>
-        <button
-            onClick={retry}
-            className="mt-4 px-4 py-2 bg-[#194b88] text-white rounded hover:bg-green-600 transition-colors"
-            aria-label="Retry Fetching Executives"
-        >
-            Retry
-        </button>
-    </div>
+const ErrorMessage = ({ message, retry }) => (
+  <div className="text-red-500 p-5 text-center">
+    <p>Error: {message}</p>
+    <button
+      onClick={retry}
+      className="mt-4 px-4 py-2 bg-[#194b88] text-white rounded hover:bg-green-600 transition-colors"
+      aria-label="Retry Fetching Executives"
+    >
+      Retry
+    </button>
+  </div>
 );
 
 // Main Executives Component
 const Executives = () => {
+
     const [executives, setExecutives] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -192,7 +195,62 @@ const Executives = () => {
                 </div>
             </div>
         </section>
+
     );
+
+  return (
+    <section
+      id="executives"
+      className="min-h-screen bg-repeat"
+      style={{
+        backgroundImage: `url(${Grid})`,
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+        backgroundAttachment: "fixed",
+      }}
+    >
+      <div className="flex flex-col items-center w-full max-w-6xl mx-auto px-4 pt-12 pb-0">
+        {" "}
+        {/* Changed my-12 to pt-12 pb-0 */}
+        <h1 className="text-4xl font-bold mb-4 mt-8 text-center">
+          Meet Your Executives
+        </h1>
+        <h4 className="text-xl text-gray-600 mb-8 text-center max-w-2xl">
+          Meet the passionate students driving the success of the community 🚀
+        </h4>
+        {/* Tabs */}
+        <div className="flex w-full max-w-[22rem] bg-gray-200 rounded-lg mb-8">
+          <button
+            className={`w-full py-2 px-4 rounded-l-lg focus:outline-none bg-gray-300 cursor-not-allowed`}
+            onClick={() => {}}
+            disabled={activeTab === "current"}
+            aria-label="View Current Executives"
+          >
+            Current Executives
+          </button>
+          <button
+            className={`p-4 w-full rounded-[10px] bg-[rgba(19,134,1,1)] shadow-md text-white`}
+            onClick={() => handleTabClick("past")}
+            disabled={activeTab === "past"}
+            aria-label="View Past Executives"
+          >
+            Past Executives
+          </button>
+        </div>
+        {/* Year Range Display */}
+        <div className="mb-6 text-lg font-medium text-gray-700">
+          Showing Executives for the{" "}
+          <span className="text-green-700">{yearRange}</span> Session
+        </div>
+        {/* Executives Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {executives.map((executive) => (
+            <ExecutiveCard key={executive.email} executive={executive} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default Executives;
