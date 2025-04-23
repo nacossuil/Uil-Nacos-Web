@@ -9,6 +9,7 @@ import AboutPage from "./pages/About/AboutPage";
 import EventsPage from "./pages/Events/EventsPage";
 import OpportunitiesPage from "./pages/Opportunities/OpportunitiesPage";
 import ScrollToTop from "./assets/up-arrow-icon.svg?react";
+import EventDetail from "./components/Events/Events/EventDetails";
 
 function App() {
   const [scrollToTopVisible, setScrollToTopVisible] = useState(false);
@@ -37,30 +38,33 @@ function App() {
   window.addEventListener("scroll", toggleVisible);
 
   return (
-    <>
-      <Navbar />
-      <main>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/events" element={<EventsPage />} />
-          <Route path="/contact" element={<ContactPage />} />
-          <Route path="/opportunities" element={<OpportunitiesPage />} />
-          {/* <Route path="/calculator" element={<CgpaCalculatorPage />} /> */}
-        </Routes>
-        {scrollToTopVisible ? (
-          <div
-            className="scroll-to-top-icon cursor-pointer"
-            onClick={() => {
-              scrollToTop();
-            }}
-          >
-            <ScrollToTop />
-          </div>
-        ) : null}
-      </main>
-      <Footer />
-    </>
+
+      <>
+        <Navbar />
+        <main>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/events" element={<EventsPage />} />
+            <Route path="/event/:title" element={<EventDetail/>} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/opportunities" element={<OpportunitiesPage />} />
+            {/* <Route path="/calculator" element={<CgpaCalculatorPage />} /> */}
+          </Routes>
+          {scrollToTopVisible ? (
+              <div
+                  className="scroll-to-top-icon"
+                  onClick={() => {
+                    scrollToTop();
+                  }}
+              >
+                <ScrollToTop />
+              </div>
+          ) : null}
+        </main>
+        <Footer />
+      </>
+
   );
 }
 
