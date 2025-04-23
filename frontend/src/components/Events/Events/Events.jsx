@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import time from "../../../assets/time.png";
@@ -5,8 +6,10 @@ import location from "../../../assets/location-icon.svg";
 import cal from "../../../assets/cal.png";
 import cost from "../../../assets/cost.png";
 import grid from "../../../assets/Grid.png";
+import { ThreeDotsLoader } from "../../Shared/three-dots-loader";
 
 const Events = () => {
+
     const [eventInfo, setEventInfo] = useState([]);
     const [activeTab, setActiveTab] = useState('past');
     const [loading, setLoading] = useState(true);
@@ -36,37 +39,40 @@ const Events = () => {
         }
     };
 
-    const getImageSource = (imageUrl) => {
-        return imageUrl;
-    };
+  const getImageSource = (imageUrl) => {
+    return imageUrl;
+  };
+
 
     const splitDateTime = (dateTimeStr) => {
         const regex = /^(\d{4}-\d{2}-\d{2})-(\d{1,2}:\d{2})(am|pm)$/i;
         const match = dateTimeStr.match(regex);
 
-        if (!match) {
-            throw new Error("Invalid date-time format. Expected: YYYY-MM-DD-H:MMam/pm");
-        }
 
-        const [, date, time, ampm] = match;
+    if (!match) {
+      throw new Error(
+        "Invalid date-time format. Expected: YYYY-MM-DD-H:MMam/pm"
+      );
+    }
 
-        let [hours, minutes] = time.split(':');
-        hours = parseInt(hours);
+    const [, date, time, ampm] = match;
 
-        if (ampm.toLowerCase() === 'pm' && hours !== 12) {
-            hours += 12;
-        } else if (ampm.toLowerCase() === 'am' && hours === 12) {
-            hours = 0;
-        }
+    let [hours, minutes] = time.split(":");
+    hours = parseInt(hours);
 
-        hours = hours.toString().padStart(2, '0');
+    if (ampm.toLowerCase() === "pm" && hours !== 12) {
+      hours += 12;
+    } else if (ampm.toLowerCase() === "am" && hours === 12) {
+      hours = 0;
+    }
 
-        return {
-            date,
-            time: `${hours}:${minutes}`
-        };
+    hours = hours.toString().padStart(2, "0");
+
+    return {
+      date,
+      time: `${hours}:${minutes}`,
     };
-
+  }
     if (loading) {
         return  <div className="flex flex-col items-center justify-center min-h-[40vh]">
         {/* Spinner */}
@@ -174,11 +180,17 @@ shear: <p className="text-[14px] sub-text">{info.description}</p>
                                 </div>
                             );
                         })}
+
                     </div>
+                  </div>
                 </div>
-            </div>
-        </section>
-    );
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default Events;

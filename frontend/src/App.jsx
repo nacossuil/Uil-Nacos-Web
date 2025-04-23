@@ -38,6 +38,7 @@ function App() {
   window.addEventListener("scroll", toggleVisible);
 
   return (
+
       <>
         <Navbar />
         <main>
@@ -63,6 +64,7 @@ function App() {
         </main>
         <Footer />
       </>
+
   );
 }
 
