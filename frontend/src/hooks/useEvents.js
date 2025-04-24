@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 const baseUrl =
-  import.meta.env.VITE_API_BASE_URL || "https://nacoss-backend.onrender.com";
+  import.meta.env.VITE_API_BASE_URL || "https://uil-nacos-web.onrender.com";
 
 export const useEvents = (activeTab) => {
   const [eventInfo, setEventInfo] = useState([]);

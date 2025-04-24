@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 const baseUrl =
-  import.meta.env.VITE_API_BASE_URL || "https://nacoss-backend.onrender.com";
+  import.meta.env.VITE_API_BASE_URL || "https://uil-nacos-web.onrender.com";
 const BASE_API_URL = `${baseUrl}/api/execs`;
 
 export const useExecutives = (activeTab) => {
