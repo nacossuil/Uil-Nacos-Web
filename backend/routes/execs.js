@@ -1,15 +1,27 @@
 import express from "express";
-import { getEvents, createEvent } from "../controllers/eventsController.js";
-import { newEventValidator } from "../validators/index.js";
+import {
+  getExecs,
+  createExec,
+  bulkCreateExecs,
+} from "../controllers/execsController.js";
+import { execsValidator, sessionvalidator } from "../validators/index.js";
 import { upload, handleMulterError } from "../middleware/multer.js";
 
 const router = express.Router();
-router.get("/", getEvents);
+
+router.get("/", sessionvalidator, getExecs);
 router.post(
   "/",
   upload.single("image"),
   handleMulterError,
-  newEventValidator,
-  createEvent
+  execsValidator,
+  createExec
 );
+router.post(
+  "/bulk",
+  upload.array("images", 20),
+  handleMulterError,
+  bulkCreateExecs
+);
+
 export default router;
