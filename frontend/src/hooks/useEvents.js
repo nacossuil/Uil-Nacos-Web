@@ -1,8 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-
-const baseUrl =
-  import.meta.env.VITE_API_BASE_URL || "https://uil-nacos-web.onrender.com";
+import { baseURL } from "../utils/constant";
 
 export const useEvents = (activeTab) => {
   const [eventInfo, setEventInfo] = useState([]);
@@ -16,7 +14,7 @@ export const useEvents = (activeTab) => {
       const session = activeTab === "upcoming" ? "2024-2025" : "2022-2023";
 
       try {
-        const { data } = await axios.get(`${baseUrl}/api/events`, {
+        const { data } = await axios.get(`${baseURL}/api/events`, {
           params: { session },
           timeout: 10000,
         });

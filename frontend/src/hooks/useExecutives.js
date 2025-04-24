@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { baseURL } from "../utils/constant";
 
-const baseUrl =
-  import.meta.env.VITE_API_BASE_URL || "https://uil-nacos-web.onrender.com";
-const BASE_API_URL = `${baseUrl}/api/execs`;
+const BASE_API_URL = `${baseURL}/api/execs`;
 
 export const useExecutives = (activeTab) => {
   const [executives, setExecutives] = useState([]);
